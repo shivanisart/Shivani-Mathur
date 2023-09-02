@@ -12,34 +12,34 @@
       height: 100vh;
       background-color: black;
       overflow: hidden;
+      cursor: pointer; /* Add cursor pointer to indicate the page is clickable */
     }
     .gif-container {
       text-align: center;
       color: white;
-      font-size: 3rem; /* Fix the font size (changed from 3erem to 3rem) */
-      cursor: pointer;
+      font-size: 3rem;
+      cursor: inherit; /* Inherit cursor style from the parent body element */
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 2
-      em; /* Add margin to create a gap of 3 lines below it */
+      margin-bottom: 1em;
     }
     img {
-      max-width: 100%; /* Make the image fit the screen width */
-      max-height: 100vh; /* Limit the image height to 60% of the viewport height */
+      max-width: 100%;
+      max-height: 100vh;
       width: auto;
       height: auto;
-      margin-top: 0em; /* Add margin to create a gap of 3 lines between the title and image */
+      margin-top: 0.23em;
     }
     a {
       text-decoration: none;
       color: white;
-      font-size: 2.5rem; /* Increase the font size for "Enter my universe" */
+      font-size: 2.5rem;
     }
   </style>
 </head>
-<body>
-  <div class="gif-container" id="clickArea" onclick="openLink()">
+<body onclick="openLink()"> <!-- Add onclick event to the body element -->
+  <div class="gif-container" id="clickArea">
     <span>Shivani Mathur</span>
   </div>
 
@@ -57,3 +57,4 @@
   </script>
 </body>
 </html>
+
