@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shivani Mathur</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+    }
+    .gif-container {
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      max-width: 100%; /* Make the image fit the screen width */
+      max-height: 100vh; /* Limit the image height to 60% of the viewport height */
+      width: auto;
+      height: auto;
+      transition: all 2s; /* Add a CSS transition for smooth size changes */
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem; /* Increase the font size for "Enter my universe" */
+      transition: font-size 2s; /* Add a transition for smooth font size changes */
+    }
+  </style>
+</head>
+<body>
+  <div class="gif-container" id="clickArea" onclick="openLink()">
+    <span id="name">Shivani Mathur</span>
+    <img id="gif1" src="pathways.GIF" alt="The Door GIF">
+    <a href="https://shivanimathur.weebly.com" id="shivaniLink">Enter my universe</a>
+  </div>
+
+  <script>
+    var gifElement = document.getElementById("gif1");
+    var nameElement = document.getElementById("name");
+    var isGrowing = true;
+    var currentSize = 20;
+    var maxSize = 100;
+
+    function updateSize() {
+      if (isGrowing) {
+        currentSize += 2; // Adjust the increment for smoother changes
+        if (currentSize >= maxSize) {
+          isGrowing = false;
+        }
+      } else {
+        currentSize -= 2; // Adjust the decrement for smoother changes
+        if (currentSize <= 20) {
+          isGrowing = true;
+        }
+      }
+
+      gifElement.style.width = currentSize + "%";
+      gifElement.style.height = "auto";
+      nameElement.style.fontSize = currentSize / 5 + "rem"; // Adjust font size accordingly
+
+      // Call the function periodically for smoother size changes
+      setTimeout(updateSize, 100);
+    }
+
+    // Start the size-changing animation
+    updateSize();
+
+    function openLink() {
+      var link = document.getElementById("shivaniLink").href;
+      window.location.href = link;
+    }
+  </script>
+</body>
+</html>
