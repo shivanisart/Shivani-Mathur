@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portraits of our Universe, 2023</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: black;
+      overflow-y: scroll; /* Enable vertical scrolling */
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 1em;
+    }
+    footer {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 1em;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 1em;
+    }
+    img, video, .gif { /* Apply the styles to img, video, and .gif elements */
+      max-width: 80%;
+      max-height: 70vh;
+      width: auto;
+      height: auto;
+      border: 2px solid white; /* Adjust the border width and style as needed */
+      border-radius: 10px;
+    }
+    .text-container {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 1em;
+    }
+    .enter-link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem; /* Set font size to match other text */
+      margin-top: 1em;
+    }
+    .video-container {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .gif-container {
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    /* Media query for smaller screens (e.g., mobile) */
+    @media screen and (max-width: 600px) {
+      .gif {
+        width: 95% !important; /* Increase the width for the GIF on smaller screens */
+      }
+    }
+
+    /* Add a 1em gap below the GIF */
+    .gif-container .gif {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>Portraits of our Universe, 2023</header>
+
+  <div class="text-container">
+    <p>A dyptic:A digital work (1 of 2) & A sculpture (2 of 2) made with cracked backlit mirror.</p>
+  </div>
+
+  <div class="gif-container">
+    <p style="font-size: 1.2rem;">The Digital display<br>Moving image in a frame<br>34x34x10.</p>
+    <img class="gif" src="pathways.GIF" alt="Portraits of our Universe, 1 of 2, 2023">
+  </div>
+
+  <div class="text-container">
+    <p>The Sculpture<br>Cracked mirror and eggshellin frame, backlit.<br>The white fine lines are light shining through cracks in the mirror. Although this image looks similar to the digital work, the next video shows the topology and light.<br> 34x34x10.</p>
+  </div>
+
+  <div class="image-container">
+    <img src="pathways-cropped.jpg" alt="Portraits of our Universe, 2 of 2, 2023">
+  </div>
+
+  <div class="text-container">
+    <p></p>
+  </div>
+
+  <div class="video-container">
+    <p style="font-size: 1.2rem;">Details of unlit and unframed sculpture showing topology of cracks and<br>materiality of sculpture</p>
+    <video controls>
+      <source src="Materiality.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <footer>&copy; 2023 Shivani Mathur</footer>
+</body>
+</html>
