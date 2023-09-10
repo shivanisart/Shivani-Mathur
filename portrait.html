@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portraits of our Universe, 2022</title>
+  <title>Portraits of our Universe, 2023</title>
   <style>
     body {
       margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       background-color: black;
-      overflow: hidden;
+      overflow-y: scroll; /* Enable vertical scrolling */
       color: white;
       font-family: Arial, sans-serif;
     }
@@ -24,28 +23,17 @@
       font-size: 1rem;
       margin-top: 1em;
     }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
     .image-container {
-      flex: 1;
-      padding: 2em;
       text-align: center;
+      margin-top: 1em;
     }
-    img {
-      max-width: 100%;
-      height: auto;
+    img, video, .gif { /* Apply the styles to img, video, and .gif elements */
+      max-width: 80%;
       max-height: 70vh;
-      border: 2px solid white;
-      border-radius: 10px; /* Add border radius for a cleaner look */
-    }
-    .gif-container {
-      flex: 1;
-      text-align: center;
-      padding: 2em;
+      width: auto;
+      height: auto;
+      border: 2px solid white; /* Adjust the border width and style as needed */
+      border-radius: 10px;
     }
     .text-container {
       text-align: center;
@@ -55,63 +43,51 @@
     .enter-link {
       text-decoration: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.2rem; /* Set font size to match other text */
       margin-top: 1em;
-      cursor: pointer; /* Add cursor pointer to indicate it's clickable */
     }
     .video-container {
       text-align: center;
-      padding: 2em;
-      display: none; /* Initially hide the video container */
+      margin-top: 1em;
     }
-    video {
-      max-width: 100%;
-      height: auto;
-      max-height: 70vh;
-      border: 2px solid white;
-      border-radius: 10px; /* Add border radius for a cleaner look */
+    .gif-container {
+      text-align: center;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
-  <header>Portraits of our Universe, 2022</header>
+  <header>Portraits of our Universe, 2023</header>
 
-  <div class="container">
-    <div class="image-container">
-      <img src="pathways-cropped.jpg" alt="Portraits of our Universe, 2022">
-    </div>
+  <div class="text-container">
+    <p>A dyptic comprising a digital work (1 of 2) and a sculpture made with cracked backlit mirror(2 of 2).</p>
+  </div>
 
-    <div class="gif-container">
-      <img src="pathways.GIF" alt="Pathways GIF">
-    </div>
+  <div class="gif-container">
+    <p style="font-size: 1.2rem;">Digital display<br>Framed: 34x34x10.</p>
+    <img class="gif" src="pathways.GIF" alt="Portraits of our Universe, 1 of 2, 2023">
   </div>
 
   <div class="text-container">
-    <p>Portrait of our Universe is a diptych. Left image is a sculpture made with broken cracked mirror and eggshell, framedin a box 33x33x10 cm. The right image is a moving image of the same size framed in an identical frame.</p>
+    <p>The Sculpture<br>Cracked mirror and eggshell, backlit.<br>The white fine lines are light shining through cracks in the mirror. Although this image looks similar to the digital work, the next video shows the topology and light.<br>Framed: 34x34x10.</p>
   </div>
 
-  <div class="enter-link" id="enterLink">Enter here to see details of unlit sculpture (left image) showing depth of the cracks</div>
+  <div class="image-container">
+    <img src="pathways-cropped.jpg" alt="Portraits of our Universe, 2 of 2, 2023">
+  </div>
 
-  <div class="video-container" id="videoContainer">
+  <div class="text-container">
+    <p>Details of unlit and unframed sculpture showing topology of cracks.</p>
+  </div>
+
+  <div class="video-container">
+    <p style="font-size: 1.2rem;">Materiality of sculpture</p>
     <video controls>
       <source src="Materiality.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <div class="text-container">
-      <p>This clip shows an unlit version of the sculpture to assess the depth of the cracks and their topology.In the exhibition, It will be framed and backlit.</p>
-    </div>
   </div>
 
   <footer>&copy; 2023 Shivani Mathur</footer>
-
-  <script>
-    document.getElementById("enterLink").addEventListener("click", openMP4Page);
-
-    function openMP4Page() {
-      var videoContainer = document.getElementById("videoContainer");
-      videoContainer.style.display = "block"; // Show the video container
-      window.location.href = "#videoContainer"; // Scroll to the video container
-    }
-  </script>
 </body>
 </html>
