@@ -9,7 +9,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       background-color: black;
       overflow: hidden;
       color: white;
@@ -29,6 +28,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
     }
     .image-container {
       flex: 1;
@@ -57,6 +57,19 @@
       color: white;
       font-size: 1.5rem;
       margin-top: 1em;
+      cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    }
+    .video-container {
+      text-align: center;
+      padding: 2em;
+      display: none; /* Initially hide the video container */
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+      max-height: 70vh;
+      border: 2px solid white;
+      border-radius: 10px; /* Add border radius for a cleaner look */
     }
   </style>
 </head>
@@ -65,7 +78,7 @@
 
   <div class="container">
     <div class="image-container">
-      <img src="pathways-cropped.jpg" alt="Our uiniverse Still Image">
+      <img src="pathways-cropped.jpg" alt="Portraits of our Universe, 2022">
     </div>
 
     <div class="gif-container">
@@ -74,11 +87,31 @@
   </div>
 
   <div class="text-container">
-    <p>Portrait of our Universe is a diptych. The image on the left is a physical 3D model made with broken mirror and eggshell, in a box frame 34x34x10 cm. The second part of the dyptich, is digital moving image (right). In real life,the materiality of the two makes them look very different - What appears as white lines in the sculptural image on the left is really light shining through cracks at different depths in the mirror. Both works will be in identical frames hung side by side. </p>
+    <p>Portrait of our Universe is a diptych. Left image is a sculpture made with broken cracked mirror and eggshell, framedin a box 33x33x10 cm. The right image is a moving image of the same size framed in an identical frame.</p>
   </div>
 
-  <a href="#" class="enter-link" id="enterLink"></a>
+  <div class="enter-link" id="enterLink">Enter here to see details of unlit sculpture (left image) showing depth of the cracks</div>
+
+  <div class="video-container" id="videoContainer">
+    <video controls>
+      <source src="Materiality.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="text-container">
+      <p>This clip shows an unlit version of the sculpture to assess the depth of the cracks and their topology.In the exhibition, It will be framed and backlit.</p>
+    </div>
+  </div>
 
   <footer>&copy; 2023 Shivani Mathur</footer>
+
+  <script>
+    document.getElementById("enterLink").addEventListener("click", openMP4Page);
+
+    function openMP4Page() {
+      var videoContainer = document.getElementById("videoContainer");
+      videoContainer.style.display = "block"; // Show the video container
+      window.location.href = "#videoContainer"; // Scroll to the video container
+    }
+  </script>
 </body>
 </html>
