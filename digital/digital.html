@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. Digital and generative art</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #929292;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Rest of your CSS styles... */
+
+        /* Style the menu icon */
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+            .menu-icon {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+        }
+
+        /* Style the menu links (change color to black) */
+        nav a {
+            color: black !important;
+            text-decoration: none; /* Remove underlines from links */
+        }
+        /* Center the menu */
+          .menu {
+            text-align: left;
+          }
+
+        /* Style header and footer */
+        header {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #929292;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video descriptions (hidden by default) */
+        .video-description {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Shivani Mathur<br>Digital and generative art</h1>
+    </header>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="icon.JPG" alt="Menu" style="width: 20px; height: 20px;">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                    <ul>
+                        <li><a href="digital.html">Digital and Generative art</a></li>
+                        <li><a href="oil.html">Oil paintings</a></li>
+                        <li><a href="charcoal.html">Charcoals</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutshivani.html">About Shivani</a></li>
+                <li><a href="whatsnext.html">What's Next</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video container -->
+    <div class="video-container">
+        <!-- Video 1 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="thedoor.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(0)">The Door, 2023 122x92 cm</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>"The Door" is a two-part artwork, featuring an oil painting and a dynamic moving image of a door. The continuation in pattern on the closed door and its surroundings makes us wonder what is really closed - the door or what we see? It prompts us to ponder on the power of our choices in shaping our destiny.</p>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="35_rampedge_AdobeExpress 2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(1)">Expansion, 2021</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>'Expansion'is a visuaslisation of the vast potential that lies dormant within us, and the interconnectedness we share with the entire universe. </p>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="Rock, Paper, Scissors 2.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(2)">Rock, Paper, Scissors. 2022</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>Rock, Paper, Scissors is a collaborative performance with James, a vilonist and Kelly Briggs, an artists who draws with charcoal. Kelly responds to James' music by drawing,This digital artwork responds to Kellys body movements by dispersing snow on a screen, to which James responds by altering his music...  </p>
+            </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="pathwaysholo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(3)">Hologram of our universe, 2023</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>"Hologram of Our Universe” is an image of our expansive and ethereal universe that appears to float in mid-air. It is the play of light through a fractured mirror. In the gallery, this hologram was installed in the ceiling. Inspiration for this work comes from quantum physics and the timeless wisdom contained within the Upanishads, an ancient Indian text dating back five thousand years. Both of these sources delve into the mysteries of our universe’s origin and the perpetual cycle of birth, destruction, and rebirth that shapes the fundamental structure of our universe.
+                "</p>
+            </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="pathwaybw.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(4)">Portrait of our universe, 2023</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>"Portrait of Our Universe" is a digital image of a sculptural work that is encased in a deep box frame, and hung like a painting.  It is made from a three-dimensional cracked mirror. The mirror's distinctive topology is crafted using the force of eggshells within a vacuum, resulting in a  three dimensional network of cracks that act as pathways for light to shine through.
+                The light seems to connect the cracks and highlight their depth - It's as if the boundaries between "you" and "me" blur, making our individual identities indistinguishable from the magnificent portrait of our universe.
+                "</p>
+            </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video-item">
+            <video controls width="100%" loop>
+                <source src="dusttolife.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(5)">From dust to life, 2022</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>"From dust to life" is a self portrait exploring what lies beyond our bodies.
+                "</p>
+            </div>
+        </div>
+
+        <!-- Add more video items for your other works -->
+    </div>
+
+    <footer>
+        <!-- Add icons and links in the footer -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        // Function to toggle video description
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
