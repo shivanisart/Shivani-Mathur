@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Mathur. Digital and generative art</title>
+    <title>Shivani Mathur. Pathways</title>
     <style>
         /* Basic CSS styling */
         body {
@@ -12,8 +12,6 @@
             margin: 0;
             padding: 0;
         }
-
-        /* Rest of your CSS styles... */
 
         /* Style the menu icon */
         .menu-icon {
@@ -41,10 +39,11 @@
             color: black !important;
             text-decoration: none; /* Remove underlines from links */
         }
+
         /* Center the menu */
-          .menu {
+        .menu {
             text-align: left;
-          }
+        }
 
         /* Style header and footer */
         header {
@@ -107,13 +106,38 @@
             border-radius: 5px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
+        /* Style the video posters (thumbnails) */
+        /* Style the video posters (thumbnails) */
+        .video-item video {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+          }
+
+          .video-item video::poster {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+
+      }
+
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
+    <style>
+    /* Basic CSS styling */
+    /* ... (your existing CSS code) ... */
+
+    /* Add CSS for the Font Awesome icons here */
+    .fa {
+        font-family: FontAwesome, sans-serif;
+    }
+</style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Shivani Mathur<br>Digital and generative art</h1>
+        <h1>Pathways<br>Shivani Mathur</h1>
     </header>
     <nav>
         <div class="menu-icon" onclick="toggleMenu()">
@@ -126,7 +150,7 @@
                     <a href="portfolio.html">Portfolio</a>
                     <ul>
                         <li><a href="../awards/awards.html">Award winning works</a></li>
-                        <li><a href="../exhibitions/exhibitions.html">"Exhibitions and publications</a></li>
+                        <li><a href="../exhibitions/exhibitions.html">Exhibitions and publications</a></li>
                         <li><a href="../inthestudio/inthestudio.html">In the studio</a></li>
                     </ul>
                 </li>
@@ -141,7 +165,9 @@
     <div class="video-container">
         <!-- Video 1 -->
         <div class="video-item">
-            <video controls width="100%" loop>
+          <div onclick="toggleVideo(0)"  loop>
+       <video poster="thedoor-poster.jpg" class=poster loop>
+
                 <source src="thedoor.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -149,27 +175,30 @@
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(0)">The Door, 2023 122x92 cm</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>"The Door" is a two-part artwork, featuring an oil painting and a dynamic moving image of a door. The continuation in pattern on the closed door and its surroundings makes us wonder what is really closed - the door or what we see? It prompts us to ponder on the power of our choices in shaping our destiny.</p>
+                <p>"The Door" is a two-part artwork, featuring an oil painting and a dynamic moving image of a door. The continuation in pattern on the closed door and its surroundings invites us to question what is really closed - the door or what we see? It draws attention to the power of our choices in shaping our destiny.</p>
             </div>
         </div>
 
         <!-- Video 2 -->
         <div class="video-item">
-            <video controls width="100%" loop>
-                <source src="35_rampedge_AdobeExpress 2.mp4" type="video/mp4">
+          <div onclick="toggleVideo(1)"  loop>
+            <video poster="35_rampedge_AdobeExpress-poster.jpg"  class=poster loop>
+
+              <source src="35_rampedge_AdobeExpress 2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <!-- Video caption (toggle button) -->
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(1)">Expansion, 2021</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>'Expansion'is a visuaslisation of the vast potential that lies dormant within us, and the interconnectedness we share with the entire universe. </p>
+                <p>'Expansion' is a visualization of the vast potential that lies dormant within us, and the interconnectedness we share with the entire universe.</p>
             </div>
         </div>
 
         <!-- Video 3 -->
         <div class="video-item">
-            <video controls width="100%" loop>
+            <div onclick="toggleVideo(2)"  loop>
+            <video poster="RockPaperScissors-poster.jpg"  class=poster loop>
                 <source src="Rock, Paper, Scissors 2.MP4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -177,13 +206,14 @@
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(2)">Rock, Paper, Scissors. 2022</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>Rock, Paper, Scissors is a collaborative performance with James, a vilonist and Kelly Briggs, an artists who draws with charcoal. Kelly responds to James' music by drawing,This digital artwork responds to Kellys body movements by dispersing snow on a screen, to which James responds by altering his music...  </p>
+                <p>Rock, Paper, Scissors is a collaborative performance with James, a violinist and Kelly Briggs, an artist who draws with charcoal. Kelly responds to James' music by drawing. This digital artwork responds to Kelly's body movements by dispersing snow on a screen, to which James responds by altering his music...</p>
             </div>
         </div>
 
         <!-- Video 4 -->
         <div class="video-item">
-            <video controls width="100%" loop>
+            <div onclick="toggleVideo(3)"  loop>
+            <video poster="pathwaysholo-poster.jpg"  class=poster loop>
                 <source src="pathwaysholo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -191,14 +221,14 @@
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(3)">Hologram of our universe, 2023</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>"Hologram of Our Universe” is an image of our expansive and ethereal universe that appears to float in mid-air. It is the play of light through a fractured mirror. In the gallery, this hologram was installed in the ceiling. Inspiration for this work comes from quantum physics and the timeless wisdom contained within the Upanishads, an ancient Indian text dating back five thousand years. Both of these sources delve into the mysteries of our universe’s origin and the perpetual cycle of birth, destruction, and rebirth that shapes the fundamental structure of our universe.
-                "</p>
+                <p>"Hologram of Our Universe” is an image of our expansive and ethereal universe that appears to float in mid-air. It is the play of light through a fractured mirror.</p>
             </div>
         </div>
 
         <!-- Video 5 -->
         <div class="video-item">
-            <video controls width="100%" loop>
+            <div onclick="toggleVideo(4)"  loop>
+            <video poster="pathwaybw-poster.jpg"  class=poster loop>
                 <source src="pathwaybw.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -206,15 +236,14 @@
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(4)">Portrait of our universe, 2023</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>"Portrait of Our Universe" is a digital image of a sculptural work that is encased in a deep box frame, and hung like a painting.  It is made from a three-dimensional cracked mirror. The mirror's distinctive topology is crafted using the force of eggshells within a vacuum, resulting in a  three dimensional network of cracks that act as pathways for light to shine through.
-                The light seems to connect the cracks and highlight their depth - It's as if the boundaries between "you" and "me" blur, making our individual identities indistinguishable from the magnificent portrait of our universe.
-                "</p>
+                <p>"Portrait of Our Universe" is ananimation of a sculptural work of light shining through a three dimensional cracked mirror, encased in a box frame , and hung like a painting. </p>
             </div>
         </div>
 
         <!-- Video 6 -->
         <div class="video-item">
-            <video controls width="100%" loop>
+            <div onclick="toggleVideo(5)"  loop>
+            <video poster="dusttolife-poster.jpg"  class=poster loop>
                 <source src="dusttolife.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -222,12 +251,9 @@
             <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(5)">From dust to life, 2022</div>
             <!-- Video description -->
             <div class="video-description">
-                <p>"From dust to life" is a self portrait exploring what lies beyond our bodies.
-                "</p>
+                <p>"From dust to life" is a self-portrait exploring what lies beyond our bodies...</p>
             </div>
         </div>
-
-        <!-- Add more video items for your other works -->
     </div>
 
     <footer>
@@ -239,7 +265,6 @@
         </div>
         <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
     </footer>
-
     <script>
         // Function to toggle the menu
         function toggleMenu() {
@@ -252,7 +277,30 @@
             var description = document.querySelectorAll('.video-description')[index];
             description.style.display = description.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Function to play or pause the video when a poster is clicked
+        function toggleVideo(index) {
+            console.log("Toggle video called with index: " + index);
+            var video = document.querySelectorAll('video')[index];
+
+            // Check if the video is paused, and toggle play/pause accordingly
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+
+            // Pause other videos
+            var allVideos = document.querySelectorAll('video');
+            for (var i = 0; i < allVideos.length; i++) {
+                if (i !== index) {
+                    allVideos[i].pause();
+                    console.log("Paused video at index: " + i);
+                }
+            }
+        }
     </script>
+
 
 </body>
 </html>
