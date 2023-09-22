@@ -129,7 +129,15 @@
             cursor: pointer;
             width: 40px;
             height: 40px;
+            z-index: 1; /* Ensure the menu icon is above other elements */
           }
+          /* Style for the additional text */
+          .header-description {
+            font-size: 14px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #555; /* Set the text color */
+          }
+
 
 
     </style>
@@ -148,7 +156,12 @@
 </head>
 <body>
     <header>
-        <h1>Pathways<br>2022-2023</h1>
+        <h1>Pathways</h1>
+        <!-- Play button for the title -->
+<button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+<!-- Additional text below the header -->
+  <p class="header-description">Listen to the music playing in studio while Shivani was working on Patyhways</p>
+</header>
     </header>
     <nav>
         <div class="menu-icon" onclick="toggleMenu()">
@@ -158,7 +171,7 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../awards/awards.html">Award winning works</a></li>
-                <li><a href="../fibonacci/fibonacci.html">Fibonacci series</a>
+                <li><a href="../portfolio.html">Fibonacci series</a>
                 <li><a href="../inthestudio/inthestudio.html">In the studio</a></li>
                 <li><a href="../exhibitions/exhibitions.html">Exhibitions & publications</a></li>
                 <li><a href="../aboutshivani/aboutshivani.html">About Shivani</a></li>
@@ -278,6 +291,12 @@
             var menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
+        function playTitleAudio() {
+            var titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+            titleAudio.loop = true; // Set the audio to loop continuously
+            titleAudio.play();
+        }
+
 
         // Function to toggle video description
         function toggleDescription(index) {
