@@ -13,11 +13,6 @@
             padding: 0;
         }
 
-        /* Style the menu icon */
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
 
         /* Ensure that the menu icon is visible at smaller screen sizes */
         @media (max-width: 7680px) {
@@ -25,7 +20,7 @@
                 display: inline-block;
             }
 
-           nav ul {
+            nav ul {
                 display: none;
                 list-style: none; /* Remove default list-style */
                 padding: 0; /* Remove any default padding */
@@ -122,6 +117,20 @@
             object-fit: cover; /* Ensure the video covers the entire container */
 
       }
+      /* Center the header content */
+          .header-content {
+            text-align: center;
+        }
+
+        /* Center the menu icon below the title */
+          .menu-icon {
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+          }
+
 
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -143,7 +152,7 @@
     </header>
     <nav>
         <div class="menu-icon" onclick="toggleMenu()">
-            <img src="icon.jpg" alt="Menu" style="width: 20px; height: 20px;">
+            <img src="icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
         </div>
         <div class="menu">
             <ul>
