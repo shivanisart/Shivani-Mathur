@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. Pathways</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #929292;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+            .menu-icon {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none;
+                list-style: none; /* Remove default list-style */
+                padding: 0; /* Remove any default padding */
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+        }
+
+        /* Style the menu links (change color to black) */
+        nav a {
+            color: black !important;
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Center the menu */
+        .menu {
+            text-align: center;
+        }
+
+        /* Style header and footer */
+        header {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #929292;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video descriptions (hidden by default) */
+        .video-description {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Style the video posters (thumbnails) */
+        /* Style the video posters (thumbnails) */
+        .video-item video {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+          }
+
+          .video-item video::poster {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+
+      }
+      /* Center the header content */
+          .header-content {
+            text-align: center;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+          /* Style for the additional text */
+          .header-description {
+            font-size: 14px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #333; /* Set the text color */
+          }
+
+
+
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <style>
+    /* Basic CSS styling */
+    /* ... (your existing CSS code) ... */
+
+    /* Add CSS for the Font Awesome icons here */
+    .fa {
+        font-family: FontAwesome, sans-serif;
+    }
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+    </div>
+        <h1>Pathways</h1>
+        <!-- Play button for the title -->
+<button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+<!-- Additional text below the header -->
+  <p class="header-description">That essence which uou call your life, is the same essence that animates the entire cosmos.<br> To discover the universe, look within yourself . Chamdogya Upanishad</p>
+</header>
+    </header>
+    <nav>
+
+        <div class="menu">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+              <li><a href="../studio/inthestudio.html">In the studio</a></li>
+              <li><a href="../awards/awards.html">Awards & Publications</a></li>
+              <li><a href="../exhibitions/exhibitions.html">Exhibitions & collaborations</a></li>
+              <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video container -->
+    <div class="video-container">
+     
+
+     
+        <!-- Video 6 -->
+        <div class="video-item">
+            <div onclick="toggleVideo(5)"  loop>
+            <video poster="dusttolife-poster.jpg"  class="poster" loop>
+                <source src="dusttolife.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(5)">From dust to life,<br>2022<br>View</div>
+            <!-- Video description -->
+            <div class="video-description">
+                <p>"From dust to life" is digital generastive self-portrait exploring what lies beyond our bodies...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Add icons and links in the footer -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+        var titleAudio; // Declare the audio variable globally
+
+  function playTitleAudio() {
+      if (!titleAudio) {
+          titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+          titleAudio.loop = true; // Set the audio to loop continuously
+          titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+          titleAudio.play();
+      } else {
+          if (!titleAudio.paused) {
+              titleAudio.pause(); // Pause the audio if it's playing
+          } else {
+              titleAudio.play(); // Resume playing if it's paused
+          }
+      }
+  }
+
+
+
+        // Function to toggle video description
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to play or pause the video when a poster is clicked
+        function toggleVideo(index) {
+            console.log("Toggle video called with index: " + index);
+            var video = document.querySelectorAll('video')[index];
+
+            // Check if the video is paused, and toggle play/pause accordingly
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+
+            // Pause other videos
+            var allVideos = document.querySelectorAll('video');
+            for (var i = 0; i < allVideos.length; i++) {
+                if (i !== index) {
+                    allVideos[i].pause();
+                    console.log("Paused video at index: " + i);
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>
