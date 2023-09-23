@@ -45,13 +45,14 @@
         /* Style the menu icon */
 
 
-        .menu-icon {
-            font-size: 24px;
+          .menu-icon {
+            display: block;
+            margin: 0 auto; /* Center horizontally */
             cursor: pointer;
-            text-align: center;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
+            width: 40px;
+            height: 40px;
+            z-index: 1; /* Ensure the menu icon is above other elements */
+          }
 
         h1 {
             text-align: center;
@@ -62,7 +63,7 @@
         .header-description {
             font-size: 14px; /* Adjust the font size as needed */
             margin-top: 10px; /* Add margin to separate it from the title */
-            color: #555; /* Set the text color */
+            color: #333; /* Set the text color */
         }
         This CSS code centers the menu icon above the title both horizontally and vertically within the header. The margin-bottom property is used to adjust the spacing between the menu icon and the title.
 
@@ -188,11 +189,11 @@
     <div class="menu-icon" onclick="toggleMenu()">
         <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
     </div>
-      <h1>Structured Chaos In the studio</h1>
+      <h1>In the studio</h1>
       <!-- Play button for the title -->
       <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
       <!-- Additional text below the header -->
-      <p class="header-description">Everything in the studio seems to have a mind of its own. Yet somehow, it is a sanctuary of calmness....</p>
+      <p class="header-description">Everything in the studio seems to have a mind of its own. Yet somehow, it is a sanctuary of calmness....As if there were a structure to the chaos.</p>
   </header>
 
 
