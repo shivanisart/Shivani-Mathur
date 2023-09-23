@@ -122,15 +122,18 @@
             text-align: center;
         }
 
-        /* Center the menu icon below the title */
-          .menu-icon {
-            display: block;
-            margin: 0 auto; /* Center horizontally */
+        .menu-icon {
+            font-size: 24px;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            z-index: 1; /* Ensure the menu icon is above other elements */
-          }
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
           /* Style for the additional text */
           .header-description {
             font-size: 14px; /* Adjust the font size as needed */
@@ -156,6 +159,9 @@
 </head>
 <body>
     <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+        <img src=../"icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+    </div>
         <h1>Pathways</h1>
         <!-- Play button for the title -->
 <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
@@ -164,9 +170,7 @@
 </header>
     </header>
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
-        </div>
+
         <div class="menu">
             <ul>
               <li><a href="../index.html">Home</a></li>
