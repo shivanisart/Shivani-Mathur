@@ -17,15 +17,18 @@
             background-color: #929292;
         }
 
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
 
-            /* Center the menu icon below the title */
-          .menu-icon {
-              display: block;
-              margin: 0 auto; /* Center horizontally */
-              cursor: pointer;
-              width: 40px;
-              height: 40px;
-                  }
+        h1 {
+            text-align: center;
+        }
+
         nav ul {
             display: none;
             list-style: none;
@@ -144,15 +147,16 @@
 </head>
 <body>
     <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>        
         <h1>The Fibonacci Series</h1>
         <!-- Additional text below the header -->
   <p class="header-description">The Fibonacci pattern is one of the most fundamental patterns that repeats itself in nature. It manifests in the rings of trees, the proportions of the human body, the breeding of rabbits, the scattering of seeds, the growth of trees, and even in the price movements of financial instruments. The golden ratio, which is the ratio between any two adjacent numbers in this series, is considered the most aesthetically pleasing proportion known to mankind. This series was created by Shivani Mathur while she traded financial markets, incorporating the principles of mathematics both in her trading and her art.  </p>
 </header>
     </header>
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
-        </div>
+
         <div class="menu">
             <ul>
                 <li><a href="../index.html">Home</a></li>
