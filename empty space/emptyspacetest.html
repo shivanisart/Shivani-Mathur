@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. Pathways</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #929292;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none;
+                list-style: none; /* Remove default list-style */
+                padding: 0; /* Remove any default padding */
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+        }
+
+        /* Style the menu links (change color to black) */
+        nav a {
+            color: black !important;
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Center the menu */
+        .menu {
+            text-align: center;
+        }
+
+        /* Style header and footer */
+        header {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #929292;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video posters (thumbnails) */
+        .video-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Center the header content */
+        .header-content {
+            text-align: center;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Style for the additional text */
+        .header-description {
+            font-size: 14px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #333; /* Set the text color */
+        }
+
+        /* Add a small gap between the two sets of videos */
+        .video-set {
+            margin-bottom: 20px;
+        }
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>
+        <h1>Empty Space</h1>
+        <!-- Play button for the title -->
+        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+        <!-- Additional text below the header -->
+        <p class="header-description">Empty Space is not empty. It is the seat of the most violent physics <br> - John Wheeler, Quantum physicist</p>
+    </header>
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../digital/digital.html">Pathways</a></li>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                <li><a href="../studio/inthestudio.html">In the studio</a></li>
+                <li><a href="../awards/awards.html">Awards & Publications</a></li>
+                <li><a href="../exhibitions/exhibitions.html">Exhibitions & collaborations</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">Evolution & Inspiration</a></li>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- First set of videos (with GIFs playing) -->
+    <div class="video-container video-set">
+        <!-- Video 1 - Infinity -->
+        <div class="video-item" onclick="toggleGif(1)">
+            <img src="Infinity.GIF" alt="Empty Space, 2020, 50x50 cm." style="width: 100%;" data-state="paused" controls preload="none">
+            <p class="video-caption">Empty Space, 2020, 50x50 cm.</p>
+        </div>
+
+        <!-- Video 2 - Inner Voice -->
+        <div class="video-item" onclick="toggleGif(2)">
+            <img src="20180326innervoice1mb2.GIF" alt="The Inner Voice, 2015, 122x92 cm." style="width: 100%;" data-state="paused" controls preload="none">
+            <p class="video-caption">The Inner Voice, 2015, 122x92 cm.</p>
+        </div>
+
+        <!-- Video 3 - The Eye -->
+        <div class="video-item" onclick="toggleGif(3)">
+            <img src="20200626theeye.GIF" alt="The Eye, 2020, 150cmx180cm." style="width: 100%;" data-state="paused" controls preload="none">
+            <p class="video-caption">The Eye, 2020, 150cmx180cm.</p>
+        </div>
+    </div>
+
+    <!-- Add a small gap between the two sets of videos -->
+    <div style="margin-bottom: 20px;"></div>
+
+    <!-- Second set of videos (still images) -->
+    <div class="video-container video-set">
+        <!-- Video 4 - Wormhole (Still Image) -->
+        <div class="video-item">
+            <img src="Wormhole.jpg" alt="Wormhole, 2019, 50x50 cm." style="width: 100%;">
+            <p class="video-caption">Wormhole, 2019, 50x50 cm.</p>
+        </div>
+
+        <!-- Video 5 - Celestial Bodies (Still Image) -->
+        <div class="video-item">
+            <img src="Celestial_Bodies.jpg" alt="Celestial Bodies, 2012, 102x92 cm. 35cmx35cm." style="width: 100%;">
+            <p class="video-caption">Celestial Bodies, 2012, 102x92 cm. 35cmx35cm.</p>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Add icons and links in the footer -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        var titleAudio; // Declare the audio variable globally
+
+        function playTitleAudio() {
+            if (!titleAudio) {
+                titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+                titleAudio.loop = true; // Set the audio to loop continuously
+                titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+                titleAudio.play();
+            } else {
+                if (!titleAudio.paused) {
+                    titleAudio.pause(); // Pause the audio if it's playing
+                } else {
+                    titleAudio.play(); // Resume playing if it's paused
+                }
+            }
+        }
+
+        // Function to toggle between image and gif
+        function toggleGif(index) {
+            var videoItem = document.querySelectorAll('.video-item')[index];
+            var img = videoItem.querySelector('img');
+
+            if (img.getAttribute('data-state') === 'playing') {
+                img.setAttribute('data-state', 'paused');
+                img.pause();
+            } else {
+                img.setAttribute('data-state', 'playing');
+                img.play();
+            }
+        }
+    </script>
+</body>
+</html>
