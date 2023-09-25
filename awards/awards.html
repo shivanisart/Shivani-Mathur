@@ -1,1 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur.Awards</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #929292;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+            .menu-icon {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none;
+                list-style: none; /* Remove default list-style */
+                padding: 0; /* Remove any default padding */
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+        }
+
+        /* Style the menu links (change color to black) */
+        nav a {
+            color: black !important;
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Center the menu */
+        .menu {
+            text-align: center;
+        }
+
+        /* Style header and footer */
+        header {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #929292;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #929292;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video descriptions (hidden by default) */
+        .video-description {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Style the video posters (thumbnails) */
+        /* Style the video posters (thumbnails) */
+        .video-item video {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+          }
+
+          .video-item video::poster {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+
+      }
+      /* Center the header content */
+          .header-content {
+            text-align: center;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+          /* Style for the additional text */
+          .header-description {
+            font-size: 14px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #333; /* Set the text color */
+          }
+
+
+          /* Style the larger image (modal) */
+          .modal {
+              display: none;
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgba(0,0,0,0.9);
+          }
+
+          .modal-content {
+              margin: auto;
+              display: block;
+              max-width: 800px;
+          }
+
+          /* Style the Close button */
+          .close {
+              position: absolute;
+              top: 15px;
+              right: 35px;
+              color: white;
+              font-size: 30px;
+              font-weight: bold;
+              transition: 0.3s;
+          }
+
+          .close:hover,
+          .close:focus {
+              color: #bbb;
+              text-decoration: none;
+              cursor: pointer;
+          }
+          /* Style the gallery container with Flexbox */
+          .gallery-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              max-width: 1000px;
+              margin: 0 auto;
+          }
+
+          /* Style the gallery items */
+          .gallery-item {
+              flex: 0 1 calc(33.33% - 5px); /* Adjust the width as needed */
+              margin-bottom: 5px;
+          }
+
+          /* Remove the width and height styles from gallery-item */
+          .gallery-item img, .gallery-item video {
+              width: 100%; /* Set the width to 100% to maintain consistency */
+              height: auto; /* Allow the height to adjust proportionally */
+          }
+
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <style>
+    /* Basic CSS styling */
+    /* ... (your existing CSS code) ... */
+
+    /* Add CSS for the Font Awesome icons here */
+    .fa {
+        font-family: FontAwesome, sans-serif;
+    }
+</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+    </div>
+        <h1>Awards, Exhibitions and Publications</h1>
+        <!-- Play button for the title -->
+<button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+<!-- Additional text below the header -->
+  <p class="header-description">Success keeps me motivated. Failure keeps me learning.<br>T<br> - Shivani Mathur/p>
+</header>
+    </header>
+    <nav>
+
+        <div class="menu">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../digital/digital.html">Pathways</a></li>
+              <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+              <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+              <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+              <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video container -->
+    <div class="video-container">
+
+
+
+        <!-- Video 6 -->
+        <div class="video-item">
+            <div onclick="toggleVideo(0)"  loop>
+
+             <video poster="full view.jpg" loop>
+                  <source src="Eggshell, clay and mirror in a vacuum chamber..MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+
+            <!-- Video caption (toggle button) -->
+            <div class="video-caption" style="background-color: #929292;" onclick="toggleDescription(0)">Pathways of light, 2022, Installation at Central Saint Martins, London <br> Maison Zero Award by LVMH / University of the arts, for sustainability. <br>View how it was made</div>
+
+
+            </div>
+                  <!-- Additional text below the picture -->
+
+            <p style="font-size: 24px; font-weight: bold;">Awards and Publications</p>
+            <p >
+              <br>2023 Academic paper published in Leonardo Labs
+              <br>2022 Recipient of ‘Maison Zero, This earth’ award for sustainability by LVMH and UAL
+              <br>2022 Awarded distinction in Masters of Art and Science, UAL  London
+              <br>2012 Global Women’s leader award, top two percent of women in the city, by Deutsche Bank
+              <br>2012 Ranked 3 out of 209 artists for Faberge Egg hunt sculpture displayed in Covent Garden
+              <br>1992 Merit scholar for academic excellence. Mumbai university
+              <br>1990 Ranked No.1 in Delhi university and achieved a new academic record</p>
+
+              <p style="font-size: 24px; font-weight: bold;">Exhibitions</p>
+              <br>
+              <p<br>Group Exhibitions<br>
+              <br>2023 MotherLnd, Great West Gallery London
+              <br>2022 The show. Central Saint Martins, UAL
+              <br>2022 Festival of Light, Poland
+              <br>2022 Merch Lethaby Gallery.Granary Square, London
+              <br>2021 See you tomorrow, Online exhibition
+              <br>2019 Bozar Brussels. Art fair
+              <br>2018 Small is beautiful. Flowers gallery, Cork Street, London
+              <br>2012 Faberge egg hunt, London. Public sculpture
+              <br>2012 Deutsche Bank
+              <br>2012 The MacMillan Delomghi auction. Royal College of Art, London
+              <br>2011 The MacMillan Delomghi auction.Bonham’s London
+              <br>2010 The Hanging gllery show. Royal Automobile Club, Pall Mall, London
+              <br>2009 Charity auction.London Business School
+              <br>2008 Empowerment of women. SOAS London
+
+              <br><br>Solo exhibitions<br>
+              <br>2020 Lockdown exhibition. solo live show in virtual gallery curated by Lindzay Chan
+              <br>2019 Passage. Red moon gallery , Brussels
+              <br>2018 Mahatma Gandhi. India House, London
+              <br>2018 Uninterrupted.Nehru Centre, Mayfair, London
+              <br>2013 The hundreth work. Institute of Contemporary Arts, London
+              <br>2013 Charity asuction for Upaya, Seattle.USA
+              <br>2012 Untitled show. Goethe Institute, London, solo show partnering with Chef Asma Khan
+              <br>2008 The first show. Art Bar, Knightsbridge, London</p>
+
+
+              <p style="font-size: 24px; font-weight: bold;">Seminars, Collaborations and Residencies</p>
+              <p>
+              <br> 2022 Rock Paper Scissors. A collaborative work weith a violonist, James ans artist Kelly Briggs
+              <br>2021-University of Arts London: Creative Hack ; Digital Hack;
+              <br>2021 Agents of Change. An exchibitin on sustainability in the week of COP26
+              <br>2021 Imperial college. I science publication of artworks
+              <br>2022 Tokyo Institute of technology and Queen Mary Hospital : Making Waves 2
+              <br>022 Cambridge University: Digital technologies</p>
+
+<!-- Gallery container -->
+  <div class="gallery-container">
+      <!-- Small GIF 1 -->
+      <div class="gallery-item " onclick="openModal('cabbage.GIF')">
+          <img src="cabbage.GIF" alt="Cabbage GIF">
+      </div>
+      <!-- Small Image 6 -->
+      <div class="gallery-item" onclick="openModal('chlorophyll.gif')">
+          <img src="chlorophyll.gif" alt="chlorophyll">
+      </div>
+
+      <!-- Small GIF 5 -->
+      <div class="gallery-item" onclick="openModal('slimemould.GIF')">
+          <img src="slimemould.GIF" alt="Slimemould GIF">
+      </div>
+      <!-- Small GIF 4 -->
+      <div class="gallery-item" onclick="openModal('pouringegg.GIF')">
+          <img src="pouringegg.GIF" alt="Pouring Egg GIF">
+      </div>
+
+      <!-- Small GIF 5 -->
+      <div class="gallery-item" onclick="openModal('playing.gif')">
+          <img src="playing.gif" alt="playGIF">
+      </div>
+        <!-- Small Image 4 -->
+        <div class="gallery-item" onclick="openModal('eggshell drying.jpg')">
+            <img src="eggshell drying.jpg" alt="Eggshell Drying">
+        </div>
+
+        <!-- Small Image 4 -->
+        <div class="gallery-item" onclick="openModal('chris.jpg')">
+            <img src="chris.jpg" alt="Eggshell Drying">
+        </div>
+
+        <!-- Large Image/Video 1 -->
+        <div class="gallery-item" onclick="openModal('eggshell.jpg')">
+            <img src="eggshell.jpg" alt="Broken Eggshell">
+        </div>
+        <!-- Small GIF 5 -->
+        <div class="gallery-item" onclick="openModal('vacuumchamber.gif')">
+          <img src="vacuumchamber.gif" alt="playGIF">
+        </div>
+
+
+
+
+
+        <!-- Add more media items here -->
+    </div>
+    <!-- Modal for displaying media -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Add icons and links in the footer -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+    // Function to toggle the menu
+function toggleMenu() {
+   var menu = document.querySelector('.menu');
+   menu.classList.toggle('active');
+}
+
+// Function to open the modal for images
+function openModal(imageSrc) {
+   var modal = document.getElementById('myModal');
+   var modalImage = document.getElementById('modalImage');
+   modal.style.display = "block";
+   modalImage.src = imageSrc;
+}
+
+// Function to open the modal for videos
+function openModalVideo(videoSrc) {
+   var modal = document.getElementById('myModal');
+   var modalVideo = document.getElementById('modalImage');
+   modal.style.display = "block";
+   modalVideo.innerHTML = `<video controls style="width: 100%;"><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
+}
+
+// Function to close the modal
+function closeModal() {
+   var modal = document.getElementById('myModal');
+   modal.style.display = "none";
+}
+
+// Call the adjustGalleryItems function when the page loads
+window.addEventListener('load', adjustGalleryItems);
+
+// Call the adjustGalleryItems function whenever the window is resized
+window.addEventListener('resize', adjustGalleryItems);
+
+        var titleAudio; // Declare the audio variable globally
+
+  function playTitleAudio() {
+      if (!titleAudio) {
+          titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+          titleAudio.loop = true; // Set the audio to loop continuously
+          titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+          titleAudio.play();
+      } else {
+          if (!titleAudio.paused) {
+              titleAudio.pause(); // Pause the audio if it's playing
+          } else {
+              titleAudio.play(); // Resume playing if it's paused
+          }
+      }
+  }
+
+
+
+        // Function to toggle video description
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to play or pause the video when a poster is clicked
+        function toggleVideo(index) {
+            console.log("Toggle video called with index: " + index);
+            var video = document.querySelectorAll('video')[index];
+
+            // Check if the video is paused, and toggle play/pause accordingly
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+
+            // Pause other videos
+            var allVideos = document.querySelectorAll('video');
+            for (var i = 0; i < allVideos.length; i++) {
+                if (i !== index) {
+                    allVideos[i].pause();
+                    console.log("Paused video at index: " + i);
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>
 
