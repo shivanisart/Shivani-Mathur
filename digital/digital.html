@@ -32,7 +32,7 @@
 
         /* Style the menu links (change color to black) */
         nav a {
-            color: #ffffff !important;
+            color: #ededed !important;
             text-decoration: none; /* Remove underlines from links */
         }
 
@@ -44,14 +44,14 @@
         /* Style header and footer */
         header {
             background-color: #4c4c4c;
-            color: #ffffff;
+            color: #ededed;
             text-align: center;
             padding: 10px;
         }
 
         footer {
             background-color: #4c4c4c;
-            color: #929292;
+            color: #ededed;
             text-align: center;
             padding: 10px;
             margin-top: auto;
@@ -64,7 +64,7 @@
 
         /* Style the footer icons */
         .footer-icons a {
-            color: #929292; /* Set the text color to white */
+            color: #ededed; /* Set the text color to white */
             text-decoration: none; /* Remove underlines from links */
             margin: 0 10px; /* Add margin to space out the icons */
         }
@@ -89,7 +89,7 @@
             text-align: center;
             cursor: pointer;
             background-color: #4c4c4c;
-            color: #929292;
+            color: #ededed;
             padding: 5px 10px;
             border-radius: 5px;
         }
@@ -101,7 +101,7 @@
             padding: 10px;
             border: 1px solid #4c4c4c;
             background-color: #4c4c4c; /* Fixed a typo here: changed "#4c4cc" to "#4c4c4c" */
-            color: #929292;
+            color: #ededed;
             border-radius: 5px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
@@ -140,7 +140,7 @@
         .header-description {
             font-size: 18px; /* Adjust the font size as needed */
             margin-top: 10px; /* Add margin to separate it from the title */
-            color: #ffffff; /* Set the text color */
+            color: #ededed; /* Set the text color */
         }
 
         /* Style for the play button icon */
@@ -284,27 +284,33 @@
     </footer>
 
     <script>
-        // Function to toggle the menu
-        function toggleMenu() {
-            var menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-
-        var titleAudio; // Declare the audio variable globally
+        var titleAudio; // Declare the title audio variable globally
+        var videoAudio; // Declare the video audio variable globally
+        var currentVideo; // Variable to keep track of the currently playing video
 
         function playTitleAudio() {
             if (!titleAudio) {
-                titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+                titleAudio = new Audio('lindsay.m4a'); // Replace 'Lindsay.mp3' with the path to your title MP3 audio file
                 titleAudio.loop = true; // Set the audio to loop continuously
-                titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-                titleAudio.play();
-            } else {
-                if (!titleAudio.paused) {
-                    titleAudio.pause(); // Pause the audio if it's playing
-                } else {
-                    titleAudio.play(); // Resume playing if it's paused
-                }
+                titleAudio.volume = 0.2; // Set the volume to your desired value
             }
+
+            // Play or pause the title audio when the title button is clicked
+            if (!titleAudio.paused) {
+                titleAudio.pause(); // Pause the audio if it's playing
+            } else {
+                titleAudio.play(); // Resume playing if it's paused
+            }
+        }
+
+        function playVideoAudio() {
+            if (!videoAudio) {
+                videoAudio = new Audio('010.mp3'); // Replace '010.mp3' with the path to your video MP3 audio file
+                videoAudio.volume = 0.2; // Set the volume to your desired value
+            }
+
+            // Play the video audio when a video is playing
+            videoAudio.play();
         }
 
         // Function to toggle video description
@@ -320,9 +326,18 @@
 
             // Check if the video is paused, and toggle play/pause accordingly
             if (video.paused) {
+                // Pause any previously playing video
+                if (currentVideo && currentVideo !== video) {
+                    currentVideo.pause();
+                }
                 video.play();
+                currentVideo = video;
+
+                // Start playing the video audio
+                playVideoAudio();
             } else {
                 video.pause();
+                videoAudio.pause();
             }
 
             // Pause other videos
@@ -335,5 +350,7 @@
             }
         }
     </script>
+
+
 </body>
 </html>
