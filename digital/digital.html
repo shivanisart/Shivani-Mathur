@@ -286,12 +286,14 @@
        var videoAudio; // Declare the video audio variable globally
        var currentVideo; // Variable to keep track of the currently playing video
 
-       // Function to toggle the menu
-       function toggleMenu() {
-           var menu = document.querySelector('.menu');
-           menu.classList.toggle('active');
-       }
+       
+      // Function to toggle the menu
+      function toggleMenu() {
+         var nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+      }
 
+     
        function playTitleAudio() {
            if (!titleAudio) {
                titleAudio = new Audio('lindzay.m4a'); // Replace 'Lindsay.mp3' with the path to your title MP3 audio file
