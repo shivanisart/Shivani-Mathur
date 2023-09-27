@@ -286,12 +286,13 @@
        var videoAudio; // Declare the video audio variable globally
        var currentVideo; // Variable to keep track of the currently playing video
 
-       
+  
       // Function to toggle the menu
       function toggleMenu() {
-         var nav = document.querySelector('nav');
-      nav.classList.toggle('active');
-      }
+       var ul = document.querySelector('nav ul'); // Select the ul element within nav
+       ul.classList.toggle('active'); // Toggle the active class on the ul
+   }
+
 
      
        function playTitleAudio() {
