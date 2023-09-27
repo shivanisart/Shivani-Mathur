@@ -27,12 +27,6 @@
                 list-style: none; /* Remove default list-style */
                 padding: 0; /* Remove any default padding */
             }
-            /* Style the active menu item */
-        .menu ul li.active a {
-            background-color: #4c4c4c; /* Dark grey background color */
-            color: #ffffff; /* Text color for active link */
-}
-
 
             .menu.active ul {
                 display: block;
@@ -57,7 +51,6 @@
             text-align: center;
             padding: 10px;
         }
-    
 
         footer {
             background-color: #4c4c4c;
@@ -209,6 +202,12 @@
               height: auto; /* Allow the height to adjust proportionally */
           }
 
+          /* Style the active menu item */
+          .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+          }
+
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
     <style>
@@ -228,28 +227,29 @@
         <div class="menu-icon" onclick="toggleMenu()">
         <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
     </div>
-        <h1>Awards, Exhibitions and Publications</h1>
+        <h1>Shivani Mathur</h1>
         <!-- Play button for the title -->
 <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
 <!-- Additional text below the header -->
-  <p class="header-description">Success keeps me motivated. Failure keeps me learning. Staying immersed in art keeps me happy.<br><br> Shivani Mathur</p>
+  <p class="header-description">"Success keeps me motivated. Failure keeps me learning. Staying immersed in art keeps me happy.""<br><br> Shivani Mathur</p>
 </header>
     </header>
- <nav>
-   
-        <ul>
-            <li><a href="../index.html">Home</a></li><br>
-            <li><a href="../portfolio/port.html">Portfolio</a></li>
-            <li><a href="../digital/digital.html">Pathways</a></li>
-            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
- 	        <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-            <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-            <li class="active"><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
-            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-        </ul>
+    <nav>
+      <div class="menu">
+          <ul>
+              <li><a href="../index.html">Home</a></li><br>
+              <li><a href="../portfolio/port.html">Portfolio</a></li>
+              <li><a href="../digital/digital.html">Pathways</a></li>
+              <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+   	          <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+              <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+              <li  class="active"><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+              <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+              <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+          </ul>
+      </div>
+  </nav>
 
-</nav>
 
     <!-- Video container -->
     <div class="video-container">
@@ -266,7 +266,7 @@
             </video>
 
             <!-- Video caption (toggle button) -->
-            <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)">Pathways of light, 2022, Installation at Central Saint Martins, London <br> Maison Zero Award by LVMH / University of the arts, for sustainability. <br>View how it was made   <i class="fas fa-play"></i> </div>
+            <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)">Pathways of light, 2022, Installation at Central Saint Martins, London <br> Maison Zero Award by LVMH / University of the arts, for sustainability. <br>View how it was made</div>
 
 
             </div>
@@ -387,25 +387,25 @@
         </div>
     </div>
 
-  <footer>
-    <p>Contact Shivani Mathur.</p> <!-- Move this line above the icons -->
-    <div class="footer-icons">
-        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
-</footer>
+
+      <footer>
+        <p>Contact </p> <!-- Move this line above the icons -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
 
 
     <script>
 
-// Function to toggle the menu
+    // Function to toggle the menu
 function toggleMenu() {
-   var nav = document.querySelector('nav ul');
-   nav.classList.toggle('active');
+   var menu = document.querySelector('.menu');
+   menu.classList.toggle('active');
 }
-
 
 // Function to open the modal for images
 function openModal(imageSrc) {
