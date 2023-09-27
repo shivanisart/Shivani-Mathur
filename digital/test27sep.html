@@ -180,15 +180,15 @@
 
    <!-- Video container -->
    <div class="video-container">
-   <!-- Video 1 -->
+ <!-- Video 1 -->
 <div class="video-item">
     <div onclick="toggleVideo(0)" loop>
-        <video poster="thedoor-poster.jpg" class="poster" loop preload="metadata" controlsList="nodownload">
+        <video poster="thedoor-poster.jpg" class="poster" loop playsinline>
             <source src="thedoor.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)"><br> <i class="fas fa-play"></i><br><br>The Door, 2023 <br> Oil on canvas. 122x92 cm.<br> <br>
+        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)"> <br> <i class="fas fa-play"></i><br><br>The Door, 2023 <br> Oil on canvas. 122x92 cm.<br> <br>
         </div>
         <!-- Video description -->
         <div class="video-description">
@@ -196,6 +196,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Video 2 -->
 <div class="video-item">
