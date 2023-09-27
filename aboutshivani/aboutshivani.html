@@ -133,6 +133,11 @@
             margin: 0 auto;
             padding-top: 20px;
         }
+    /* Style the active menu item */
+        .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+    }
 
         h1 {
             text-align: center;
@@ -210,25 +215,28 @@
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
         </div>
-        <h1>About the artist and her Inspiration</h1>
+        <h1>Journey and Inspiration</h1>
         <!-- Play button for the title -->
         <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
         <!-- Additional text below the header -->
         <p class="header-description">"The same essence that gives you life also animates the entire cosmos.<br>Therefore the potential within you is as vast as the universe itself."<br> - Chandogya Upanishad circa 800 BCE</p>
     </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../digital/digital.html">Pathways</a></li>
-                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-                <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-                <!-- Add more navigation links as needed -->
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../portfolio/port.html">Portfolio</a></li>
+            <li><a href="../digital/digital.html">Pathways</a></li>
+            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+            <li><a href="../fire/fire.html">Fire and Water</a></li>
+            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+            <li class="active"><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Video container -->
     <div class="video-container">
@@ -326,7 +334,7 @@
 
     <!-- Footer with social media icons -->
 <footer>
-    <p>Contact Shivani Mathur.</p> <!-- Move this line above the icons -->
+    <p>Contact</p> <!-- Move this line above the icons -->
     <div class="footer-icons">
         <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
