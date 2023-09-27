@@ -124,6 +124,11 @@
        .header-content {
            text-align: center;
        }
+/* Style the active menu item */
+      .menu ul li.active a {
+          background-color: #4c4c4c; /* Dark grey background color */
+          color: #ffffff; /* Text color for active link */
+}
 
        .menu-icon {
            font-size: 24px;
@@ -166,17 +171,22 @@
        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
    </header>
 
-    <nav>
-        <div class="menu">
-            <ul>
-                <li><a href="../portfolio/port.html">Back to Portfolios</a></li><br>
-                <li><a href="../digital/digital.html">Pathways</a></li>
-                <li><a href="../fibonacci/fiboncci.html">Fibonacci</a></li>
-                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                <li><a href="../fire/fire.html">Fire and Water</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../portfolio/port.html">Portfolio</a></li>
+            <li class="active"><a href="../digital/digital.html">Pathways</a></li>
+            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+            <li><a href="../fire/fire.html">Fire and Water</a></li>
+            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
+
 
    <!-- Video container -->
    <div class="video-container">
