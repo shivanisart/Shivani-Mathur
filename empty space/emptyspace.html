@@ -152,21 +152,21 @@
         <!-- Additional text below the header -->
         <p class="header-description">Empty Space is not empty. It is the seat of the most violent physics <br> - John Wheeler, Quantum physicist</p>
     </header>
-  <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li><br>
-            <li><a href="../portfolio/port.html">Portfolio</a></li>
-            <li><a href="../digital/digital.html">Pathways</a></li>
-            <li class="active"><a href="../empty space/emptyspace.html">Empty Space</a></li>
-            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-            <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
-            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-        </ul>
-
-</nav>
-
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li><br>
+                <li><a href="../portfolio/port.html">Portfolio</a></li>
+                <li><a href="../digital/digital.html">Pathways</a></li>
+                <li  class="active"><a href="../empty space/emptyspace.html">Empty Space</a></li>
+     	          <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+                <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- First set of videos (with GIFs playing) -->
     <div class="video-container video-set">
@@ -226,44 +226,43 @@ Could the path to infinity truly lie in realising that what we do not see with o
 </footer>
 
 
-    <script>
-     // Function to toggle the menu
-     function toggleMenu() {
-       var nav = document.querySelector('nav ul');
-           nav.classList.toggle('active');
-        }
+<script>
+    // Function to toggle the menu
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
+    }
 
+    var titleAudio; // Declare the audio variable globally
 
-        var titleAudio; // Declare the audio variable globally
-
-        function playTitleAudio() {
-            if (!titleAudio) {
-                titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
-                titleAudio.loop = true; // Set the audio to loop continuously
-                titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-                titleAudio.play();
+    function playTitleAudio() {
+        if (!titleAudio) {
+            titleAudio = new Audio('010.mp3'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+            titleAudio.loop = true; // Set the audio to loop continuously
+            titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+            titleAudio.play();
+        } else {
+            if (!titleAudio.paused) {
+                titleAudio.pause(); // Pause the audio if it's playing
             } else {
-                if (!titleAudio.paused) {
-                    titleAudio.pause(); // Pause the audio if it's playing
-                } else {
-                    titleAudio.play(); // Resume playing if it's paused
-                }
+                titleAudio.play(); // Resume playing if it's paused
             }
         }
+    }
 
-        // Function to toggle between image and gif
-        function toggleGif(index) {
-            var videoItem = document.querySelectorAll('.video-item')[index];
-            var img = videoItem.querySelector('img');
+    // Function to toggle between image and gif
+    function toggleGif(index) {
+        var videoItem = document.querySelectorAll('.video-item')[index];
+        var img = videoItem.querySelector('img');
 
-            if (img.getAttribute('data-state') === 'playing') {
-                img.setAttribute('data-state', 'paused');
-                img.pause();
-            } else {
-                img.setAttribute('data-state', 'playing');
-                img.play();
-            }
+        if (img.getAttribute('data-state') === 'playing') {
+            img.setAttribute('data-state', 'paused');
+            img.pause();
+        } else {
+            img.setAttribute('data-state', 'playing');
+            img.play();
         }
-    </script>
+    }
+</script>
 </body>
 </html>
