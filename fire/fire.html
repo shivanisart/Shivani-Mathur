@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire cannot burn it, Water cannot wet it.</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            color: #929292;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1, .header-description {
+            text-align: center;
+            color: #929292;
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu.active ul {
+            display: block;
+        }
+
+        nav a {
+            color: #929292;
+            text-decoration: none;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        /* Header and Footer Styles */
+        header,
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Font Awesome Icons Styles */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        /* Thumbnail Container Styles */
+        .thumbnail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Thumbnail Item Styles */
+        .thumbnail-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Updated styles for the caption */
+        .thumbnail-caption {
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 16px; /* Adjust this value to control the spacing */
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Play button icon */
+        .play-button::before {
+            content: "\f04b"; /* Unicode for the play icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 5px;
+        }
+
+        /* Add a gap after "Empty Space" */
+        .menu ul li:nth-child(4) {
+            margin-bottom: 10px;
+        }
+
+        /* Centered play button style */
+        .centered-play-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Modified play button style */
+        .play-button {
+            font-size: 48px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>
+        <h1>Fire cannot burn it, Water cannot wet it.</h1>
+
+        <!-- Additional text below the header -->
+        <p class="header-description">In 2012, Shivani Mathur began charcoal drawing when the doctor told her to avoid using oil paints because the evaporation was eroding my cornea.</p>
+    </header>
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><a href="../portfolio/port.html">Back to Portfolios</a></li><br>
+                <li><a href="../digital/digital.html">Pathways</a></li>
+                <li><a href="../fibonacci/fiboncci.html">Fibonacci</a></li>
+                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+                <li><a href="../fire/fire.html">Fire and Water</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Thumbnail container -->
+    <div class="thumbnail-container">
+      <!-- Thumbnail 6 -->
+      <div class="thumbnail-item">
+          <img src="098gift.jpg" alt="098gift Image">
+          <div class="thumbnail-caption">The Gift.2012 Charcoal and gold spray on canvas 150x120 cm</div>
+      </div>
+
+
+        <!-- Thumbnail 2 -->
+        <div class="thumbnail-item">
+            <img src="Entwined.jpg" alt="Entwined Poster">
+            <div class="thumbnail-caption">Entwined. 2012 Charcoal, pastels and gold spray on canvas 120x150 cm</div>
+        </div>
+        <!-- Thumbnail 5 -->
+        <div class="thumbnail-item">
+            <img src="112wait.jpg" alt="112wait Image">
+            <div class="thumbnail-caption">Waiting,2014 Charcoal and gold spray 80x60 cm</div>
+        </div>
+
+        <!-- Thumbnail 3 -->
+        <div class="thumbnail-item">
+            <img src="charcoalcabbage.jpg" alt="Charcoal Cabbage">
+            <div class="thumbnail-caption">Untitled. 2021 Charcoal and cabbage juice on paper, 30x40 cm</div>
+        </div>
+        <!-- Thumbnail 4 -->
+        <div class="thumbnail-item">
+            <img src="267dsisy3.jpg" alt="267dsisy3 Image">
+            <div class="thumbnail-caption">Untitled. 2021 Charcoal and cabbage juice on paper, 30x40</div>
+        </div>
+        <!-- Thumbnail 1 -->
+
+        <div class="thumbnail-item">
+            <img src="yellow.jpg" alt="Yellow Image">
+            <div class="thumbnail-caption">Fire cannot burn. 2022 Charcoal paper, 30x40</div>
+        </div>
+
+    </div>
+
+
+
+    <footer>
+        <!-- Add icons and links in the footer -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
