@@ -25,6 +25,11 @@
             margin: 0 auto;
             padding-top: 20px;
         }
+        /* Style the active menu item */
+        .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+        }
 
         h1, .header-description {
             text-align: center;
@@ -154,17 +159,21 @@
         <!-- Additional text below the header -->
         <p class="header-description">In 2012, Shivani Mathur began charcoal drawing when the doctor told her to avoid using oil paints because the evaporation was eroding her cornea.</p>
     </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                <li><a href="../portfolio/port.html">Back to Portfolios</a></li><br>
-                <li><a href="../digital/digital.html">Pathways</a></li>
-                <li><a href="../fibonacci/fiboncci.html">Fibonacci</a></li>
-                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                <li><a href="../fire/fire.html">Fire and Water</a></li>
-            </ul>
-        </div>
-    </nav>
+ <nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li><br>
+            <li><a href="../portfolio/port.html">Portfolio</a></li>
+            <li><a href="../digital/digital.html">Pathways</a></li>
+            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+ 	        <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+            <li class="active"><a href="../fire/fire.html">Fire and Water</a></li><br>
+            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
 
 
     <!-- Thumbnail container -->
@@ -206,17 +215,16 @@
 
     </div>
 
+  <footer>
+    <p>Contact </p> <!-- Move this line above the icons -->
+    <div class="footer-icons">
+        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+</footer>
 
-
-    <footer>
-        <!-- Add icons and links in the footer -->
-        <div class="footer-icons">
-            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
-    </footer>
     <script>
         // Function to toggle the menu
         function toggleMenu() {
