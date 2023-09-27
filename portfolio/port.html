@@ -40,6 +40,12 @@
         .menu.active ul {
             display: block;
         }
+        /* Style the active menu item */
+        .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+        }
+
 
         nav a {
             color: #929292;
@@ -152,23 +158,22 @@
         <!-- Additional text below the header -->
         <p class="header-description">If there was a single phrase to describe the work of Shivani Mathur, it would be <br> "Non Linear"</p>
     </header>
-    <nav>
+   <nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li><br>
+            <li class="active"><a href="../portfolio/port.html">Portfolio</a></li>
+            <li><a href="../digital/digital.html">Pathways</a></li>
+            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+            <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>   
+            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
 
-        <div class="menu">
-            <ul>
-              <li><a href="../index.html">Home</a></li>
-
-              <li><a href="../portfolio/port.html">Portfolios</a></li> <!-- Added "Portfolio" line -->
-              <li><a href="../digital/digital.html">Pathways</a></li>
-              <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-              <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-              <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-              <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-              <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
-              <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Thumbnail container -->
     <div class="thumbnail-container">
