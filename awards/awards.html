@@ -208,6 +208,25 @@
             color: #ffffff !important; /* Text color for active link */
     }
 
+    /* Style for the captions (initially hidden) */
+          .gallery-item .caption {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s;
+    }
+
+    /* Show captions on hover */
+    .gallery-item:hover .caption {
+        display: block;
+    }
+
 
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -329,55 +348,100 @@
               <br>2022 Tokyo Institute of technology and Queen Mary Hospital : Making Waves 2
               <br>022 Cambridge University: Digital technologies</p>
 
-<!-- Gallery container -->
-  <div class="gallery-container">
-      <!-- Small GIF 1 -->
-      <div class="gallery-item " onclick="openModal('cabbage.GIF')">
-          <img src="cabbage.GIF" alt="Cabbage GIF">
-      </div>
-      <!-- Small Image 6 -->
-      <div class="gallery-item" onclick="openModal('chlorophyll.gif')">
-          <img src="chlorophyll.gif" alt="chlorophyll">
-      </div>
+              <!-- Gallery container -->
+          <div class="gallery-container">
+              <!-- Image 24 -->
+              <div class="gallery-item" onclick="openModal('24.jpg')">
+                  <img src="24.jpg" alt="Image 24">
+                  <div class="caption">Caption for Image 24</div>
+              </div>
 
-      <!-- Small GIF 5 -->
-      <div class="gallery-item" onclick="openModal('slimemould.GIF')">
-          <img src="slimemould.GIF" alt="Slimemould GIF">
-      </div>
-      <!-- Small GIF 4 -->
-      <div class="gallery-item" onclick="openModal('pouringegg.GIF')">
-          <img src="pouringegg.GIF" alt="Pouring Egg GIF">
-      </div>
+              <!-- Image 22 -->
+              <div class="gallery-item" onclick="openModal('22poland.jpg')">
+                  <img src="22poland.jpg" alt="Image 22">
+                  <div class="caption">Caption for Image 22</div>
+              </div>
 
-      <!-- Small GIF 5 -->
-      <div class="gallery-item" onclick="openModal('playing.gif')">
-          <img src="playing.gif" alt="playGIF">
-      </div>
-        <!-- Small Image 4 -->
-        <div class="gallery-item" onclick="openModal('eggshell drying.jpg')">
-            <img src="eggshell drying.jpg" alt="Eggshell Drying">
-        </div>
+              <!-- Image 21 -->
+              <div class="gallery-item" onclick="openModal('21.jpg')">
+                  <img src="21.jpg" alt="Image 21">
+                  <div class="caption">Caption for Image 21</div>
+              </div>
 
-        <!-- Small Image 4 -->
-        <div class="gallery-item" onclick="openModal('chris.jpg')">
-            <img src="chris.jpg" alt="Eggshell Drying">
-        </div>
+              <!-- Image 18 -->
+              <div class="gallery-item" onclick="openModal('18.jpg')">
+                  <img src="18.jpg" alt="Image 18">
+                  <div class="caption">Caption for Image 18</div>
+              </div>
 
-        <!-- Large Image/Video 1 -->
-        <div class="gallery-item" onclick="openModal('eggshell.jpg')">
-            <img src="eggshell.jpg" alt="Broken Eggshell">
-        </div>
-        <!-- Small GIF 5 -->
-        <div class="gallery-item" onclick="openModal('vacuumchamber.gif')">
-          <img src="vacuumchamber.gif" alt="playGIF">
-        </div>
+              <!-- Image 17 -->
+              <div class="gallery-item" onclick="openModal('17.jpg')">
+                  <img src="17.jpg" alt="Image 17">
+                  <div class="caption">Caption for Image 17</div>
+              </div>
+
+              <!-- Image 15 -->
+              <div class="gallery-item" onclick="openModal('15.jpg')">
+                  <img src="15.jpg" alt="Image 15">
+                  <div class="caption">Caption for Image 15</div>
+              </div>
+
+              <!-- Image 14 -->
+              <div class="gallery-item" onclick="openModal('14.jpg')">
+                  <img src="14.jpg" alt="Image 14">
+                  <div class="caption">Caption for Image 14</div>
+              </div>
+
+              <!-- Image 12 -->
+              <div class="gallery-item" onclick="openModal('12.jpg')">
+                  <img src="12.jpg" alt="Image 12">
+                  <div class="caption">Caption for Image 12</div>
+              </div>
+
+              <!-- Image 08 -->
+              <div class="gallery-item" onclick="openModal('08.jpg')">
+                  <img src="08.jpg" alt="Image 08">
+                  <div class="caption">Caption for Image 08</div>
+              </div>
+
+              <!-- Image 07 -->
+              <div class="gallery-item" onclick="openModal('07.jpg')">
+                  <img src="07.jpg" alt="Image 07">
+                  <div class="caption">Caption for Image 07</div>
+              </div>
+
+              <!-- Image 05 -->
+              <div class="gallery-item" onclick="openModal('05.jpg')">
+                  <img src="05.jpg" alt="Image 05">
+                  <div class="caption">Caption for Image 05</div>
+              </div>
+
+              <!-- Image 04 -->
+              <div class="gallery-item" onclick="openModal('04.jpg')">
+                  <img src="04.jpg" alt="Image 04">
+                  <div class="caption">Caption for Image 04</div>
+              </div>
+
+              <!-- Image 03 -->
+              <div class="gallery-item" onclick="openModal('03.jpg')">
+                  <img src="03.jpg" alt="Image 03">
+                  <div class="caption">Caption for Image 03</div>
+              </div>
+
+              <!-- Image 02 -->
+              <div class="gallery-item" onclick="openModal('02.jpg')">
+                  <img src="02.jpg" alt="Image 02">
+                  <div class="caption">Caption for Image 02</div>
+              </div>
+
+              <!-- Image 01 -->
+              <div class="gallery-item" onclick="openModal('01.jpg')">
+                  <img src="01.jpg" alt="Image 01">
+                  <div class="caption">Caption for Image 01</div>
+              </div>
+          </div>
 
 
-
-
-
-        <!-- Add more media items here -->
-    </div>
     <!-- Modal for displaying media -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
