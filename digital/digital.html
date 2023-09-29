@@ -14,6 +14,14 @@
            font-size: 18px; /* Standard font size for body text */
        }
 
+      /* Apply max-width to the page container */
+      .page-container {
+          max-width: 800px;
+          margin: 0 auto; /* To center the content horizontally */
+          padding: 0 20px; /* Add padding to create spacing from the edges */
+   }
+      
+
        /* Ensure that the menu icon is visible at smaller screen sizes */
        @media (max-width: 7680px) {
            .menu-icon {
@@ -160,6 +168,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <div class="page-container">
    <header>
        <div class="menu-icon" onclick="toggleMenu()">
            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
@@ -274,7 +283,7 @@
     </div>
    </div>
    </div>
-
+   </div>
    <footer>
       
         <div class="menu-icon" onclick="toggleMenu()">
