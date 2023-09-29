@@ -189,6 +189,18 @@
               max-width: 1000px;
               margin: 0 auto;
           }
+          /* Center-align the text box */
+          .slideshow-text-center {
+              text-align: center;
+              padding: 20px; /* Add padding for spacing */
+          }
+
+          /* Left-align the text inside the text box */
+          .slideshow-text-left {
+              display: inline-block; /* Ensure inline block for left alignment */
+              text-align: left; /* Left-align the text inside the box */
+          }
+
 
           /* Style the gallery items */
           .gallery-item {
@@ -378,7 +390,7 @@
             <div class="caption">Backlit image revealing the cracks</div>
         </div>
 
-      
+
           <!-- Slide 4 -->
           <div class="mySlides fade">
               <img src="exhibition-egg1.jpg" alt="Slide 3">
@@ -393,7 +405,8 @@
 
 
     <!-- Additional text below the picture -->
-    <div style="text-align: center;">
+    <div class="slideshow-text-center">
+        <div class="slideshow-text-left">
         <p style="font-size: 24px; font-weight: bold;">Awards and Publications</p>
         <p>
             2023 Academic paper published in Leonardo Labs<br>
@@ -434,7 +447,7 @@
             022 Cambridge University: Digital technologies
         </p>
     </div>
-
+</div>
 
           <div class="gallery-container">
               <!-- Image 24 -->
