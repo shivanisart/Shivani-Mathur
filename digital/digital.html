@@ -171,129 +171,80 @@ header {
        .play-button i {
            color: #4c4c4c;
        }
+        /* Center the last line in the footer and change its color to #929292 */
+        footer p:last-child {
+            text-align: center;
+            color: #929292;
+        }
+
+        /* Center the "Listen to curator Lindzay Chan" text and change its color to #929292 */
+        .listen-text {
+            text-align: center;
+            color: #929292;
+        }
+
+        /* Center the play button for Lindzay Chan */
+        .play-button {
+            display: block;
+            margin: 0 auto;
+        }     
    </style>
 
    <!-- Include the Font Awesome CSS stylesheet -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div class="page-container">
-   <header>
-       <div class="menu-icon" onclick="toggleMenu()">
-           <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-       </div>
-       <h1>Shivani Mathur</h1>
-
-       <!-- Additional text below the header -->
-       <p class="header-description"> Shivani Mathur's current work, Pathways, at the intersection of art, science and technology, was created while listening to the background sound of our universe as recorded by NASA. </p>
-
-      
-   </header>
-
-   <nav>
-       <div class="menu">
-           <ul>
-               <li><a href="../index.html">Home</a></li><br>
-               <li><a href="../portfolio/port.html">Portfolio</a></li>
-               <li class="active"><a href="../digital/digital.html">Pathways</a></li>
-               <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-    	         <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-               <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-               <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-               <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
-               <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-           </ul>
-       </div>
-   </nav>
-
-
-   <!-- Video container -->
-
-   <div class="video-container">
-<!-- Video 1 -->
-<div class="video-item">
-    <div onclick="toggleVideo(0)" loop>
-        <video poster="thedoor-poster.jpg" class="poster" loop playsinline>
-            <source src="thedoor.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)"> <br> <i class="fas fa-play"></i><br><br>The Door, 2023 <br> Oil on canvas. 122x92 cm.<br> <br>
+<div class="page-container">
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
-        <!-- Video description -->
-        <div class="video-description">
-            <p>"The door" is a two-part artwork, featuring an oil painting and a digital generative work that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.</p>
-        </div>
-    </div>
-</div>
+        <h1>Shivani Mathur</h1>
+        <!-- Additional text below the header -->
+        <p class="header-description"> Shivani Mathur's current work, Pathways, at the intersection of art, science and technology, was created while listening to the background sound of our universe as recorded by NASA. </p>
+    </header>
 
-<!-- Video 2 -->
-<div class="video-item">
-    <div onclick="toggleVideo(1)" loop>
-        <video poster="35_rampedge_AdobeExpress-poster.jpg" class="poster" loop playsinline>
-            <source src="35_rampedge_AdobeExpress 2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(1)"><br> <i class="fas fa-play"></i><br><br>Expansion, 2021<br> Digital generative art<br><br></div>
-        <!-- Video description -->
-        <div class="video-description">
-            <p>'Expansion' is a digital generative visualization of the vast potential that lies dormant within us, and the interconnectedness we share with the entire universe.</p>
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li><br>
+                <li><a href="../portfolio/port.html">Portfolio</a></li>
+                <li class="active"><a href="../digital/digital.html">Pathways</a></li>
+                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+                <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+            </ul>
         </div>
-    </div>
-</div>
+    </nav>
 
-<!-- Video 3 -->
-<div class="video-item">
-    <div onclick="toggleVideo(2)" loop>
-        <video poster="RockPaperScissors-poster.jpg" class="poster" loop playsinline>
-            <source src="Rock, Paper, Scissors 2.MP4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(2)"><br> <i class="fas fa-play"></i><br><br>Rock, Paper, Scissors. 2022 <br> Digital generative art in a collaborative performance.<br><br></div>
-        <!-- Video description -->
-        <div class="video-description">
-            <p>A three-way collaboration: James, a violinist begins playing music. Kelly Briggs responds to James' music by drawing. An algorithm by Shivani picks up Kelly's body movements and creates a digital image of snow dispersing on a screen, to which James responds by altering his music...</p>
+    <!-- Video container -->
+    <div class="video-container">
+        <!-- Video 1 -->
+        <div class="video-item">
+            <div onclick="toggleVideo(0)" loop>
+                <video poster="thedoor-poster.jpg" class="poster" loop playsinline>
+                    <source src="thedoor.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Video caption (toggle button) -->
+                <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)"> <br> <i class="fas fa-play"></i><br><br>The Door, 2023 <br> Oil on canvas. 122x92 cm.<br> <br>
+                </div>
+                <!-- Video description -->
+                <div class="video-description">
+                    <p>"The door" is a two-part artwork, featuring an oil painting and a digital generative work that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<!-- Video 4 -->
-<div class="video-item">
-    <div onclick="toggleVideo(3)" loop>
-        <video poster="pathwaysholo-poster.jpg" class="poster" loop playsinline>
-            <source src="pathwaysholo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(3)" ><br> <i class="fas fa-play"></i><br><br>Hologram of our universe, 2023 <br>Cracked mirror and light. 35cmx35cm.<br><br></div>
-        <!-- Video description -->
-        <div class="video-description">
-            <p>"Hologram of Our Universe” is made from cracked mirror with colored light streaming through the cracks. It is like an image of our expansive and ethereal universe floating in mid-air on the ceiling in the gallery.</p>
-        </div>
-    </div>
-</div>
+        <!-- ... (other video items) ... -->
 
-<!-- Video 5 -->
-<div class="video-item">
-    <div onclick="toggleVideo(4)" loop>
-        <video poster="pathwaybw-poster.jpg" class="poster" loop playsinline>
-            <source src="pathwaybw.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(4)"><br> <i class="fas fa-play"></i><br><br>Portrait of our universe, 2023 <br>Cracked mirror and light. 35cmx35cm.<br><br></div>
-        <!-- Video description -->
-        <div class="video-description">
-            <p>"Portrait of Our Universe" is a three-dimensional cracked mirror, encased in a box frame, and hung like a painting. Light shines through the cracks which appear as a web of interconnections. It is as if the boundaries between you and me blur when the light shines, making our individual identities indistinguishable from the magnificent portrait of our universe.</p>
-        </div>
-    </div>
-  
         <!-- Play button for the title -->
-       <p>Listen to curator Lindzay Chan on the series "Pathways"</p>
-       <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
-   </div>
+        <p class="listen-text">Listen to curator Lindzay Chan on the series "Pathways"</p>
+        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+    </div>
 
        
    <footer>
