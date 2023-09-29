@@ -276,6 +276,11 @@
    </div>
 
    <footer>
+      
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>
+
      <p>Contact </p> <!-- Move this line above the icons -->
      <div class="footer-icons">
          <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -291,11 +296,19 @@
        var videoAudio; // Declare the video audio variable globally
        var currentVideo; // Variable to keep track of the currently playing video
 
-       // Function to toggle the menu
-       function toggleMenu() {
-           var menu = document.querySelector('.menu');
-           menu.classList.toggle('active');
-       }
+
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        var isMenuActive = menu.classList.contains('active');
+
+        // Toggle the 'active' class for the menu
+        menu.classList.toggle('active', !isMenuActive);
+
+        if (!isMenuActive) {
+            // If the menu is now active, scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
 
        function playTitleAudio() {
            if (!titleAudio) {
