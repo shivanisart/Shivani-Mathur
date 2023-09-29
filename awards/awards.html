@@ -126,6 +126,7 @@
         }
 
         .menu-icon {
+
             font-size: 24px;
             cursor: pointer;
             text-align: center;
@@ -548,12 +549,16 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+
     </div>
         </div>
     </div>
 
 
       <footer>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>
         <p>Contact </p> <!-- Move this line above the icons -->
         <div class="footer-icons">
             <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -566,11 +571,19 @@
 
     <script>
 
-    // Function to toggle the menu
-function toggleMenu() {
-   var menu = document.querySelector('.menu');
-   menu.classList.toggle('active');
-}
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        var isMenuActive = menu.classList.contains('active');
+
+        // Toggle the 'active' class for the menu
+        menu.classList.toggle('active', !isMenuActive);
+
+        if (!isMenuActive) {
+            // If the menu is now active, scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
 
 // Function to open the modal for images
 function openModal(imageSrc) {
