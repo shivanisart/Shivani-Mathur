@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. Fibonacci</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
+            color: #929292; /* Updated text color to #929292 */
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1, .header-description {
+            text-align: center;
+            text-decoration: none;
+            color: #929292; /* Updated text color to #ffffff (white) */
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu.active ul {
+            display: block;
+        }
+
+        nav a {
+            color: #929292; /* Updated text color to #929292 */
+            text-decoration: none;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        /* Header and Footer Styles */
+        header,
+        footer {
+            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
+            color: #929292; /* Updated text color to #929292 */
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Font Awesome Icons Styles */
+        .footer-icons {
+            font-size: 24px;
+        }
+
+        .footer-icons a {
+            color: #929292; /* Updated text color to #929292 */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Video Item Styles */
+        .video-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            font-size: 18px; /* Updated font size to 18px */
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
+            color: #929292; /* Updated text color to #929292 */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Updated CSS for the play button */
+        .play-button {
+            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
+            border: none; /* Remove the button border */
+            color: #4c4c4c; /* Updated text color to #929292 */
+            font-size: 8px;
+            padding: 5px 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Style the active menu item */
+        .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+        }
+
+        .play-button:hover {
+            background-color: #929292; /* Darker background color on hover */
+        }
+
+        /* Center the play button within the video-item */
+        .video-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Updated CSS for the video description */
+        .video-description {
+            display: none; /* Hide the description by default */
+            text-align: center;
+            font-size: 18px; /* Updated font size to 18px */
+            color: #929292; /* Updated text color to #929292 */
+        }
+
+    </style>
+
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+        </div>
+        <h1>Shivani Mathur<br>presents<br>
+"The Door"</h1>
+        <!-- Additional text below the header -->
+        <p class="header-description">12 October - 15 December 2023<br> William gallery, William Blake House, 8 Marshall Street, London.<br> To join the preview on 12 october please send a message.<br><br><a href="https://www.eventbrite.co.uk/e/shivani-mathur-at-the-william-gallery-london-tickets-723893784797?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"><i class="fas fa-envelope"></i></a> </p>
+    </header>
+<nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li><br>
+            <li><a href="../portfolio/port.html">Portfolio</a></li>
+           </li><a href="../digital/digital.html">Pathways</a></li>
+            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+            <li><a href="../fire/fire.html">Fire and Water</a></li> <br>
+            <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+            <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+            <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Video container -->
+    <div class="video-container">
+        <!-- Video 1 -->
+        <div class="video-item">
+            <video poster="thedoor.gif" class="poster" loop>
+
+            </div>
+        </div>
+
+
+        <p>
+
+The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
+Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in  two-parts - an oil painting and a digital generative artwork that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
+Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October to 15 December 2023.</p>
+
+
+
+  </div>
+
+    <footer>
+    <p>Contact </p> <!-- Move this line above the icons -->
+    <div class="footer-icons">
+        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+        <a href="http://www.shivani-mathur.com/"><i class="fas fa-globe"></i></a>
+    </div>
+    <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
+</footer>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        // Function to toggle video description
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            if (description.style.display === 'block') {
+                description.style.display = 'none';
+            } else {
+                description.style.display = 'block';
+            }
+        }
+
+        // Function to toggle audio playback
+        function toggleAudio(index) {
+            var audio = document.getElementById('audio' + index);
+
+            // Check if the audio is paused, and toggle play/pause accordingly
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
