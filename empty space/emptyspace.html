@@ -10,11 +10,26 @@
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
             margin: 0
-            font-size: 18px; /* Adjust the font size as needed */
+            font-size: 24px; /* Adjust the font size as needed */
             color:  #929292 ;
             padding: 0;
         }
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            font-size: 36px; /* Adjust the font size to your preference */
+        }
 
+
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto; /* To center the content horizontally */
+            padding: 0 20px; /* Add padding to create spacing from the edges */
+        }
         /* Ensure that the menu icon is visible at smaller screen sizes */
         @media (max-width: 7680px) {
             .menu-icon {
@@ -55,14 +70,14 @@
             background-color: #4c4c4c;
             color: #929292 ;
             text-align: center;
-            font-size: 18px; /* Adjust the font size as needed */
+            font-size: 24px; /* Adjust the font size as needed */
             padding: 10px;
             margin-top: auto;
         }
 
         /* Add CSS for the Font Awesome icons here */
         .footer-icons {
-            font-size: 24px;
+            font-size: 36px;
         }
 
         .footer-icons a {
@@ -86,7 +101,7 @@
 
         /* Style the video captions (toggle button) */
         .video-caption {
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 10px;
             text-align: center;
             cursor: pointer;
@@ -129,7 +144,7 @@
 
         /* Style for the additional text */
         .header-description {
-            font-size: 18px; /* Adjust the font size as needed */
+            font-size: 24px; /* Adjust the font size as needed */
             margin-top: 10px; /* Add margin to separate it from the title */
             color: #929292 ; /* Set the text color */
         }
@@ -143,9 +158,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+  <div class="page-container">
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
         <h1>Shivani Mathur</h1>
         <!-- Play button for the title -->
@@ -219,11 +235,11 @@ Could the path to infinity truly lie in realising that what we do not see with o
 
         </div>
     </div>
-
+</div>
    <footer>
        
         <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
     <p>Contact </p> <!-- Move this line above the icons -->
     <div class="footer-icons">
