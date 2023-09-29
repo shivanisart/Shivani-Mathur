@@ -11,6 +11,22 @@
             padding: 0;
             box-sizing: border-box;
         }
+      /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            font-size: 36px; /* Adjust the font size to your preference */
+        }
+
+
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto; /* To center the content horizontally */
+            padding: 0 20px; /* Add padding to create spacing from the edges */
+        }        
 
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -19,7 +35,7 @@
         }
 
         .menu-icon {
-            font-size: 24px;
+            font-size: 36px;
             cursor: pointer;
             text-align: center;
             margin: 0 auto;
@@ -66,7 +82,7 @@
 
         /* Font Awesome Icons Styles */
         .footer-icons {
-            font-size: 24px;
+            font-size: 36px;
         }
 
         .footer-icons a {
@@ -104,7 +120,7 @@
 
         /* Updated styles for the caption */
         .thumbnail-caption {
-            font-size: 18px;
+            font-size: 36px;
             text-align: center;
             cursor: pointer;
             background-color: #4c4c4c;
@@ -150,9 +166,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <div class="page-container">
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
         <h1>Shivani Mathur</h1>
 
@@ -214,10 +231,11 @@
         </div>
 
     </div>
+          </div>
 
   <footer>
              <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 40px; height: 40px;">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
 
     <p>Contact </p> <!-- Move this line above the icons -->
