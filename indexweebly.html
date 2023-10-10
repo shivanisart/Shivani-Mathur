@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shivani Mathur</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      cursor: pointer; /* Add cursor pointer to indicate the page is clickable */
+    }
+    .gif-container {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      cursor: inherit; /* Inherit cursor style from the parent body element */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100vh;
+      width: auto;
+      height: auto;
+      margin-top: 0.23em;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+  </head>
+<body onclick="openLink()"> <!-- Add onclick event to the body element -->
+  <div class="gif-container" id="clickArea">
+    <span>Shivani Mathur</span>
+  </div>
+
+  <img id="gif1" src="pathways2-2.gif" alt="Pathways GIF">
+
+  <div class="gif-container">
+     <a href="https://shivanimathur.weebly.com" id="shivaniLink">Enter my universe</a>
+
+
+  </div>
+</body>
+</div>
+
+  <script>
+    function openLink() {
+      var link = document.getElementById("shivaniLink").href;
+      window.location.href = link;
+    }
+  </script>
+</body>
+</html>
