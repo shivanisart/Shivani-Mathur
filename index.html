@@ -38,28 +38,22 @@
     }
   </style>
 </head>
-  </head>
-<body onclick="openLink()"> <!-- Add onclick event to the body element -->
+<body onclick="openLink()">
   <div class="gif-container" id="clickArea">
     <span>Shivani Mathur</span>
   </div>
 
-  <img id="gif1" src="pathways2-2.gif" alt="Pathways GIF">
+  <img id="gif1" src="pathways2-2.gif?v=2" alt="Pathways GIF">
 
   <div class="gif-container">
     <a href="portfolio/port.html">Enter my universe</a>
-
-
   </div>
-</body>
-</div>
 
   <script>
     function openLink() {
-      var link = document.getElementById("shivaniLink").href;
+      var link = document.querySelector("a").href; // Use querySelector to select the link
       window.location.href = link;
     }
   </script>
 </body>
 </html>
-
