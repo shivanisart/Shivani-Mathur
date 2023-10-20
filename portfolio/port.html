@@ -208,14 +208,17 @@
     </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
     <div class="play-button"></div>
     </div>        
-        <!-- Thumbnail 2 -->
-        <div class="thumbnail-item">
-            <a href="../empty space/emptyspace.html">
-                <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
-                <div class="thumbnail-caption">Empty Space. 2015 - 2020. <br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
-    </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
+<!-- Thumbnail 2 -->
+<div class="thumbnail-item">
+    <a href="../empty space/emptyspace.html">
+        <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
+        <div class="thumbnail-caption">
+            Empty Space. 2015 - 2020. <br>View portfolio <br>
+            <a href="empty space.m4a" id="emptySpaceAudio">Listen to curator Lindzay Chan</a> <!-- Add the audio link -->
+        </div>
+    </a>
     <div class="play-button"></div>
-    </div>        
+</div>
         <!-- Thumbnail 3 -->
         <div class="thumbnail-item">
             <a href="../fibonacci/fibonacci.html">
@@ -250,7 +253,20 @@
     </div>
     <p>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
 </footer>
-    <script>
+  <script>
+    // Function to play the audio
+    function playEmptySpaceAudio() {
+        var audioElement = document.getElementById('emptySpaceAudio');
+        var audio = new Audio(audioElement.href);
+        audio.play();
+    }
+
+    // Attach a click event handler to the "Listen to curator Lindzay Chan" link
+    document.getElementById('emptySpaceAudio').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the link from navigating
+        playEmptySpaceAudio();
+    });
+
         function toggleMenu() {
         var menu = document.querySelector('.menu');
         var isMenuActive = menu.classList.contains('active');
