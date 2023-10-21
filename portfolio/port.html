@@ -17,7 +17,7 @@
             background-color: #4c4c4c;
             font-size: 36px;
             color: #929292;
-            font-size: 36pxx;
+            font-size: 36px;
         }
         /* Style header and footer */
         header {
@@ -78,6 +78,7 @@
           .menu-icon {
                 display: inline-block;
             }
+          }
 
 
         /* Header and Footer Styles */
@@ -165,7 +166,7 @@
              font-size: 36px;
         }
 
-      
+
     </style>
 
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -207,18 +208,21 @@
                 <div class="thumbnail-caption">Pathways. 2022- current. <br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
     </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
     <div class="play-button"></div>
-    </div>        
-<!-- Thumbnail 2 -->
-<div class="thumbnail-item">
-    <a href="../empty space/emptyspace.html">
-        <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
-        <div class="thumbnail-caption">
-            Empty Space. 2015 - 2020. <br>View portfolio <br>
-            <a href="empty space.m4a" id="emptySpaceAudio">Listen to curator Lindzay Chan</a> <!-- Add the audio link -->
+    </div>
+    <!-- Thumbnail 2 -->
+    <div class="thumbnail-item">
+        <a href="../empty space/emptyspace.html">
+            <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
+            <div class="thumbnail-caption">
+                Empty Space. 2015 - 2020. <br>View portfolio <br>
+            </div>
+        </a>
+        <div class="play-button">
+            <button id="playEmptySpaceAudio">Play Audio</button>
         </div>
-    </a>
-    <div class="play-button"></div>
-</div>
+    </div>
+
+
         <!-- Thumbnail 3 -->
         <div class="thumbnail-item">
             <a href="../fibonacci/fibonacci.html">
@@ -226,7 +230,7 @@
                 <div class="thumbnail-caption">Fibonacci Pattern. 2008  - 2018. <br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
     </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
     <div class="play-button"></div>
-    </div>        
+    </div>
       <!-- Thumbnail 4 -->
 <div class="thumbnail-item">
     <a href="../fire/fire.html">
@@ -254,18 +258,23 @@
     <p>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
 </footer>
   <script>
-    // Function to play the audio
-    function playEmptySpaceAudio() {
-        var audioElement = document.getElementById('emptySpaceAudio');
-        var audio = new Audio(audioElement.href);
-        audio.play();
-    }
+  // Function to play the audio for Thumbnail 2
+  function playEmptySpaceAudio() {
+      var audio = new Audio("empty space.m4a");
+      audio.play().then(function() {
+          // Audio started playing
+      }).catch(function(error) {
+          // Handle any errors
+          console.error('Audio playback error: ' + error);
+      });
+  }
 
-    // Attach a click event handler to the "Listen to curator Lindzay Chan" link
-    document.getElementById('emptySpaceAudio').addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the link from navigating
-        playEmptySpaceAudio();
-    });
+  // Attach a click event handler to the "Play Audio" button for Thumbnail 2
+  document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
+      playEmptySpaceAudio();
+  });
+
+
 
         function toggleMenu() {
         var menu = document.querySelector('.menu');
