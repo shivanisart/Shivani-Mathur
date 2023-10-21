@@ -218,7 +218,10 @@
             </div>
         </a>
         <div class="play-button">
-            <button id="playEmptySpaceAudio">Play Audio</button>
+            <button id="playEmptySpaceAudio">
+                <i class="fas fa-play"></i> <!-- White play icon -->
+            </button>
+            <button id="stopEmptySpaceAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
         </div>
     </div>
 
@@ -258,20 +261,38 @@
     <p>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
 </footer>
   <script>
+  var audio = new Audio("empty space.m4a");
+
   // Function to play the audio for Thumbnail 2
   function playEmptySpaceAudio() {
-      var audio = new Audio("empty space.m4a");
-      audio.play().then(function() {
-          // Audio started playing
-      }).catch(function(error) {
-          // Handle any errors
-          console.error('Audio playback error: ' + error);
-      });
+      if (audio.paused) {
+          audio.play().then(function() {
+              document.getElementById('playEmptySpaceAudio').style.display = 'none';
+              document.getElementById('stopEmptySpaceAudio').style.display = 'inline-block';
+          }).catch(function(error) {
+              console.error('Audio playback error: ' + error);
+          });
+      }
+  }
+
+  // Function to stop the audio
+  function stopEmptySpaceAudio() {
+      if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+          document.getElementById('stopEmptySpaceAudio').style.display = 'none';
+          document.getElementById('playEmptySpaceAudio').style.display = 'inline-block';
+      }
   }
 
   // Attach a click event handler to the "Play Audio" button for Thumbnail 2
   document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
       playEmptySpaceAudio();
+  });
+
+  // Attach a click event handler to the "Stop Audio" button
+  document.getElementById('stopEmptySpaceAudio').addEventListener('click', function () {
+      stopEmptySpaceAudio();
   });
 
 
