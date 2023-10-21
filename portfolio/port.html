@@ -214,53 +214,65 @@
 
     <!-- Thumbnail container -->
     <div class="thumbnail-container">
-        <!-- Thumbnail 1 -->
-        <div class="thumbnail-item">
-            <a href="../digital/digital.html">
-                <img src="pathwaysholo-poster.jpg" alt="Pathways Poster">
-                <div class="thumbnail-caption">Pathways. 2022- current. <br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
-    </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
-    <div class="play-button"></div>
-    </div>
-    <!-- Thumbnail 2 -->
-    <div class="thumbnail-item">
-        <a href="../empty space/emptyspace.html">
-            <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
-            <div class="thumbnail-caption">
-                Empty Space. 2015 - 2020. <br>View portfolio <br><br>Listen to curator Lindzay Chan <br>            </div>
-        </a>
-        <div class="play-button">
-            <button id="playEmptySpaceAudio"class="play-button-large">
-                <i class="fas fa-play"></i> <!-- White play icon -->
-            </button>
-            <button id="stopEmptySpaceAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
-        </div>
-    </div>
-
-
-        <!-- Thumbnail 3 -->
-        <div class="thumbnail-item">
-            <a href="../fibonacci/fibonacci.html">
-                <img src="010 circle of life.tif" alt="Circle of Life Poster">
-                <div class="thumbnail-caption">Fibonacci Pattern. 2008  - 2018. <br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
+     <!-- Thumbnail 1 -->
+<div class="thumbnail-item">
+    <a href="../digital/digital.html">
+        <img src="pathwaysholo-poster.jpg" alt="Pathways Poster">
+        <div class="thumbnail-caption">Pathways. 2022- current. <br>View portfolio <br></div>
     </a>
-        <div class="play-button">
-            <button id="playfibAudio"class="play-button-large">
-                <i class="fas fa-play"></i> <!-- White play icon -->
-            </button>
-            <button id="stopAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
-        </div>
+    <div class="play-button">
+        <button id="playPathwaysAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopPathwaysAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
     </div>
-      <!-- Thumbnail 4 -->
+</div>
+
+<!-- Thumbnail 2 (Empty Space) -->
+<div class="thumbnail-item">
+    <a href="../empty space/emptyspace.html">
+        <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
+        <div class="thumbnail-caption">
+            Empty Space. 2015 - 2020. <br>View portfolio <br>
+        </div>
+    </a>
+    <div class="play-button">
+        <button id="playEmptySpaceAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopEmptySpaceAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+<!-- Thumbnail 3 (Fibonacci) -->
+<div class="thumbnail-item">
+    <a href="../fibonacci/fibonacci.html">
+        <img src="010 circle of life.tif" alt="Circle of Life Poster">
+        <div class="thumbnail-caption">Fibonacci Pattern. 2008 - 2018. <br>View portfolio <br></div>
+    </a>
+    <div class="play-button">
+        <button id="playFibonacciAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopFibonacciAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+<!-- Thumbnail 4 (Fire and Water) -->
 <div class="thumbnail-item">
     <a href="../fire/fire.html">
         <img src="Entwined.jpg" alt="Entwined Poster">
-        <div class="thumbnail-caption">Fire cannot burn it<br>Water cannot wet it<br> 2011 - current.<br>View portfolio <br> <br>Listen to curator Lindzay Chan <br></div>
-    </a> <!-- Move the anchor tag around the image and caption to cover the entire thumbnail area -->
-    <div class="play-button"></div>
+        <div class="thumbnail-caption">Fire cannot burn it<br>Water cannot wet it<br> 2011 - current.<br>View portfolio <br></div>
+    </a>
+    <div class="play-button">
+        <button id="playFireAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopFireAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
 </div>
 
-            </a>
+
         </div>
     </div>
     </div>
@@ -278,29 +290,63 @@
     <p>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
 </footer>
   <script>
-  var audio = new Audio("empty space.m4a");
+var emptySpaceAudio = new Audio("empty space.m4a");
+var pathwaysAudio = new Audio("Lindzay.m4a");
+var fibonacciAudio = new Audio("Lindzayfibo.m4a");
+var fireAudio = new Audio("fire.m4a");
 
-  // Function to play the audio for Thumbnail 2
-  function playEmptySpaceAudio() {
-      if (audio.paused) {
-          audio.play().then(function() {
-              document.getElementById('playEmptySpaceAudio').style.display = 'none';
-              document.getElementById('stopEmptySpaceAudio').style.display = 'inline-block';
-          }).catch(function(error) {
-              console.error('Audio playback error: ' + error);
-          });
-      }
-  }
+function playAudio(audio, playButton, stopButton) {
+    if (audio.paused) {
+        audio.play().then(function() {
+            playButton.style.display = 'none';
+            stopButton.style.display = 'inline-block';
+        }).catch(function(error) {
+            console.error('Audio playback error: ' + error);
+        });
+    }
+}
 
-  // Function to stop the audio
-  function stopEmptySpaceAudio() {
-      if (!audio.paused) {
-          audio.pause();
-          audio.currentTime = 0;
-          document.getElementById('stopEmptySpaceAudio').style.display = 'none';
-          document.getElementById('playEmptySpaceAudio').style.display = 'inline-block';
-      }
-  }
+function stopAudio(audio, playButton, stopButton) {
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+        stopButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
+    }
+}
+
+document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
+    playAudio(emptySpaceAudio, this, document.getElementById('stopEmptySpaceAudio'));
+});
+
+document.getElementById('stopEmptySpaceAudio').addEventListener('click', function () {
+    stopAudio(emptySpaceAudio, document.getElementById('playEmptySpaceAudio'), this);
+});
+
+document.getElementById('playPathwaysAudio').addEventListener('click', function () {
+    playAudio(pathwaysAudio, this, document.getElementById('stopPathwaysAudio'));
+});
+
+document.getElementById('stopPathwaysAudio').addEventListener('click', function () {
+    stopAudio(pathwaysAudio, document.getElementById('playPathwaysAudio'), this);
+});
+
+document.getElementById('playFibonacciAudio').addEventListener('click', function () {
+    playAudio(fibonacciAudio, this, document.getElementById('stopFibonacciAudio'));
+});
+
+document.getElementById('stopFibonacciAudio').addEventListener('click', function () {
+    stopAudio(fibonacciAudio, document.getElementById('playFibonacciAudio'), this);
+});
+
+document.getElementById('playFireAudio').addEventListener('click', function () {
+    playAudio(fireAudio, this, document.getElementById('stopFireAudio'));
+});
+
+document.getElementById('stopFireAudio').addEventListener('click', function () {
+    stopAudio(fireAudio, document.getElementById('playFireAudio'), this);
+});
+
 
   // Attach a click event handler to the "Play Audio" button for Thumbnail 2
   document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
