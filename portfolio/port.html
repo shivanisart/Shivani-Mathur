@@ -163,9 +163,22 @@
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             margin-right: 5px;
-             font-size: 36px;
+             font-size: 1px;
+        }
+  /* Style the new white play button */
+        .play-button-large {
+            background-color: #929292; /* background */
+            color: #4c4c4c; /* Text color */
+            border: none;
+            padding: 20px; /* Increase the padding to increase the button size */
+            border-radius: 50%; /* Make the button round */
+            cursor: pointer;
         }
 
+        /* Adjust the size of the play icon */
+        .play-button-large i {
+            font-size: 36px; /* Increase the font size to make the icon larger */
+        }
 
     </style>
 
@@ -218,7 +231,7 @@
             </div>
         </a>
         <div class="play-button">
-            <button id="playEmptySpaceAudio">
+            <button id="playEmptySpaceAudio">>class="play-button-large">
                 <i class="fas fa-play"></i> <!-- White play icon -->
             </button>
             <button id="stopEmptySpaceAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
