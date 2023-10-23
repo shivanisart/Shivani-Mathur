@@ -168,6 +168,8 @@
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
         <h1>Shivani Mathur</h1>
+          <!-- Play button for the title -->
+        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
         <!-- Additional text below the header -->
         <p class="header-description">The Fibonacci series of paintings are early works inspired by Shivani's mathematical background.</p>
     </header>
@@ -339,17 +341,21 @@ Shivani Mathur skillfully integrated this mathematical pattern into both her art
             }
         }
 
-        // Function to toggle audio playback
-        function toggleAudio(index) {
-            var audio = document.getElementById('audio' + index);
-
-            // Check if the audio is paused, and toggle play/pause accordingly
-            if (audio.paused) {
-                audio.play();
+       
+          function playTitleAudio() {
+        if (!titleAudio) {
+            titleAudio = new Audio('Lindzayfibo.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+            titleAudio.loop = true; // Set the audio to loop continuously
+            titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+            titleAudio.play();
+        } else {
+            if (!titleAudio.paused) {
+                titleAudio.pause(); // Pause the audio if it's playing
             } else {
-                audio.pause();
+                titleAudio.play(); // Resume playing if it's paused
             }
         }
+    }
     </script>
 </body>
 </html>
