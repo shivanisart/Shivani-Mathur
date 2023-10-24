@@ -26,12 +26,12 @@
             max-width: 800px;
             margin: 0 auto; /* To center the content horizontally */
             padding: 0 20px; /* Add padding to create spacing from the edges */
-        }        
+        }
 
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
-              font-size: 36px; 
+              font-size: 36px;
             color: #929292;
         }
 
@@ -137,30 +137,28 @@
             position: relative;
         }
 
-        /* Play button icon */
-        .play-button::before {
-            content: "\f04b"; /* Unicode for the play icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            margin-right: 5px;
-        }
+
 
         /* Add a gap after "Empty Space" */
         .menu ul li:nth-child(4) {
             margin-bottom: 10px;
         }
 
-        /* Centered play button style */
-        .centered-play-button {
-            margin-top: 20px;
+        /* Center the play button for Lindzay Chan */
+        .play-button {
+            display: block;
             text-align: center;
+             margin: 0 auto;
+             padding: 5px 10px;
+
+
+
+        }
+        /* Style for the play button icon */
+  .play-button i {
+      color: #4c4c4c;
         }
 
-        /* Modified play button style */
-        .play-button {
-            font-size: 48px;
-            cursor: pointer;
-        }
     </style>
 
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -175,122 +173,129 @@
         <h1>Shivani Mathur</h1>
 
         <!-- Additional text below the header -->
-        <p class="header-description">Fire cannot burn it, Water cannot wet it. The Wind cannot dry it.<br> Verse 23,Capter 2, The Gita <br> <br>shaped. <br><br></p>
-    </header>
- <nav>
-    <div class="menu">
-        <ul>
-<li><a href="../portfolio/port.html">Back to Portfolios</a></li>
-                  <li></li><a href="../digital/digital.html">Pathways</a></li>
-                  <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                  <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-                  <li class="active"><a href="../fire/fire.html">Fire and Water</a></li><br>
-        </ul>
-    </div>
-</nav>
+        <p class="header-description">Fire cannot burn it, Water cannot wet it. The Wind cannot dry it.<br> Verse 23,Chapter 2, The Gita. <br><br></p>
+
+                </header>
+                <nav>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="../portfolio/port.html">Back to Portfolios</a></li>
+                            <li><a href="../digital/digital.html">Pathways</a></li>
+                            <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+                            <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                            <li class="active"><a href="../fire/fire.html">Fire and Water</a></li><br>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Thumbnail container -->
+                <div class="thumbnail-container">
+                    <!-- Thumbnail items go here -->
+                    <!-- Thumbnail 6 -->
+                    <div class="thumbnail-item">
+                        <img src="098gift.jpg" alt="098gift Image">
+                        <div class="thumbnail-caption">The Gift. 2012 Charcoal and gold on canvas 150x120 cm</div>
+                    </div>
+
+                    <!-- Thumbnail 2 -->
+                    <div class="thumbnail-item">
+                        <img src="Entwined.jpg" alt="Entwined Poster">
+                        <div class="thumbnail-caption">Fire cannot burn us. 2012 Charcoal, pastels and gold on canvas 120x150 cm</div>
+                    </div>
+                    <!-- Thumbnail 5 -->
+                    <div class="thumbnail-item">
+                        <img src="112wait.jpg" alt="112wait Image">
+                        <div class="thumbnail-caption">A tornado will not move me, 2014. This charcoal and gold self-portrait was made in the midst of a legal battle. 80x60 cm</div>
+                    </div>
+
+                    <!-- Thumbnail 3 -->
+                    <div class="thumbnail-item">
+                        <img src="charcoalcabbage.jpg" alt="Charcoal Cabbage">
+                        <div class="thumbnail-caption">Fire cannot burn me. 2021 Charcoal and cabbage juice on paper, 30x40 cm</div>
+                    </div>
+                    <!-- Thumbnail 4 -->
+                    <div class="thumbnail-item">
+                        <img src="267dsisy3.jpg" alt="267dsisy3 Image">
+                        <div class="thumbnail-caption">Water cannot wet me. 2021 Charcoal and cabbage juice on paper, 30x40</div>
+                    </div>
+                    <!-- Thumbnail 1 -->
+                    <div class="thumbnail-item">
+                        <img src="yellow.jpg" alt="Yellow Image">
+                        <div class="thumbnail-caption">The wind cannot move us. 2022 Charcoal on paper, 30x40</div>
+                    </div>
+                </div>
+
+                <div class="centered-play-button">
+      <p class="listen-text">Listen to curator Lindzay Chan on the series "Fire and Water"</p>
+      <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+  </div>
 
 
-    <!-- Thumbnail container -->
-    <div class="thumbnail-container">
-      <!-- Thumbnail 6 -->
-      <div class="thumbnail-item">
-          <img src="098gift.jpg" alt="098gift Image">
-          <div class="thumbnail-caption">The Gift.2012 Charcoal and gold spray on canvas 150x120 cm</div>
-      </div>
+                <!-- Bottom text section -->
+                <div id="bottom-text" style="display: none;">
+                    <!-- Your bottom text content goes here -->
+                    <p>In the words of Verse 23, Chapter 2 of The Gita, it is proclaimed, 'Fire cannot burn it, Water cannot wet it. The Wind cannot dry it.' These timeless verses encapsulate the essence of the indomitable spirit.</p>
+                    <p>Within the charcoals of her artwork, Shivani Mathur reveals the reservoir of inner strength that we can harness when our external surroundings take an unexpected turn. In the face of adversity, these charcoals become symbols of resilience and resourcefulness.</p>
+                    <p>In 2012, when Shivani Mathur received the medical counsel to forsake oil paints due to the corrosive fumes they emitted during the drying process, she made a courageous trade. She exchanged a box of oil paints for a stick of charcoal. This pivotal moment marked the beginning of her transformative artistic journey, demonstrating that even when faced with unforeseen challenges, true creativity finds a way to thrive.</p>
+                </div>
+            </div>
+
+            <footer>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+                </div>
+
+                <p>Contact</p> <!-- Move this line above the icons -->
+                <div class="footer-icons">
+                    <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+            </footer>
+
+            <script>
+                // Your JavaScript code here
+                function toggleMenu() {
+                    var menu = document.querySelector('.menu');
+                    var isMenuActive = menu.classList.contains('active');
+
+                    // Toggle the 'active' class for the menu
+                    menu.classList.toggle('active', !isMenuActive);
+
+                    if (!isMenuActive) {
+                        // If the menu is now active, scroll to the top of the page
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+
+                // Function to handle audio playback
+                var titleAudio;
 
 
-        <!-- Thumbnail 2 -->
-        <div class="thumbnail-item">
-            <img src="Entwined.jpg" alt="Entwined Poster">
-            <div class="thumbnail-caption">Fire cannot burn us. 2012 Charcoal, pastels and gold spray on canvas 120x150 cm</div>
-        </div>
-        <!-- Thumbnail 5 -->
-        <div class="thumbnail-item">
-            <img src="112wait.jpg" alt="112wait Image">
-            <div class="thumbnail-caption"> A tornado will not move me,2014 This charcoal and gold spray self portrait was made in the midst of a legal battle.  80x60 cm</div>
-        </div>
+                function playTitleAudio() {
+                    if (!titleAudio) {
+                        titleAudio = new Audio('empty space.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
+                        titleAudio.loop = false;
+                        titleAudio.volume = 0.7;
+                        titleAudio.play();
+                        // Show the bottom text
+                        document.getElementById('bottom-text').style.display = 'block';
+                    } else {
+                        if (titleAudio.paused) {
+                            titleAudio.play();
+                            // Show the bottom text
+                            document.getElementById('bottom-text').style.display = 'block';
+                        } else {
+                            titleAudio.pause();
+                            // Hide the bottom text
+                            document.getElementById('bottom-text').style.display = 'none';
+                        }
+                    }
+                }
 
-        <!-- Thumbnail 3 -->
-        <div class="thumbnail-item">
-            <img src="charcoalcabbage.jpg" alt="Charcoal Cabbage">
-            <div class="thumbnail-caption">Fire can not burn me. 2021 Charcoal and cabbage juice on paper, 30x40 cm</div>
-        </div>
-        <!-- Thumbnail 4 -->
-        <div class="thumbnail-item">
-            <img src="267dsisy3.jpg" alt="267dsisy3 Image">
-            <div class="thumbnail-caption">Water cannot wet me. 2021 Charcoal and cabbage juice on paper, 30x40</div>
-        </div>
-        <!-- Thumbnail 1 -->
 
-        <div class="thumbnail-item">
-            <img src="yellow.jpg" alt="Yellow Image">
-            <div class="thumbnail-caption">The wind cannot move us. 2022 Charcoal paper, 30x40</div>
-        </div>
-   <p class="listen-text">Listen to curator Lindzay Chan on the series "Fibonacci Pattern"</p>
-          <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
-   
-  <div id="bottom-text" style="display: none;">
+            </script>
+        </body>
 
-            <p In the words of Verse 23, Chapter 2 of The Gita, it is proclaimed, 'Fire cannot burn it, Water cannot wet it. The Wind cannot dry it.' These timeless verses encapsulate the essence of the indomitable spirit.
-
-Within the charcoals of her artwork, Shivani Mathur reveals the reservoir of inner strength that we can harness when our external surroundings take an unexpected turn. In the face of adversity, these charcoals become symbols of resilience and resourcefulness.
-
-In 2012, when Shivani Mathur received the medical counsel to forsake oil paints due to the corrosive fumes they emitted during the drying process, she made a courageous trade. She exchanged a box of oil paints for a stick of charcoal. This pivotal moment marked the beginning of her transformative artistic journey, demonstrating that even when faced with unforeseen challenges, true creativity finds a way to thrive."
-
-</p>
-
-      </div>
- </div>
-          </div>
-
-  <footer>
-             <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-        </div>
-
-    <p>Contact </p> <!-- Move this line above the icons -->
-    <div class="footer-icons">
-        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
-</footer>
-
-    <script>
-    function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        var isMenuActive = menu.classList.contains('active');
-
-        // Toggle the 'active' class for the menu
-        menu.classList.toggle('active', !isMenuActive);
-
-        if (!isMenuActive) {
-            // If the menu is now active, scroll to the top of the page
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    }
-            function playTitleAudio() {
-      if (!titleAudio) {
-          titleAudio = new Audio('empty space.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
-          titleAudio.loop = false;
-          titleAudio.volume = 0.7;
-          titleAudio.play();
-          // Show the bottom text
-          document.getElementById('bottom-text').style.display = 'block';
-      } else {
-          if (titleAudio.paused) {
-              titleAudio.play();
-              // Show the bottom text
-              document.getElementById('bottom-text').style.display = 'block';
-          } else {
-              titleAudio.pause();
-              // Hide the bottom text
-              document.getElementById('bottom-text').style.display = 'none';
-          }
-      }
-  }
-
-    </script>
-</body>
 </html>
