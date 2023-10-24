@@ -270,6 +270,26 @@ In 2012, when Shivani Mathur received the medical counsel to forsake oil paints 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
+            function playTitleAudio() {
+      if (!titleAudio) {
+          titleAudio = new Audio('empty space.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
+          titleAudio.loop = false;
+          titleAudio.volume = 0.7;
+          titleAudio.play();
+          // Show the bottom text
+          document.getElementById('bottom-text').style.display = 'block';
+      } else {
+          if (titleAudio.paused) {
+              titleAudio.play();
+              // Show the bottom text
+              document.getElementById('bottom-text').style.display = 'block';
+          } else {
+              titleAudio.pause();
+              // Hide the bottom text
+              document.getElementById('bottom-text').style.display = 'none';
+          }
+      }
+  }
 
     </script>
 </body>
