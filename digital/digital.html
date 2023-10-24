@@ -305,6 +305,11 @@ header {
         <p class="listen-text">Listen to curator Lindzay Chan on the series "Pathways"</p>
         <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
     </div>
+<div id="bottom-text" style="display: none;">
+    <p>
+        Pathways of light hung in Granary square in June 2022, winning an award for sustainability by LVMH/UAL 
+    </p>
+</div>
 
        
    <footer>
@@ -342,20 +347,28 @@ header {
         }
     }
 
-       function playTitleAudio() {
-           if (!titleAudio) {
-               titleAudio = new Audio('lindzay.m4a'); // Replace 'Lindsay.mp3' with the path to your title MP3 audio file
-               titleAudio.loop = true; // Set the audio to loop continuously
-               titleAudio.volume = 0.2; // Set the volume to your desired value
-           }
 
-           // Play or pause the title audio when the title button is clicked
-           if (!titleAudio.paused) {
-               titleAudio.pause(); // Pause the audio if it's playing
-           } else {
-               titleAudio.play(); // Resume playing if it's paused
-           }
-       }
+      function playTitleAudio() {
+    if (!titleAudio) {
+        titleAudio = new Audio('lindzay.m4a.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
+        titleAudio.loop = false;
+        titleAudio.volume = 0.7;
+        titleAudio.play();
+        // Show the bottom text
+        document.getElementById('bottom-text').style.display = 'block';
+    } else {
+        if (titleAudio.paused) {
+            titleAudio.play();
+            // Show the bottom text
+            document.getElementById('bottom-text').style.display = 'block';
+        } else {
+            titleAudio.pause();
+            // Hide the bottom text
+            document.getElementById('bottom-text').style.display = 'none';
+        }
+    }
+}
+
 
        function playVideoAudio() {
            if (!videoAudio) {
@@ -403,6 +416,7 @@ header {
                }
            }
        }
+      
    </script>
 
 
