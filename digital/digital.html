@@ -29,7 +29,7 @@ header {
           margin: 0 auto; /* To center the content horizontally */
           padding: 0 20px; /* Add padding to create spacing from the edges */
    }
-      
+
 
        /* Ensure that the menu icon is visible at smaller screen sizes */
        @media (max-width: 7680px) {
@@ -187,7 +187,7 @@ header {
         .play-button {
             display: block;
             margin: 0 auto;
-        }     
+        }
    </style>
 
    <!-- Include the Font Awesome CSS stylesheet -->
@@ -207,13 +207,15 @@ header {
     <nav>
         <div class="menu">
             <ul>
-               
-                <li><a href="../portfolio/port.html">Back to Portfolios</a></li>
-                   <li class="active"><a href="../digital/digital.html">Pathways</a></li>
-                   <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                   <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-                   <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-              
+                <li><a href="../index.html">Home</a></li><br>
+                <li><a href="../portfolio/port.html">Portfolio</a></li>
+                <li class="active"><a href="../digital/digital.html">Pathways</a></li>
+                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+                <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
             </ul>
         </div>
     </nav>
@@ -237,7 +239,7 @@ header {
             </div>
         </div>
 
-        
+
        <!-- Video 2 -->
 <div class="video-item">
     <div onclick="toggleVideo(1)" loop>
@@ -305,15 +307,10 @@ header {
         <p class="listen-text">Listen to curator Lindzay Chan on the series "Pathways"</p>
         <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
     </div>
-<div id="bottom-text" style="display: none;">
-    <p>
-        Pathways of light hung in Granary square in June 2022, winning an award for sustainability by LVMH/UAL 
-    </p>
-</div>
 
-       
+
    <footer>
-      
+
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
@@ -347,33 +344,39 @@ header {
         }
     }
 
+       function playTitleAudio() {
+           if (!titleAudio) {
+               titleAudio = new Audio('lindzay.m4a'); file
+               titleAudio.loop = false; // Set the audio to loop continuously
+               titleAudio.volume = 0.7; // Set the volume to your desired value
+               // Show the bottom text
+           document.getElementById('bottom-text').style.display = 'block';
+       } else {
+           if (titleAudio.paused) {
+               titleAudio.play();
+               // Show the bottom text
+               document.getElementById('bottom-text').style.display = 'block';
+           } else {
+               titleAudio.pause();
+               // Hide the bottom text
+               document.getElementById('bottom-text').style.display = 'none';
+           }
+       }
+   }
+   In this code, when the audio button is clicked, we set the display style property of the "bottom-text" element to 'block' to show the text. When the button is clicked again to pause the audio, we set the display property to 'none' to hide the text.
 
-      function playTitleAudio() {
-    if (!titleAudio) {
-        titleAudio = new Audio('lindzay.m4a.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
-        titleAudio.loop = false;
-        titleAudio.volume = 0.7;
-        titleAudio.play();
-        // Show the bottom text
-        document.getElementById('bottom-text').style.display = 'block';
-    } else {
-        if (titleAudio.paused) {
-            titleAudio.play();
-            // Show the bottom text
-            document.getElementById('bottom-text').style.display = 'block';
-        } else {
-            titleAudio.pause();
-            // Hide the bottom text
-            document.getElementById('bottom-text').style.display = 'none';
-        }
-    }
-}
+   Now, the bottom text will only be displayed when the audio button is clicked, and it will be hidden when the audio is paused.
+
+
+
+
 
 
        function playVideoAudio() {
            if (!videoAudio) {
                videoAudio = new Audio('010.mp3'); // Replace '010.mp3' with the path to your video MP3 audio file
-               videoAudio.volume = 0.2; // Set the volume to your desired value
+               videoAudio.volume = 0.7; // Set the volume to your desired value
+                videoAudio.loop = true
            }
 
            // Play the video audio when a video is playing
@@ -416,7 +419,6 @@ header {
                }
            }
        }
-      
    </script>
 
 
