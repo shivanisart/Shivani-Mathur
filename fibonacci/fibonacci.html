@@ -25,7 +25,7 @@
             max-width: 800px;
             margin: 0 auto; /* To center the content horizontally */
             padding: 0 20px; /* Add padding to create spacing from the edges */
-        }        
+        }
 
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -120,16 +120,26 @@
             border-radius: 5px;
         }
 
-        /* Updated CSS for the play button */
-        .play-button {
-            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
-            border: none; /* Remove the button border */
-            color: #4c4c4c; /* Updated text color to #929292 */
-            font-size: 8px;
-            padding: 5px 8px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+        /* Center the "Listen to curator Lindzay Chan" text and change its color to #929292 */
+      .listen-text {
+          text-align: center;
+          color: #929292;
+      }
+
+      /* Center the play button for Lindzay Chan */
+      .play-button {
+          display: block;
+          text-align: center;
+           margin: 0 auto;
+           padding: 5px 10px;
+           
+
+
+      }
+      /* Style for the play button icon */
+.play-button i {
+    color: #4c4c4c;
+      }
 
         /* Style the active menu item */
         .menu ul li.active a {
@@ -137,9 +147,7 @@
             color: #ffffff; /* Text color for active link */
         }
 
-        .play-button:hover {
-            background-color: #929292; /* Darker background color on hover */
-        }
+
 
         /* Center the play button within the video-item */
         .video-item {
@@ -197,7 +205,7 @@
             <!-- Audio for playing MP3 -->
             <audio src="010.mp3" id="audio0"></audio>
             <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(0)"><i class="fas fa-play"></i></button>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
@@ -214,7 +222,7 @@
             <!-- Audio for playing MP3 -->
             <audio src="031 Celebration of life.mp3" id="audio1"></audio>
             <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(1)"><i class="fas fa-play"></i></button>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
@@ -231,7 +239,7 @@
             <!-- Audio for playing MP3 -->
             <audio src="011 green fibonacci.mp3" id="audio2"></audio>
             <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(2)"><i class="fas fa-play"></i></button>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
@@ -248,7 +256,7 @@
             <!-- Audio for playing MP3 -->
             <audio src="014 turquoise fibonacci.mp3" id="audio3"></audio>
             <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(3)"><i class="fas fa-play"></i></button>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
@@ -264,8 +272,7 @@
             <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(4)">Learning, 2008. Oil on canvas. 76x102 cm.</div>
             <!-- Audio for playing MP3 -->
             <audio src="012 Learning.mp3" id="audio4"></audio>
-            <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(4)"><i class="fas fa-play"></i></button>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
@@ -280,18 +287,17 @@
             <!-- Video caption (toggle button) -->
             <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(5)">Study, 2008. Oil on canvas. 76x102 cm.</div>
             <!-- Audio for playing MP3 -->
-            <audio src="013 Study.mp3" id="audio5"></audio>
-            <!-- Toggle button for audio with play arrow icon -->
-            <button class="play-button" onclick="toggleAudio(5)"><i class="fas fa-play"></i></button>
+            <audio src="013 Study.mp3" id="audio5"<br>></audio>
+
             <!-- Video description -->
             <div class="video-description">
                 <p></p>
             </div>
         </div>
-                  <p>Listen to curator Lindxay Chan on the series <br> "Fibonacci Pattern"</p> 
         <!-- Play button for the title -->
-        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
-        <p>The Fibonacci number series is a mathematical pattern evident in numerous natural phenomena. It can be observed in the growth rings of trees, the proportions of the human body, the reproduction of rabbits, the dispersal of seeds, the development of plants, and even in the fluctuations of financial markets.
+               <p class="listen-text">Listen to curator Lindzay Chan on the series "Fibonacci Pattern"</p>
+               <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+        <p><br>The Fibonacci number series is a mathematical pattern evident in numerous natural phenomena. It can be observed in the growth rings of trees, the proportions of the human body, the reproduction of rabbits, the dispersal of seeds, the development of plants, and even in the fluctuations of financial markets.
 
 At the heart of this pattern lies the golden ratio, a constant proportion that manifests at every scale within it. This golden ratio is often regarded as the most aesthetically pleasing and harmonious proportion known to humanity. It's no wonder that natural patterns in the micro and macro worlds appear similar and interconnected.
 
@@ -302,7 +308,7 @@ Shivani Mathur skillfully integrated this mathematical pattern into both her art
   </div>
 
     <footer>
-        
+
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
@@ -346,8 +352,9 @@ Shivani Mathur skillfully integrated this mathematical pattern into both her art
         function playTitleAudio() {
             if (!titleAudio) {
                 titleAudio = new Audio('Lindzayfibo.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
-                titleAudio.loop = true;
-                titleAudio.volume = 0.2;
+                titleAudio.loop = false;
+                titleAudio.volume = 0.7
+                ;
                 titleAudio.play();
             } else {
                 if (titleAudio.paused) {
