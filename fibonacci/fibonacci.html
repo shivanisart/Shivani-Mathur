@@ -132,7 +132,7 @@
           text-align: center;
            margin: 0 auto;
            padding: 5px 10px;
-           
+
 
 
       }
@@ -297,12 +297,15 @@
         <!-- Play button for the title -->
                <p class="listen-text">Listen to curator Lindzay Chan on the series "Fibonacci Pattern"</p>
                <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
-        <p><br>The Fibonacci number series is a mathematical pattern evident in numerous natural phenomena. It can be observed in the growth rings of trees, the proportions of the human body, the reproduction of rabbits, the dispersal of seeds, the development of plants, and even in the fluctuations of financial markets.
+               <div id="bottom-text" style="display: none;">
+             <p>
+                 The Fibonacci number series is a mathematical pattern evident in numerous natural phenomena. It can be observed in the growth rings of trees, the proportions of the human body, the reproduction of rabbits, the dispersal of seeds, the development of plants, and even in the fluctuations of financial markets.
 
 At the heart of this pattern lies the golden ratio, a constant proportion that manifests at every scale within it. This golden ratio is often regarded as the most aesthetically pleasing and harmonious proportion known to humanity. It's no wonder that natural patterns in the micro and macro worlds appear similar and interconnected.
 
-Shivani Mathur skillfully integrated this mathematical pattern into both her artistic endeavors and her trading practices, recognizing its universal significance and beauty.</p>
-
+Shivani Mathur skillfully integrated this mathematical pattern into both her artistic endeavors and her trading practices, recognizing its universal significance and beauty.
+             </p>
+         </div>
 
     </div>
   </div>
@@ -361,6 +364,27 @@ Shivani Mathur skillfully integrated this mathematical pattern into both her art
                     titleAudio.play();
                 } else {
                     titleAudio.pause();
+                }
+            }
+        }
+
+        function playTitleAudio() {
+            if (!titleAudio) {
+                titleAudio = new Audio('Lindzayfibo.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
+                titleAudio.loop = false;
+                titleAudio.volume = 0.7;
+                titleAudio.play();
+                // Show the bottom text
+                document.getElementById('bottom-text').style.display = 'block';
+            } else {
+                if (titleAudio.paused) {
+                    titleAudio.play();
+                    // Show the bottom text
+                    document.getElementById('bottom-text').style.display = 'block';
+                } else {
+                    titleAudio.pause();
+                    // Hide the bottom text
+                    document.getElementById('bottom-text').style.display = 'none';
                 }
             }
         }
