@@ -12,7 +12,7 @@
             margin: 0
             font-size: 24px; /* Adjust the font size as needed */
             color:  #929292 ;
-            font-size: 36px; 
+            font-size: 36px;
             padding: 0;
         }
         /* Style header and footer */
@@ -123,7 +123,7 @@
         .header-content {
             text-align: center;
         }
-    
+
       /* Style the active menu item */
       .menu ul li.active a {
           background-color: #4c4c4c;
@@ -154,6 +154,22 @@
         .video-set {
             margin-bottom: 20px;
         }
+        /* Center the "Listen to curator Lindzay Chan" text and change its color to #929292 */
+      .listen-text {
+          text-align: center;
+          color: #929292;
+      }
+
+      /* Center the play button for Lindzay Chan */
+      .play-button {
+          display: block;
+          text-align: center;
+           margin: 0 auto;
+           padding: 5px 10px;
+
+
+
+      }
     </style>
     <!-- Include the Font Awesome CSS stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -165,8 +181,7 @@
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
         <h1>Shivani Mathur</h1>
-        <!-- Play button for the title -->
-        <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+
         <!-- Additional text below the header -->
         <p class="header-description">Empty Space is not empty. It is the seat of the most violent physics <br> - John Wheeler, Quantum physicist</p>
     </header>
@@ -184,19 +199,19 @@
 
     <!-- First set of videos (with GIFs playing) -->
     <div class="video-container video-set">
-       
+
         <!-- Video 4 - Wormhole (Still Image) -->
         <div class="video-item">
             <img src="171the wormhole 2.JPG" alt="Wormhole, 2019 <br>Oil on canvas. 50x50 cm." style="width: 100%;">
             <p class="video-caption">Wormhole, 2019<br>Oil on canvas. 50x50 cm.<br><br></p>
-        </div> 
-        
+        </div>
+
         <!-- Video 5 - Celestial Bodies (Still Image) -->
         <div class="video-item">
             <img src="043 celestial bodies.JPG" alt="Celestial Bodies, 2012, 102x92 cm. 35cmx35cm." style="width: 100%;">
             <p class="video-caption">Celestial Bodies, 2012 <br>Oil on canvas. 102x92 cm. <br><br></p>
 
-        
+
         <!-- Video 1 - Infinity -->
         <div class="video-item" onclick="toggleGif(1)">
             <img src="Infinity.GIF" alt="Empty Space, 2020 <br>Oil on canvas. 50x50 cm." style="width: 100%;" data-state="paused" controls preload="none">
@@ -219,6 +234,12 @@
 
 
 
+          <!-- Play button for the title -->
+          <!-- Play button for the title -->
+                 <p class="listen-text">Listen to curator Lindzay Chan on the series "Fibonacci Pattern"</p>
+          <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+
+        <div id="bottom-text" style="display: none;">
 
             <p <br><br>The exploration of empty space, dark matter, and the behavior of light in a vacuum have long been focal points of inquiry in physics. However, to date, true 'empty space' remains elusive.
 
@@ -230,11 +251,12 @@ Think of Kha as the empty space within the hub of a wheel, the void. Insert an a
 
 Could the path to infinity lie in realising the power of what is invisible?</p>
 
+      </div>
         </div>
     </div>
 </div>
    <footer>
-       
+
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
@@ -265,19 +287,26 @@ Could the path to infinity lie in realising the power of what is invisible?</p>
     var titleAudio; // Declare the audio variable globally
 
     function playTitleAudio() {
-        if (!titleAudio) {
-            titleAudio = new Audio('emptyspace.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
-            titleAudio.loop = true; // Set the audio to loop continuously
-            titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-            titleAudio.play();
-        } else {
-            if (!titleAudio.paused) {
-                titleAudio.pause(); // Pause the audio if it's playing
-            } else {
-                titleAudio.play(); // Resume playing if it's paused
-            }
-        }
-    }
+      if (!titleAudio) {
+          titleAudio = new Audio('emptyspace.m4a'); // Replace 'Lindzayfibo.m4a' with your audio file
+          titleAudio.loop = false;
+          titleAudio.volume = 0.7;
+          titleAudio.play();
+          // Show the bottom text
+          document.getElementById('bottom-text').style.display = 'block';
+      } else {
+          if (titleAudio.paused) {
+              titleAudio.play();
+              // Show the bottom text
+              document.getElementById('bottom-text').style.display = 'block';
+          } else {
+              titleAudio.pause();
+              // Hide the bottom text
+              document.getElementById('bottom-text').style.display = 'none';
+          }
+      }
+  }
+
 
     // Function to toggle between image and gif
     function toggleGif(index) {
