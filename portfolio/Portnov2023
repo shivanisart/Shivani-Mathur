@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            font-size: 36px;
+            color: #929292;
+            font-size: 36px;
+        }
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            font-size: 36px; /* Adjust the font size to your preference */
+        }
+
+
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto; /* To center the content horizontally */
+            padding: 0 20px; /* Add padding to create spacing from the edges */
+        }
+
+        .menu-icon {
+            font-size: 36px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1, .header-description {
+            text-align: center;
+            color: #929292;
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu.active ul {
+            display: block;
+        }
+        /* Style the active menu item */
+        .menu ul li.active a {
+            background-color: #4c4c4c; /* Dark grey background color */
+            color: #ffffff; /* Text color for active link */
+        }
+
+
+        nav a {
+            color: #929292;
+            text-decoration: none;
+        }
+
+        .menu {
+            text-align: center;
+        }
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+          .menu-icon {
+                display: inline-block;
+            }
+          }
+
+
+        /* Header and Footer Styles */
+        header,
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Font Awesome Icons Styles */
+        .footer-icons {
+            font-size: 36px;
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        /* Thumbnail Container Styles */
+        .thumbnail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Thumbnail Item Styles */
+        .thumbnail-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+            /* Remove the blue underline from links */
+.thumbnail-item a {
+    text-decoration: none;
+    color: #4c4c4c; /* Set the link color to black */
+}
+
+/* Center-align the play button */
+.thumbnail-item .play-button {
+    text-align: center;
+}
+
+
+        .thumbnail-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Updated styles for the caption */
+        .thumbnail-caption {
+            font-size: 36px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 16px; /* Adjust this value to control the spacing */
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Play button icon */
+        .play-button::before {
+            content: "\f04b"; /* Unicode for the play icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 5px;
+             font-size: 1px;
+        }
+  /* Style the new white play button */
+        .play-button-large {
+            background-color: #4c4c4c; /* background change to #929292 to makr the button visible */
+            color: #4c4c4c; /* Text color */
+            border: none;
+            padding: 20px; /* Increase the padding to increase the button size */
+            border-radius: 50%; /* Make the button round */
+            cursor: pointer;
+        }
+
+        /* Adjust the size of the play icon */
+        .play-button-large i {
+            font-size: 36px; /* Increase the font size to make the icon larger */
+        }
+
+    </style>
+
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="page-container">
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+        </div>
+        <h1>Shivani Mathur</h1>
+        <!-- Additional text below the header -->
+        <p class="header-description">Shivani Mathur's work is abour breakage, fracture, cracks and gaps. What causes it? How does it alter our experience and ehat is the payhway to regenerate? 
+, selection of portfolios </p>
+    </header>
+   <nav>
+    <div class="menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../background/background.html">Journey and Awards</a></li> <br>
+            <li class="active"><a href="../portfolio/port.html">Portfolios</a></li> 
+            <li><a href="../awards/awards.html">Past Exhibitions</a></li>
+            <li><a href="../aboutshivani/aboutshivani.html">Inspiration</a></li><br>
+            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Thumbnail container -->
+    <div class="thumbnail-container">
+     <!-- Thumbnail 1 -->
+<div class="thumbnail-item">
+     <div class="thumbnail-caption">Pathways. 2022- current.<br> </div>
+    <a href="../digital/digital.html">
+        <img src="pathwaysholo-poster.jpg" alt="Pathways Poster">
+        <div class="thumbnail-caption">View portfolio <br></div>
+    </a>
+    <div class="play-button">
+        <button id="playPathwaysAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopPathwaysAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+<!-- Thumbnail 2 (Empty Space) -->
+<div class="thumbnail-item">
+    <div class="thumbnail-caption">
+            Empty Space. 2015 - 2020. <br>
+        </div>
+    <a href="../empty space/emptyspace.html">
+        <img src="171the wormhole 2.JPG" alt="The Wormhole Poster">
+        <div class="thumbnail-caption">
+            View portfolio <br>
+        </div>
+    </a>
+    <div class="play-button">
+        <button id="playEmptySpaceAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopEmptySpaceAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+<!-- Thumbnail 3 (Fibonacci) -->
+<div class="thumbnail-item">
+     <div class="thumbnail-caption">Fibonacci Pattern. 2008 - 2018.<br></div>
+    <a href="../fibonacci/fibonacci.html">
+        <img src="010 circle of life.tif" alt="Circle of Life Poster">
+        <div class="thumbnail-caption">View portfolio <br></div>
+    </a>
+    <div class="play-button">
+        <button id="playFibonacciAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopFibonacciAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+<!-- Thumbnail 4 (Fire and Water) -->
+<div class="thumbnail-item">
+      <div class="thumbnail-caption">Fire cannot burn it. Water cannot wet it. 2011 - current.</div>
+    <a href="../fire/fire.html">
+        <img src="Entwined.jpg" alt="Entwined Poster">
+        <div class="thumbnail-caption">View portfolio <br></div>
+    </a>
+    <div class="play-button">
+        <button id="playFireAudio" class="play-button-large">
+            <i class="fas fa-play"></i> <!-- White play icon -->
+        </button>
+        <button id="stopFireAudio" style="display: none;">Stop Audio</button> <!-- Hidden stop button -->
+    </div>
+</div>
+
+        <p><br> Shivani works with Oil paints, charcoal, sculpture and installation and digital interactive and generative art. Influences of her mathematical background, her multicultural upbringing, her experiences as a woman and a minority surface in her work repeatedly. Her current portfolios are situated at the intersection of art, science amf technology, They are directly influenced by research in three distinct disciplines:<br><br>- Ancient Indian philosophy from the Upanishads, emphasizing self-discovery and interconnectedness, encouraging individuals to look within themselves to understand the universe.<br>- The Japanese art of Kintsugi, celebrating imperfections and breakage.<br>- Quantum physics, which explores subatomic particle behavior and questions how they are related to the cosmic scale.<br><br> At the core of her creative practice lies the belief that art transforms lives.
+          </p>
+
+        </div>
+    </div>
+    </div>
+   <footer>
+
+          <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+        </div>
+    <p>Contact </p> <!-- Move this line above the icons -->
+    <div class="footer-icons">
+        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
+</footer>
+  <script>
+var emptySpaceAudio = new Audio("**empty space.m4a");
+var pathwaysAudio = new Audio("**lindzay.m4a");
+var fibonacciAudio = new Audio("**Lindzayfibo.m4a");
+var fireAudio = new Audio("**fire.m4a");
+
+function playAudio(audio, playButton, stopButton) {
+    if (audio.paused) {
+        audio.play().then(function() {
+            playButton.style.display = 'none';
+            stopButton.style.display = 'inline-block';
+        }).catch(function(error) {
+            console.error('Audio playback error: ' + error);
+        });
+    }
+}
+
+function stopAudio(audio, playButton, stopButton) {
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+        stopButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
+    }
+}
+
+document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
+    playAudio(emptySpaceAudio, this, document.getElementById('stopEmptySpaceAudio'));
+});
+
+document.getElementById('stopEmptySpaceAudio').addEventListener('click', function () {
+    stopAudio(emptySpaceAudio, document.getElementById('playEmptySpaceAudio'), this);
+});
+
+document.getElementById('playPathwaysAudio').addEventListener('click', function () {
+    playAudio(pathwaysAudio, this, document.getElementById('stopPathwaysAudio'));
+});
+
+document.getElementById('stopPathwaysAudio').addEventListener('click', function () {
+    stopAudio(pathwaysAudio, document.getElementById('playPathwaysAudio'), this);
+});
+
+document.getElementById('playFibonacciAudio').addEventListener('click', function () {
+    playAudio(fibonacciAudio, this, document.getElementById('stopFibonacciAudio'));
+});
+
+document.getElementById('stopFibonacciAudio').addEventListener('click', function () {
+    stopAudio(fibonacciAudio, document.getElementById('playFibonacciAudio'), this);
+});
+
+document.getElementById('playFireAudio').addEventListener('click', function () {
+    playAudio(fireAudio, this, document.getElementById('stopFireAudio'));
+});
+
+document.getElementById('stopFireAudio').addEventListener('click', function () {
+    stopAudio(fireAudio, document.getElementById('playFireAudio'), this);
+});
+
+
+  // Attach a click event handler to the "Play Audio" button for Thumbnail 2
+  document.getElementById('playEmptySpaceAudio').addEventListener('click', function () {
+      playEmptySpaceAudio();
+  });
+
+  // Attach a click event handler to the "Stop Audio" button
+  document.getElementById('stopEmptySpaceAudio').addEventListener('click', function () {
+      stopEmptySpaceAudio();
+  });
+
+
+
+        function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        var isMenuActive = menu.classList.contains('active');
+
+        // Toggle the 'active' class for the menu
+        menu.classList.toggle('active', !isMenuActive);
+
+        if (!isMenuActive) {
+            // If the menu is now active, scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+
+    </script>
+</body>
+</html>
