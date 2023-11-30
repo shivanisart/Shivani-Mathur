@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Shivani Mathur</title>
   <style>
@@ -12,13 +12,13 @@
       height: 100vh;
       background-color: black;
       overflow: hidden;
-      cursor: pointer; /* Add cursor pointer to indicate the page is clickable */
+      cursor: pointer;
     }
     .gif-container {
       text-align: center;
       color: white;
       font-size: 3rem;
-      cursor: inherit; /* Inherit cursor style from the parent body element */
+      cursor: inherit;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,25 +35,36 @@
       text-decoration: none;
       color: white;
       font-size: 2.5rem;
+      display: flex;
+      align-items: center; /* Align the icon and text vertically */
+    }
+    .fa-icon {
+      margin-right: 0.5em; /* Add some space between the icon and text */
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body onclick="openLink()">
   <div class="gif-container" id="clickArea">
     <span>Shivani Mathur</span>
   </div>
 
-  <img id="gif1" src="cover.GIF" alt="Pathways GIF">
+  <img id="gif1" src="cover.GIF?v=2" alt="Pathways GIF">
 
   <div class="gif-container">
-    <a href="https://shivanimathur.weebly.com" id="shivaniLink">Enter</a>
+   <a href="https://shivanimathur.weebly.com">
+    <a href="portfolio/port.html">
+      <i class="fas fa-sign-in-alt fa-icon"></i>
+    </a>
   </div>
 
   <script>
     function openLink() {
-      var link = document.getElementById("shivaniLink").href;
+      var link = document.querySelector("a").href;
       window.location.href = link;
     }
   </script>
 </body>
 </html>
+
+ 
