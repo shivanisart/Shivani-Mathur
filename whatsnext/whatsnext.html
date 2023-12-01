@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivani Mathur. Fibonacci</title>
     <style>
-        /* Add this style block for menu icon and container */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            font-size: 36px; 
+            color: #929292;
+            text-align: center;
+        }
+
         .menu-icon {
             font-size: 36px;
             cursor: pointer;
             text-align: center;
-            margin: 0 auto;
-            padding-top: 20px;
-            z-index: 2; /* Ensure the menu icon stays on top */
+            margin: 20px auto;
         }
 
         .menu-container {
@@ -21,9 +26,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #4c4c4c; /* Semi-transparent black background */
-            display: none; /* Initially hide the menu */
-            z-index: 1; /* Ensure the menu stays on top of the page content */
+            background-color: #4c4c4c;
+            display: none;
+            z-index: 1;
         }
 
         .menu-content {
@@ -54,72 +59,28 @@
             color: #bbb;
             text-decoration: none;
         }
-        /* End of added styles */
-
-        /* Your existing styles remain unchanged */
-        /* ... */
     </style>
 
     <!-- Include the Font Awesome CSS stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-  <div class="page-container">
-    <header>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-        </div>
-        <h1>Shivani Mathur</h1>
-        <!-- Additional text below the header -->
-        <p class="header-description"><br>presents<br>
-"The Door"<br><br>12 October - 15 December 2023<br> William gallery, William Blake House, 8 Marshall Street, London.<br> To join the preview on 12 october please send a message.<br><br><a href="https://www.eventbrite.co.uk/e/shivani-mathur-at-the-william-gallery-london-tickets-723893784797?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"><i class="fas fa-envelope"></i></a> </p>
-    </header>
-    <nav>
-        <div class="menu-container" id="menuContainer">
-            <span class="close" onclick="closeMenu()">&times;</span>
-            <div class="menu-content">
-                <ul>
-                    <li><a href="../portfolio/port.html">Portfolios</a></li> 
-                    <li><a href="../awards/awards.html">Past Exhibitions</a></li>
-                    <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li>
-                    <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Video container -->
-    <div class="video-container">
-        <!-- Video 1 -->
-        <div class="video-item">
-            <video poster="thedoor.GIF" class="poster" loop>
-                <!-- Your video content goes here -->
-            </video>
-        </div>
-
-        <p>
-            The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
-            Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in two parts - an oil painting and a digital generative artwork
-            that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
-            Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October to 15 December 2023.
-        </p>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
     </div>
-  </div>
 
-    <footer>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../portfolio/port.html">Portfolios</a></li> 
+                <li><a href="../awards/awards.html">Past Exhibitions</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li>
+                <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+            </ul>
         </div>
+    </div>
 
-        <p>Contact </p> <!-- Move this line above the icons -->
-        <div class="footer-icons">
-            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-            <a href="http://www.shivani-mathur.com/"><i class="fas fa-globe"></i></a>
-        </div>
-        <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
-    </footer>
     <script>
         function toggleMenu() {
             var menuContainer = document.getElementById('menuContainer');
