@@ -19,6 +19,9 @@
             color: #929292;
             text-align: center;
             padding: 10px;
+            width: 100%;
+            z-index: 1;
+            top: 0;
             font-size: 36px; /* Adjust the font size to your preference */
         }
 
@@ -50,6 +53,12 @@
             text-align: center;
             margin: 20px auto;
             padding-top: 20px;
+            position: absolute;
+            background-color: #4c4c4c;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
         }
 
         .menu-container {
@@ -71,13 +80,7 @@
             font-size: 2.5rem;
             color: #929292;
         }
-        .menu-icon,
-    header {
-            position: fixed;
-            width: 100%;
-            z-index: 2; /* Ensure the menu icon and header appear above other elements */
-            background-color: #4c4c4c; /* Adjust background color if needed */
-        }
+      
         .menu-content ul {
             list-style: none;
             padding: 0;
