@@ -208,17 +208,20 @@
         <p>Contact </p> <!-- Move this line above the icons
 
     <script>
-    function toggleMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        var currentDisplay = window.getComputedStyle(menuContainer).display;
+      document.getElementById('menuIcon').addEventListener('click', toggleMenu);
+        document.getElementById('footerMenuIcon').addEventListener('click', toggleMenu);
 
-        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-    }
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
 
-    function closeMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        menuContainer.style.display = 'none';
-    }
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
 </script>
     </body>
 </html>
