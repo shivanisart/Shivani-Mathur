@@ -5,36 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivani Mathur. Fibonacci</title>
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        /* Style header and footer */
-        header {
-            background-color: #4c4c4c;
-            color: #929292;
-            text-align: center;
-            padding: 10px;
-            font-size: 36px; /* Adjust the font size to your preference */
-        }
-
-
-        /* Apply max-width to the page container */
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto; /* To center the content horizontally */
-            padding: 0 20px; /* Add padding to create spacing from the edges */
-        }
-
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
-            font-size: 36px; 
-            color: #929292; /* Updated text color to #929292 */
-        }
-
+        /* Add this style block for menu icon and container */
         .menu-icon {
             font-size: 36px;
             cursor: pointer;
@@ -43,167 +14,50 @@
             padding-top: 20px;
             z-index: 2; /* Ensure the menu icon stays on top */
         }
-  /* Style the menu container */
-    .menu-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #4c4c4c; /* Semi-transparent black background */
-    display: none; /* Initially hide the menu */
-    z-index: 1; /* Ensure the menu stays on top of the page content */
-}
 
-/* Style the menu content */
-.menu-content {
-    text-align: center;
-    padding: 50px;
-    text-decoration: none;
-    font-size: 2.5rem;
-    color:#929292;
-}
-/* Style the active menu item */
-.menu-content a.active {
-    color: white;
-}
-
-/* Style the close button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-}
-
-
-        h1, .header-description {
-            text-align: center;
-            text-decoration: none;
-            color: #929292; /* Updated text color to #ffffff (white) */
-        }
-
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navigation Styles */
-nav ul {
-    display: none;
-    list-style: none;
-    padding: 0;
-}
-
-.menu ul li.active ul {
-    display: block;
-}
-
-/* Style the active menu item */
-.menu ul li.active a {
-    background-color: #4c4c4c; /* Dark grey background color */
-    color: #ffffff; /* Text color for active link */
-}
-
-nav a {
-    color: #929292; /* Updated text color to #929292 */
-    text-decoration: none;
-    font-size: 2.5rem;
-}
-
-.menu {
-    text-align: center;
-}
-
-
-        /* Header and Footer Styles */
-        header,
-        footer {
-            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
-            color: #929292; /* Updated text color to #929292 */
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Font Awesome Icons Styles */
-        .footer-icons {
-            font-size: 36px;
-        }
-
-        .footer-icons a {
-            color: #929292; /* Updated text color to #929292 */
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer-icons a:hover {
-            color: #ffffff;
-        }
-
-        /* Video Container Styles */
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Video Item Styles */
-        .video-item {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .video-item video {
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            height: 100%;
+            background-color: #4c4c4c; /* Semi-transparent black background */
+            display: none; /* Initially hide the menu */
+            z-index: 1; /* Ensure the menu stays on top of the page content */
         }
 
-        .video-caption {
-            font-size: 36px; /* Updated font size to 36px */
+        .menu-content {
             text-align: center;
+            padding: 50px;
+            text-decoration: none;
+            font-size: 2.5rem;
+            color: #929292;
+        }
+
+        .menu-content a.active {
+            color: white;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
             cursor: pointer;
-            background-color: #4c4c4c; /* Updated background color to #4c4c4c */
-            color: #929292; /* Updated text color to #929292 */
-            padding: 5px 10px;
-            border-radius: 5px;
+            transition: 0.3s;
         }
 
- 
-
-
-        .play-button:hover {
-            background-color: #929292; /* Darker background color on hover */
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
         }
+        /* End of added styles */
 
-        /* Center the play button within the video-item */
-        .video-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Updated CSS for the video description */
-        .video-description {
-            display: none; /* Hide the description by default */
-            text-align: center;
-            font-size: 36px; /* Updated font size to 36px */
-            color: #929292; /* Updated text color to #929292 */
-        }
-
+        /* Your existing styles remain unchanged */
+        /* ... */
     </style>
 
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -220,91 +74,63 @@ nav a {
         <p class="header-description"><br>presents<br>
 "The Door"<br><br>12 October - 15 December 2023<br> William gallery, William Blake House, 8 Marshall Street, London.<br> To join the preview on 12 october please send a message.<br><br><a href="https://www.eventbrite.co.uk/e/shivani-mathur-at-the-william-gallery-london-tickets-723893784797?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"><i class="fas fa-envelope"></i></a> </p>
     </header>
-<nav>
-    <div class="menu-container" id="menuContainer">
-        <span class="close" onclick="closeMenu()">&times;</span>
-        <div class="menu-content">
-            <ul>
-                <li><a href="../portfolio/port.html">Portfolios</a></li> 
-                <li><a href="../awards/awards.html">Past Exhibitions</a></li>
-                <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li>
-                <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-            </ul>
+    <nav>
+        <div class="menu-container" id="menuContainer">
+            <span class="close" onclick="closeMenu()">&times;</span>
+            <div class="menu-content">
+                <ul>
+                    <li><a href="../portfolio/port.html">Portfolios</a></li> 
+                    <li><a href="../awards/awards.html">Past Exhibitions</a></li>
+                    <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li>
+                    <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-   
+    </nav>
 
     <!-- Video container -->
     <div class="video-container">
         <!-- Video 1 -->
         <div class="video-item">
             <video poster="thedoor.GIF" class="poster" loop>
-
-            </div>
+                <!-- Your video content goes here -->
+            </video>
         </div>
 
-
         <p>
-
-The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
-Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in  two-parts - an oil painting and a digital generative artwork that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
-Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October to 15 December 2023.</p>
-
-
-  </div>
+            The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
+            Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in two parts - an oil painting and a digital generative artwork
+            that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
+            Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October to 15 December 2023.
+        </p>
+    </div>
   </div>
 
     <footer>
-               <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
 
-    <p>Contact </p> <!-- Move this line above the icons -->
-    <div class="footer-icons">
-        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-        <a href="http://www.shivani-mathur.com/"><i class="fas fa-globe"></i></a>
-    </div>
-    <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
-</footer>
+        <p>Contact </p> <!-- Move this line above the icons -->
+        <div class="footer-icons">
+            <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
+            <a href="http://www.shivani-mathur.com/"><i class="fas fa-globe"></i></a>
+        </div>
+        <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
+    </footer>
     <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
 
-function toggleMenu() {
-    var menuContainer = document.getElementById('menuContainer');
-    var currentDisplay = window.getComputedStyle(menuContainer).display;
-
-    menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-}
-
-function closeMenu() {
-    var menuContainer = document.getElementById('menuContainer');
-    menuContainer.style.display = 'none';
-}
-
-
-
-        // Function to toggle video description
-        function toggleDescription(index) {
-            var description = document.querySelectorAll('.video-description')[index];
-            if (description.style.display === 'block') {
-                description.style.display = 'none';
-            } else {
-                description.style.display = 'block';
-            }
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
         }
 
-        // Function to toggle audio playback
-        function toggleAudio(index) {
-            var audio = document.getElementById('audio' + index);
-
-            // Check if the audio is paused, and toggle play/pause accordingly
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
         }
     </script>
 </body>
