@@ -277,7 +277,9 @@ Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October
 
 function toggleMenu() {
     var menuContainer = document.getElementById('menuContainer');
-    menuContainer.style.display = (menuContainer.style.display === 'block') ? 'none' : 'block';
+    var currentDisplay = window.getComputedStyle(menuContainer).display;
+
+    menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
 }
 
 function closeMenu() {
