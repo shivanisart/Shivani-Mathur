@@ -71,6 +71,28 @@
             font-size: 2.5rem;
             color: #929292;
         }
+        .menu-icon,
+    header {
+            position: fixed;
+            width: 100%;
+            z-index: 2; /* Ensure the menu icon and header appear above other elements */
+            background-color: #4c4c4c; /* Adjust background color if needed */
+        }
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+        }
+
 
         .menu-content a.active {
             color: white;
@@ -79,10 +101,10 @@
 
         .close {
             position: absolute;
-            bottom: 35px;
+            bottom: 55px;
             text-align: center;
             color: white;
-            font-size: 36px;
+            font-size: 100 px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
