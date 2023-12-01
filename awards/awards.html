@@ -260,13 +260,7 @@
       position: relative;
       overflow: hidden;
     }
-    /* Style for slideshow container */
-    .manual-slideshow-container {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
+ 
     /* Style for individual slides */
     .mySlides1 {
       display: none;
@@ -300,23 +294,7 @@
       padding: 10px;
     }
 
-    /* Style for prev/next buttons */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 36px;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 10px;
-      background-color: #4c4c4c;
-      color: white;
-      transition: background-color 0.3s;
-    }
 
-    .prev:hover, .next:hover {
-      background-color: #4c4c4c;
-    }
 
     /* Style for the captions (initially hidden) */
     .mySlides1 .caption {
@@ -360,7 +338,7 @@
         <!-- Play button for the title -->
         <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
         <!-- Additional text below the header -->
-        <p class="header-description">"Success keeps me motivated. Failure keeps me learning. Staying immersed in art keeps me happy."<br><br> Shivani Mathur</p>
+        <p class="header-description">Past exhibitions, awards and collaborations</p>
     </header>
 
     <nav>
@@ -368,7 +346,7 @@
         
             <li><a href="../portfolio/port.html">Portfolios</a></li> 
             <li class="active"><a href="../awards/awards.html">Past Exhibitions</a></li>
-            <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li><br>
+            <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li>
             <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
             </ul>
         </div>
@@ -564,15 +542,6 @@
     </div>
 </div>
 
-<!-- Manual Gallery Slideshow Container -->
-  <div class="manual-slideshow-container">
-
-<!-- Previous and Next Buttons for Gallery Slideshow -->
-<a class="prev-gallery" onclick="plusSlidesGallery(-1)">&#10094;</a>
-<a class="next-gallery" onclick="plusSlidesGallery(1)">&#10095;</a>
-</div>
-</div>
-
 
 
 
@@ -646,20 +615,7 @@
                 slides[slideIndex - 1].style.display = "block";
             }
 
-            function plusSlidesGallery(n) {
-                manualSlideIndex += n;
-                var slides = document.querySelectorAll(".mySlides");
-                if (manualSlideIndex > slides.length) {
-                    manualSlideIndex = 1;
-                }
-                if (manualSlideIndex < 1) {
-                    manualSlideIndex = slides.length;
-                }
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[manualSlideIndex - 1].style.display = "block";
-            }
+     
 
             // Toggle the menu
             function toggleMenu() {
