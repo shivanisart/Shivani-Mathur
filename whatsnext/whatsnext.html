@@ -41,7 +41,43 @@
             text-align: center;
             margin: 0 auto;
             padding-top: 20px;
+            z-index: 2; /* Ensure the menu icon stays on top */
         }
+  /* Style the menu container */
+    .menu-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+      display: none; /* Initially hide the menu */
+      z-index: 1; /* Ensure the menu stays on top of the page content */
+            /* Style the menu content */
+    .menu-content {
+      text-align: center;
+      padding: 50px;
+      color: white;
+    }
+
+    /* Style the close button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
+    }
 
         h1, .header-description {
             text-align: center;
@@ -62,6 +98,8 @@
         nav a {
             color: #929292; /* Updated text color to #929292 */
             text-decoration: none;
+            font-size: 2.5rem;
+
         }
 
         .menu {
@@ -166,7 +204,9 @@
 "The Door"<br><br>12 October - 15 December 2023<br> William gallery, William Blake House, 8 Marshall Street, London.<br> To join the preview on 12 october please send a message.<br><br><a href="https://www.eventbrite.co.uk/e/shivani-mathur-at-the-william-gallery-london-tickets-723893784797?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"><i class="fas fa-envelope"></i></a> </p>
     </header>
 <nav>
-    <div class="menu">
+       <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
         <ul>
        
           
@@ -175,7 +215,9 @@
             <li><a href="../aboutshivani/aboutshivani.html">About the artist</a></li><br>
             <li> class="active"<a href="../whatsnext/whatsnext.html">What's Next</a></li>
         </ul>
-    </div>
+            </div>
+        </div>
+      </div>
 </nav>
 
     <!-- Video container -->
@@ -214,11 +256,15 @@ Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October
 </footer>
     <script>
     function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        var isMenuActive = menu.classList.contains('active');
+        function toggleMenu() {
+      var menuContainer = document.getElementById('menuContainer');
+      menuContainer.style.display = (menuContainer.style.display === 'block') ? 'none' : 'block';
+    }
 
-        // Toggle the 'active' class for the menu
-        menu.classList.toggle('active', !isMenuActive);
+    function closeMenu() {
+      var menuContainer = document.getElementById('menuContainer');
+      menuContainer.style.display = 'none';
+    }
 
         if (!isMenuActive) {
             // If the menu is now active, scroll to the top of the page
