@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivani Mathur. Whats next</title>
     <style>
-                /* Reset default styles */
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        * Style header and footer */
+
+        /* Style header and footer */
         header {
             background-color: #4c4c4c;
             color: #929292;
@@ -25,12 +26,14 @@
             text-decoration: none;
             color: #929292; /* Updated text color to #ffffff (white) */
         }
-                /* Apply max-width to the page container */
+
+        /* Apply max-width to the page container */
         .page-container {
             max-width: 800px;
             margin: 0 auto; /* To center the content horizontally */
             padding: 0 20px; /* Add padding to create spacing from the edges */
         }
+
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
@@ -89,7 +92,7 @@
             text-decoration: none;
         }
 
-  footer {
+        footer {
             background-color: #4c4c4c; /* Updated background color to #4c4c4c */
             color: #929292; /* Updated text color to #929292 */
             text-align: center;
@@ -140,7 +143,8 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
-  .play-button:hover {
+
+        .play-button:hover {
             background-color: #929292; /* Darker background color on hover */
         }
 
@@ -158,9 +162,6 @@
             font-size: 36px; /* Updated font size to 36px */
             color: #929292; /* Updated text color to #929292 */
         }
-
-
- 
     </style>
 
     <!-- Include the Font Awesome CSS stylesheet -->
@@ -183,74 +184,42 @@
         </div>
     </div>
 
-      <!-- Video container -->
+    <!-- Video container -->
     <div class="video-container">
         <!-- Video 1 -->
         <div class="video-item">
             <video poster="thedoor.GIF" class="poster" loop>
-
-            </div>
+                <!-- Video source here -->
+            </video>
         </div>
 
-
         <p>
-
-The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
-Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in  two-parts - an oil painting and a digital generative artwork that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
-Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October to 15 December 2023.</p>
-
-
-  </div>
-  </div>
+            The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William Blake.
+            Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in two-parts - an oil painting and a digital generative artwork that invites us to contemplate the role of our choices in shaping our destiny when we encounter a closed door.
+            Join us at The William Blake House, 8 Marshall Street, London, UK. 12th October to 15 December 2023.
+        </p>
+    </div>
 
     <footer>
-               <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" onclick="toggleMenu()">
             <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
         </div>
 
-    <p>Contact </p> <!-- Move this line above the icons -->
-    <div class="footer-icons">
-        <a href="mailto:shivanimathurart@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/shivani-mathur-a480438"><i class="fab fa-linkedin"></i></a>
-        <a href="http://www.shivani-mathur.com/"><i class="fas fa-globe"></i></a>
-    </div>
-    <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
-</footer>
+        <p>Contact </p> <!-- Move this line above the icons
 
     <script>
-        function toggleMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            var currentDisplay = window.getComputedStyle(menuContainer).display;
+    function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
 
-            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-        }
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+    }
 
-        function closeMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            menuContainer.style.display = 'none';
-        }
-          // Function to toggle video description
-        function toggleDescription(index) {
-            var description = document.querySelectorAll('.video-description')[index];
-            if (description.style.display === 'block') {
-                description.style.display = 'none';
-            } else {
-                description.style.display = 'block';
-            }
-        }
-
-        // Function to toggle audio playback
-        function toggleAudio(index) {
-            var audio = document.getElementById('audio' + index);
-
-            // Check if the audio is paused, and toggle play/pause accordingly
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-    </script>
-</body>
+    function closeMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        menuContainer.style.display = 'none';
+    }
+</script>
+    </body>
 </html>
+
