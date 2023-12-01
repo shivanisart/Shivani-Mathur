@@ -255,22 +255,16 @@ Join us at The William Blake House, 8 Marshall Street, London, UK.  12th October
     <p> <br>&copy; Copyright Shivani Mathur.<br> All rights reserved.</p>
 </footer>
     <script>
-  function toggleMenu() {
-   var menuContainer = document.getElementById('menuContainer');
-   menuContainer.style.display = (menuContainer.style.display === 'block') ? 'none' : 'block';
+
+function toggleMenu() {
+    var menuContainer = document.getElementById('menuContainer');
+    menuContainer.style.display = (menuContainer.style.display === 'block') ? 'none' : 'block';
 }
 
-
-    function closeMenu() {
-      var menuContainer = document.getElementById('menuContainer');
-      menuContainer.style.display = 'none';
-    }
-
-        if (!isMenuActive) {
-            // If the menu is now active, scroll to the top of the page
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    }
+function closeMenu() {
+    var menuContainer = document.getElementById('menuContainer');
+    menuContainer.style.display = 'none';
+}
 
 
         // Function to toggle video description
