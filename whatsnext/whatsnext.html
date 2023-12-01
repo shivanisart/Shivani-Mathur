@@ -93,27 +93,40 @@
             color: #929292; /* Updated text color to #ffffff (white) */
         }
 
-        nav ul {
-            display: none;
-            list-style: none;
-            padding: 0;
-        }
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .menu ul li.active ul {
-            display: block;
-        }
+/* Navigation Styles */
+nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
 
+.menu ul li.active ul {
+    display: block;
+}
 
-        nav a {
-            color: #929292; /* Updated text color to #929292 */
-            text-decoration: none;
-            font-size: 2.5rem;
+/* Style the active menu item */
+.menu ul li.active a {
+    background-color: #4c4c4c; /* Dark grey background color */
+    color: #ffffff; /* Text color for active link */
+}
 
-        }
+nav a {
+    color: #929292; /* Updated text color to #929292 */
+    text-decoration: none;
+    font-size: 2.5rem;
+}
 
-        .menu {
-            text-align: center;
-        }
+.menu {
+    text-align: center;
+}
+
 
         /* Header and Footer Styles */
         header,
@@ -171,11 +184,6 @@
 
  
 
-        /* Style the active menu item */
-        .menu ul li.active a {
-            background-color: #4c4c4c; /* Dark grey background color */
-            color: #ffffff; /* Text color for active link */
-        }
 
         .play-button:hover {
             background-color: #929292; /* Darker background color on hover */
