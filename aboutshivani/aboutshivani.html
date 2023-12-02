@@ -33,30 +33,79 @@
 
         /* Ensure that the menu icon is visible at smaller screen sizes */
         @media (max-width: 7680px) {
-            .menu-icon {
-                display: inline-block;
-            }
-
-            nav ul {
-                display: none;
-                list-style: none; /* Remove default list-style */
-                padding: 0; /* Remove any default padding */
-            }
-
-            .menu.active ul {
-                display: block;
-            }
-        }
-
-        /* Style the menu links */
-        nav a {
-            color: #929292 !important;
-            text-decoration: none; /* Remove underlines from links */
-        }
-
-        /* Center the menu */
-        .menu {
+        .menu-icon {
+            font-size: 36px;
+            cursor: pointer;
             text-align: center;
+            margin: 20px auto;
+            padding-top: 20px;
+            background-color: #4c4c4c;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4c4c4c;
+            color: #929292;
+            display: none;
+            z-index: 1;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px;
+            text-decoration: none;
+            font-size: 4.5rem;
+            color: #929292;
+        }
+      
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+        text-decoration: none;
+        color: #929292;
+        display: block; /* Add this line to make the entire area clickable */
+        padding: 10px; /* Add padding for better clickability */
+        }
+       .menu-content li.active a {
+        color: white;
+        text-decoration: none;
+        }
+
+        .close {
+          position: absolute;
+          bottom: 120px; /* Adjust this value to your preference */
+          text-align: center;
+          color: white;
+          font-size: 100px; /* Remove the space between 100 and px */
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.3s;
+  }
+
+        
+        
+            
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
         }
 
         /* Style header and footer */
@@ -143,19 +192,6 @@
             text-align: center;
         }
 
-        .menu-icon {
-            font-size: 36px;
-            cursor: pointer;
-            text-align: center;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
-
-        /* Style the active menu item */
-    .menu ul li.active a {
-        background-color: #4c4c4c;
-        color: #ffffff !important; /* Text color for active link */
-    }
 
         h1 {
             text-align: center;
@@ -187,22 +223,7 @@
             max-width: 800px;
         }
 
-        /* Style the Close button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover, .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
+        
 
         /* Style the gallery container with Flexbox */
         .gallery-container {
@@ -240,18 +261,7 @@
         <!-- Additional text below the header -->
         <p class="header-description">"The same essence that gives you life also animates the entire cosmos.<br>Therefore the potential within you is as vast as the universe itself."<br> - Chandogya Upanishad circa 800 BCE</p>
       </header>
-      <nav>
-    <div class="menu">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../background/background.html">Journey and Awards</a></li> <br>
-            <li><a href="../portfolio/port.html">Portfolios</a></li> 
-            <li><a href="../awards/awards.html">Past Exhibitions</a></li>
-            <li class="active"><a href="../aboutshivani/aboutshivani.html">Inspiration</a></li><br>
-            <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-        </ul>
-    </div>
-</nav>
+     
 
       <!-- Video container -->
       <div class="video-container">
@@ -370,18 +380,22 @@ Much like the radiance within us - if we are not afraid of  the cracks in oursel
 
     <!-- JavaScript for toggling the menu and video description -->
     <script>
-     function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        var isMenuActive = menu.classList.contains('active');
+     
+        
+        <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
 
-        // Toggle the 'active' class for the menu
-        menu.classList.toggle('active', !isMenuActive);
-
-        if (!isMenuActive) {
-            // If the menu is now active, scroll to the top of the page
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
         }
-    }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+
+        
 
 
         function toggleVideo(index) {
