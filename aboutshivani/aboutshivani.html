@@ -378,61 +378,56 @@ Much like the radiance within us - if we are not afraid of  the cracks in oursel
 </footer>
 
 
-    <!-- JavaScript for toggling the menu and video description -->
-    <script>
-     
-        
-        <script>
-        function toggleMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            var currentDisplay = window.getComputedStyle(menuContainer).display;
+    <!-- JavaScript for toggling the menu and video description --
+   <!-- JavaScript for toggling the menu and video description -->
+<script>
+    function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
 
-            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+    }
+
+    function closeMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        menuContainer.style.display = 'none';
+    }
+
+    function toggleVideo(index) {
+        var video = document.querySelectorAll('video')[index];
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    function toggleDescription(index) {
+        var description = document.querySelectorAll('.video-description')[index];
+        description.style.display = description.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // JavaScript for modal image gallery
+    function openModal(image) {
+        var modal = document.querySelector('.modal');
+        var modalContent = document.querySelector('.modal-content');
+        var closeBtn = document.querySelector('.close');
+
+        modalContent.innerHTML = '<img src="' + image + '" alt="Modal Image">';
+        modal.style.display = 'block';
+
+        // Close the modal when the user clicks on the "X" button
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
         }
 
-        function closeMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            menuContainer.style.display = 'none';
-        }
-
-        
-
-
-        function toggleVideo(index) {
-            var video = document.querySelectorAll('video')[index];
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        }
-
-        function toggleDescription(index) {
-            var description = document.querySelectorAll('.video-description')[index];
-            description.style.display = description.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // JavaScript for modal image gallery
-        function openModal(image) {
-            var modal = document.querySelector('.modal');
-            var modalContent = document.querySelector('.modal-content');
-            var closeBtn = document.querySelector('.close');
-
-            modalContent.innerHTML = '<img src="' + image + '" alt="Modal Image">';
-            modal.style.display = 'block';
-
-            // Close the modal when the user clicks on the "X" button
-            closeBtn.onclick = function() {
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 modal.style.display = 'none';
             }
-
-            // Close the modal when the user clicks anywhere outside of the modal
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
         }
-    </script>
+    }
+ </script>
 </body>
 </html>
