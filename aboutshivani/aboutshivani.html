@@ -225,6 +225,12 @@
             max-width: 800px;
         }
 
+        .video-item .poster {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+        }
         
 
         /* Style the gallery container with Flexbox */
@@ -291,6 +297,20 @@
 
 
         <!-- Video 6 -->
+           <div class="video-item">
+        <video class="poster" poster="dusttolife.jpg" onclick="toggleVideo(0)" loop playsinline>
+            <source src="dusttolife.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="poster" poster="scottposter.jpg" onclick="toggleVideo(1)" loop playsinline>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Video caption (toggle button) -->
+        <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)">
+            <br><i class="fas fa-play"></i> <br>Shivani Mathur. photo credit: Scott Mead. 
+        </div>
+    </div>
         <div class="video-item">
             <div onclick="toggleVideo(0)" loop>
                 <video poster="dusttolife-poster.jpg" loop playsinline>
