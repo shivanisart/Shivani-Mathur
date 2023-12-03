@@ -263,6 +263,40 @@
             width: 100%;
             height: auto;
         }
+/* Add these styles at the end of your existing CSS */
+
+/* Style for the container of video posters (side by side) */
+.video-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Style for each poster container */
+.poster-container {
+    width: 47%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Style for the video posters (thumbnails) */
+.video-item video,
+.video-item .poster {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Style for the caption */
+.caption {
+    background-color: #4c4c4c;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -303,37 +337,33 @@
      
 
       <!-- Video container -->
-      <div class="video-container">
-
-
-        <!-- Video 6 -->
-           <div class="video-item">
-        <video class="poster" poster="dusttolife.jpg" onclick="toggleVideo(0)" loop playsinline>
-            <source src="dusttolife.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="caption" style="background-color: #4c4c4c; text-align: left;">
-            <p style="font-size: 18px; font-weight: bold;">Dust to life. Self portrait.</p>
-            <p> Click image to view.</p>
-        </div>
-        <video class="poster" poster="scottposter.jpg" onclick="toggleVideo(1)" loop playsinline>
-            <source src="video2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- Video caption (toggle button) -->
-   
-    </div>
-        <div class="video-item">
-            <div onclick="toggleVideo(0)" loop>
-                <video poster="dusttolife-poster.jpg" loop playsinline>
-                    <source src="dusttolife1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <!-- Video caption (toggle button) -->
-                <div class="video-caption" style="background-color: #4c4c4c;" onclick="toggleDescription(0)">
-                    <br><i class="fas fa-play"></i> <br>Shivani Mathur. photo credit: Scott Mead. 
-                </div>
+   <div class="video-container">
+    <!-- Video 6 -->
+    <div class="video-item">
+        <!-- Dust to life -->
+        <div class="poster-container" onclick="toggleVideo(0)">
+            <video class="poster" poster="dusttolife.jpg" loop playsinline>
+                <source src="dusttolife.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption" style="background-color: #4c4c4c; text-align: left;">
+                <p style="font-size: 18px; font-weight: bold;">Dust to life. Self portrait.</p>
+                <p> Click image to view.</p>
             </div>
+        </div>
+
+        <!-- Scottphoto -->
+        <div class="poster-container" onclick="toggleVideo(1)">
+            <video class="poster" poster="scottposter.jpg" loop playsinline>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption" style="background-color: #4c4c4c; text-align: left;">
+                <p style="font-size: 18px; font-weight: bold;">Scottphoto.</p>
+                <p> Click image to view.</p>
+            </div>
+        </div>
+    </div>
             <!-- Additional text below the picture -->
             <p style="font-size: 36px; font-weight: bold;">The pathway from Lucknow to London</p>
             <p>
