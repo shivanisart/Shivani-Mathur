@@ -236,31 +236,39 @@ header {
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-<div class="page-container">
-    <header>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+     <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../portfolio/port.html">Back to Portfolios</a></li><br>
+                 
+                <li><a href="../digital/digital.html">Pathways</a></li><br>
+                <li><a href="../empty space/emptyspace.html">From Zero to infinity</a></li><br>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li><br>
+                <li class="active"><a href="../fire/fire.html">Fractured relationships</a></li><br>
+                <li <a href="../whatsnext/junk.html">Contact</a></li><br>
+                
+                <a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+              
+  
+            </ul>
         </div>
+    </div>
+
+    <header>
+        <div class="page-container">
+            <h1>Shivani Mathur</h1>
+
         <h1>Shivani Mathur</h1>
         <!-- Additional text below the header -->
         <p class="header-description"> Shivani Mathur's current work, Pathways, at the intersection of art, science and technology, was created while listening to the background sound of our universe as recorded by NASA. You can hear it when you touch the images below. </p>
-    </header>
-
-    <nav>
-        <div class="menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li><br>
-                <li><a href="../portfolio/port.html">Portfolio</a></li>
-                <li class="active"><a href="../digital/digital.html">Pathways</a></li>
-                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
-                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
-                <li><a href="../fire/fire.html">Fire and Water</a></li><br>
-                <li><a href="../awards/awards.html">Awards & Exhibitions</a></li>
-                <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
-                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
-            </ul>
-        </div>
-    </nav>
+ 
 
     <!-- Video container -->
     <div class="video-container">
