@@ -35,18 +35,21 @@
             color: #929292;
         }
 
-     .menu-icon {
+ 
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
             font-size: 36px;
             cursor: pointer;
-            text-align: center;
             margin: 20px auto;
             padding-top: 20px;
             background-color: #4c4c4c;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2;
         }
+
+/* Add styles for the rest of your content, e.g., padding or margin to avoid overlay */
+
 
         .menu-container {
             position: fixed;
@@ -300,9 +303,6 @@
             </div>
 
             <footer>
-                <div class="menu-icon" onclick="toggleMenu()">
-                    <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-                </div>
 
                 <p>Contact</p> <!-- Move this line above the icons -->
                 
