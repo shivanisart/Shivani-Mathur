@@ -394,6 +394,11 @@
 
     <!-- Slideshow Container -->
     <div class="slideshow-container">
+     
+    <div class="slideshow-container" onclick="advanceSlides(1)">
+     
+    </div>
+
         
         <!-- Slide 1 -->
         <div class="mySlides1 fade">
@@ -662,6 +667,25 @@
                 slides[slideIndex - 1].style.display = "block";
             }
 
+            // Add this function to enable manual navigation by clicking on the slideshow area
+        function advanceSlides(n) {
+          showSlidesManual(manualSlideIndex += n);
+        }
+
+        // Modify the existing showSlidesManual function
+        function showSlidesManual(n) {
+          var slides = document.querySelectorAll(".mySlides1");
+          if (n > slides.length) {
+            manualSlideIndex = 1;
+      }
+          if (n < 1) {
+            manualSlideIndex = slides.length;
+      }
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[manualSlideIndex - 1].style.display = "block";
+    }
 
             var titleAudio; // Declare the audio variable globally
 
