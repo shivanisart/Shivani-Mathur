@@ -43,17 +43,17 @@
             text-align: center;
             padding: 10px;
         }
-.menu-icon {
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
             font-size: 36px;
             cursor: pointer;
-            text-align: center;
             margin: 20px auto;
-            padding-top: 20px;
+            padding-top: 0px;
             background-color: #4c4c4c;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2;
         }
 
         .menu-container {
@@ -596,9 +596,7 @@
  
 
     <footer>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="../icon.jpg" alt="Menu" style="width: 100px; height: 100px;">
-        </div>
+    
        
         <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
     </footer>
