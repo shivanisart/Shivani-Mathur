@@ -588,107 +588,82 @@
         <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
     </footer>
 
+<script>
+    var slideIndex = 0;
+    var manualSlideIndex = 0;
+    var titleAudio;
 
-    <script>
-        function toggleMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            var currentDisplay = window.getComputedStyle(menuContainer).display;
-
-            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-        }
-
-        function closeMenu() {
-            var menuContainer = document.getElementById('menuContainer');
-            menuContainer.style.display = 'none';
-        }
-
-            var slideIndex = 0;
-            var manualSlideIndex = 0;
-
-            // Start the automatic slideshow at the top
-            showSlides();
-            // Start the automatic slideshow at the bottom
-            showSlidesManual();
-
-            function showSlides() {
-                var i;
-                var slides = document.querySelectorAll(".mySlides1");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                slides[slideIndex - 1].style.display = "block";
-                setTimeout(showSlides, 7000); // Change slide every 7 seconds
-            }
-
-            function showSlidesManual() {
-                var slides = document.querySelectorAll(".mySlides");
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                manualSlideIndex++;
-                if (manualSlideIndex > slides.length) {
-                    manualSlideIndex = 1;
-                }
-                slides[manualSlideIndex - 1].style.display = "block";
-                setTimeout(showSlidesManual, 7000); // Change slide every 7 seconds
-            }
-
-            function plusSlides(n) {
-                slideIndex += n;
-                var slides = document.querySelectorAll(".mySlides1");
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                if (slideIndex < 1) {
-                    slideIndex = slides.length;
-                }
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[slideIndex - 1].style.display = "block";
-            }
-
-            // Add this function to enable manual navigation by clicking on the slideshow area
-        function advanceSlides(n) {
-          showSlidesManual(manualSlideIndex += n);
-        }
-
-        // Modify the existing showSlidesManual function
-        function showSlidesManual(n) {
-          var slides = document.querySelectorAll(".mySlides1");
-          if (n > slides.length) {
-            manualSlideIndex = 1;
-      }
-          if (n < 1) {
-            manualSlideIndex = slides.length;
-      }
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[manualSlideIndex - 1].style.display = "block";
+    function toggleMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        var currentDisplay = window.getComputedStyle(menuContainer).display;
+        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
     }
 
-            var titleAudio; // Declare the audio variable globally
+    function closeMenu() {
+        var menuContainer = document.getElementById('menuContainer');
+        menuContainer.style.display = 'none';
+    }
 
-            function playTitleAudio() {
-                if (!titleAudio) {
-                    titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
-                    titleAudio.loop = false; // Set the audio to loop continuously
-                    titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-                    titleAudio.play();
-                } else {
-                    if (!titleAudio.paused) {
-                        titleAudio.pause(); // Pause the audio if it's playing
-                    } else {
-                        titleAudio.play(); // Resume playing if it's paused
-                    }
-                }
+    function showSlides() {
+        var slides = document.querySelectorAll(".mySlides1");
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 7000); // Change slide every 7 seconds
+    }
+
+    function plusSlides(n) {
+        slideIndex += n;
+        var slides = document.querySelectorAll(".mySlides1");
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        if (slideIndex < 1) {
+            slideIndex = slides.length;
+        }
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+    function advanceSlides(n) {
+        showSlidesManual(manualSlideIndex += n);
+    }
+
+    function showSlidesManual(n) {
+        var slides = document.querySelectorAll(".mySlides1");
+        if (n > slides.length) {
+            manualSlideIndex = 1;
+        }
+        if (n < 1) {
+            manualSlideIndex = slides.length;
+        }
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[manualSlideIndex - 1].style.display = "block";
+    }
+
+    function playTitleAudio() {
+        if (!titleAudio) {
+            titleAudio = new Audio('lindzay.m4a');
+            titleAudio.loop = false;
+            titleAudio.volume = 0.2;
+            titleAudio.play();
+        } else {
+            if (!titleAudio.paused) {
+                titleAudio.pause();
+            } else {
+                titleAudio.play();
             }
-        </script>
-
-</body>
+        }
+    }
+</script>
+    </body>
 </html>
