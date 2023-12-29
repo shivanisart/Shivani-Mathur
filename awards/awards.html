@@ -631,21 +631,6 @@
     }
 
     function plusSlides(n) {
-        slideIndex += n;
-        var slides = document.querySelectorAll(".mySlides1");
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        if (slideIndex < 1) {
-            slideIndex = slides.length;
-        }
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-    }
-
-    function advanceSlides(n) {
         showSlidesManual(manualSlideIndex += n);
     }
 
@@ -677,6 +662,9 @@
             }
         }
     }
+
+    // Call the initial function to start the automatic slideshow
+    showSlides();
 </script>
     </body>
 </html>
