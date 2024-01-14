@@ -1,355 +1,369 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivani Mathur.Awards</title>
-    <style>
-        /* Basic CSS styling */
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Shivani Mathur.Awards</title>
+   <style>
+       /* Basic CSS styling */
+       body {
+           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+           background-color: #4c4c4c;
+           margin: 0;
+           font-size: 18px;
+           color: #929292;
+           padding: 0;
+       }
+       /* Style header and footer */
+       header {
+           background-color: #4c4c4c;
+           color: #929292;
+           text-align: center;
+           padding: 10px;
+           font-size: 36px; /* Adjust the font size to your preference */
+       }
+
+
+       /* Apply max-width to the page container */
+       .page-container {
+           max-width: 800px;
+           margin: 0 auto; /* To center the content horizontally */
+           padding: 0 20px; /* Add padding to create spacing from the edges */
+       }
+
+
+       /* Ensure that the menu icon is visible at smaller screen sizes */
+       @media (max-width: 7680px) {
+           .menu-icon {
+               display: inline-block;
+           }
+
+           nav ul {
+               display: none;
+               list-style: none; /* Remove default list-style */
+               padding: 0; /* Remove any default padding */
+           }
+
+           .menu.active ul {
+               display: block;
+           }
+       }
+
+       /* Style the menu links (change color to #929292;) */
+       nav a {
+           color: #929292 !important;
+           text-decoration: none; /* Remove underlines from links */
+       }
+
+       /* Center the menu */
+       .menu {
+           text-align: center;
+           font-size: 36px;
+       }
+
+       /* Style header and footer */
+       header {
+           background-color: #4c4c4c;
+           color: #929292;
+           text-align: center;
+           padding: 10px;
+       }
+
+       footer {
+           background-color: #4c4c4c;
+           color: #929292;
+           text-align: center;
+           padding: 10px;
+           margin-top: auto;
+       }
+
+       /* Add CSS for the Font Awesome icons here */
+       .footer-icons {
+           font-size: 36px;
+       }
+
+       .footer-icons a {
+           color: #929292;
+           text-decoration: none;
+           margin: 0 10px;
+       }
+
+       /* Style the icons on hover (optional) */
+       .footer-icons a:hover {
+           color: #07BFF;
+       }
+
+       /* Style the video container */
+       .video-container {
+           max-width: 800px;
+           margin: 0 auto;
+           padding: 20px;
+           box-sizing: border-box;
+       }
+
+       /* Style the video captions (toggle button) */
+       .video-caption {
+           font-size: 18px;
+           margin-bottom: 10px;
+           text-align: center;
+           cursor: pointer;
+           background-color: #4c4c4c;
+           color: #929292;
+           padding: 5px 10px;
+           border-radius: 5px;
+       }
+
+       /* Style the video descriptions (hidden by default) */
+       .video-description {
+           display: none;
+           font-size: 18px;
+           text-align: left;
+           padding: 10px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+       }
+       /* Style the video posters (thumbnails) */
+       /* Style the video posters (thumbnails) */
+       .video-item video {
+           width: 100%; /* Set the video width to 100% */
+           height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+           object-fit: cover; /* Ensure the video covers the entire container */
+         }
+
+         .video-item video::poster {
+           width: 100%; /* Set the video width to 100% */
+           height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+           object-fit: cover; /* Ensure the video covers the entire container */
+
+     }
+     /* Center the header content */
+         .header-content {
+           text-align: center;
+       }
+
+
+
+       h1 {
+           text-align: center;
+       }
+
+         /* Style for the additional text */
+         .header-description {
+           font-size: 24px; /* Adjust the font size as needed */
+           margin-top: 10px; /* Add margin to separate it from the title */
+           color: #929292; /* Set the text color */
+         }
+
+
+         /* Style the larger image (modal) */
+         .modal {
+             display: none;
+             position: fixed;
+             z-index: 1;
+             left: 0;
+             top: 0;
+             width: 100%;
+             height: 100%;
+             overflow: auto;
+             background-color: rgba(0,0,0,0.9);
+         }
+
+         .modal-content {
+             margin: auto;
+             display: block;
+             max-width: 800px;
+         }
+
+         /* Style the Close button */
+         .close {
+             position: absolute;
+             top: 15px;
+             right: 35px;
+             color: white;
+             font-size: 30px;
+             font-weight: bold;
+             transition: 0.3s;
+         }
+
+         .close:hover,
+         .close:focus {
+             color: #bbb;
+             text-decoration: none;
+             cursor: pointer;
+         }
+         /* Style the gallery container with Flexbox */
+         .gallery-container {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-between;
+             max-width: 1000px;
+             margin: 0 auto;
+         }
+         /* Center-align the text box */
+         .slideshow-text-center {
+             text-align: center;
+             padding: 20px; /* Add padding for spacing */
+         }
+
+         /* Left-align the text inside the text box */
+         .slideshow-text-left {
+             display: inline-block; /* Ensure inline block for left alignment */
+             text-align: left; /* Left-align the text inside the box */
+         }
+
+
+         /* Style the gallery items */
+         .gallery-item {
+             flex: 0 1 calc(33.33% - 5px); /* Adjust the width as needed */
+             margin-bottom: 5px;
+         }
+
+         /* Remove the width and height styles from gallery-item */
+         .gallery-item img, .gallery-item video {
+             width: 100%; /* Set the width to 100% to maintain consistency */
+             height: auto; /* Allow the height to adjust proportionally */
+         }
+
+        /* Style the active menu item */
+           .menu ul li.active a {
             background-color: #4c4c4c;
-            margin: 0;
-            font-size: 24px;
-            color: #929292;
-            padding: 0;
-        }
-        /* Style header and footer */
-        header {
-            background-color: #4c4c4c;
-            color: #929292;
-            text-align: center;
-            padding: 10px;
-            font-size: 24px; /* Adjust the font size to your preference */
-        }
+           color: #ffffff !important; /* Text color for active link */
+   }
+
+   /* Style for the captions (initially hidden) */
+         .gallery-item .caption {
+           display: none;
+           position: absolute;
+           background-color: #4c4c4c;
+           color:  #929292;
+           padding: 5px;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+           text-align: center;
+           transition: 0.2s;
+   }
+
+   /* Show captions on hover */
+     .gallery-item:hover .caption {
+       display: block;
+   }
+   /* Slideshow container */
+     .slideshow-container {
+       position: relative;
+       max-width: 800px;
+       margin: 0 auto;
+     }
+
+/* Hide slides by default */
+   .mySlides {
+     display: none;
+   }
+
+   /* Next and previous buttons */
+   .prev, .next {
+     cursor: pointer;
+     position: absolute;
+     top: 50%;
+     width: auto;
+     padding: 16px;
+     margin-top: -22px;
+     color:  #929292;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+   }
+
+   /* Position the "next button" to the right */
+   .next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+   }
+   /* Style for slideshow container */
+   .slideshow-container {
+     max-width: 800px;
+     margin: 0 auto;
+     position: relative;
+     overflow: hidden;
+   }
+
+   /* Style for individual slides */
+   .mySlides {
+     display: none;
+   }
+
+   /* Style for slide images */
+   .mySlides img {
+     width: 100%;
+     height: auto;
+   }
+
+   /* Style for captions */
+   .caption {
+     position: absolute;
+     bottom: -10px;
+     left: 0;
+     width: 100%;
+     background-color:#4c4c4c;
+     color: #929292;
+     text-align: center;
+     padding: 10px;
+   }
+
+   /* Style for prev/next buttons */
+   .prev, .next {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     font-size: 18px;
+     font-weight: bold;
+     cursor: pointer;
+     padding: 10px;
+     background-color: #4c4c4c;
+     color: white;
+     transition: background-color 0.3s;
+   }
+
+   .prev:hover, .next:hover {
+     background-color: #4c4c4c;
+   }
+   /* Style for the captions (initially hidden) */
+   .gallery-item .caption {
+       display: none;
+       position: absolute;
+       background-color: #4c4c4c;
+       color: #929292;
+       padding: 5px;
+       bottom: -20px; /* Add some space at the bottom */
+       left: 0;
+       width: 100%;
+       text-align: center;
+       transition: 0.5s;
+
+   }
 
 
-        /* Apply max-width to the page container */
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto; /* To center the content horizontally */
-            padding: 0 20px; /* Add padding to create spacing from the edges */
-        }
+   </style>
+   <!-- Include the Font Awesome CSS stylesheet -->
+   <style>
+   /* Basic CSS styling */
+   /* ... (your existing CSS code) ... */
 
-
-        /* Ensure that the menu icon is visible at smaller screen sizes */
-        @media (max-width: 7680px) {
-         
-
-        /* Style header and footer */
-        header {
-            background-color: #4c4c4c;
-            color: #929292;
-            text-align: center;
-            padding: 10px;
-        }
-        .menu-icon {
-            position: fixed;
-            top: 0px;
-            left: 20px;
-            z-index: 2;
-            font-size: 24px;
-            cursor: pointer;
-            margin: 0px auto;
-            padding-top: 0px;
-            background-color: #4c4c4c;
-        }
-
-        .menu-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(76, 76, 76, 0.85); /* Adjust the alpha value (0.8 in this example) for transparency */
-            color: #929292;
-            display: none;
-            z-index: 1;
-        }
-
-        .menu-content {
-            text-align: center;
-            padding: 50px;
-            text-decoration: none;
-            font-size: 3.5rem;
-            color: #929292;
-        }
-      
-        .menu-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu-content li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .menu-content a {
-        text-decoration: none;
-        color: #929292;
-        display: block; /* Add this line to make the entire area clickable */
-        padding: 10px; /* Add padding for better clickability */
-        }
-       .menu-content li.active a {
-        color: white;
-        text-decoration: none;
-        }
-
-        .close {
-    position: absolute;
-    top: 85%; /* Adjust this value to your preference */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 100px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-        
-        
-            
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-        }
-        footer {
-            background-color: #4c4c4c;
-            color: #929292;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-        }
-
-        /* Add CSS for the Font Awesome icons here */
-        .footer-icons {
-            font-size: 24px;
-        }
-
-        .footer-icons a {
-            color: #929292;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        /* Style the icons on hover (optional) */
-        .footer-icons a:hover {
-            color: #07BFF;
-        }
-
-        /* Style the video container */
-        .video-container {
-            max-width: 800px;
-            height: 600px; /* Set a fixed height */
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Style the video captions (toggle button) */
-        .video-caption {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: center;
-            cursor: pointer;
-            background-color: #4c4c4c;
-            color: #929292;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* Style the video descriptions (hidden by default) */
-        .video-description {
-            display: none;
-            font-size: 24px;
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-        /* Style the video posters (thumbnails) */
-        /* Style the video posters (thumbnails) */
-        .video-item video {
-            width: 100%; /* Set the video width to 100% */
-            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-            object-fit: cover; /* Ensure the video covers the entire container */
-          }
-
-          .video-item video::poster {
-            width: 100%; /* Set the video width to 100% */
-            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-            object-fit: cover; /* Ensure the video covers the entire container */
-
-      }
-      /* Center the header content */
-          .header-content {
-            text-align: center;
-        }
-
-   
-
-        h1 {
-            text-align: center;
-        }
-
-          /* Style for the additional text */
-          .header-description {
-            font-size: 24px; /* Adjust the font size as needed */
-            margin-top: 10px; /* Add margin to separate it from the title */
-            color: #929292; /* Set the text color */
-          }
-
-
-
-
-          }
-          /* Style the gallery container with Flexbox */
-          .gallery-container {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
-              max-width: 1000px;
-              margin: 0 auto;
-          }
-          /* Center-align the text box */
-          .slideshow-text-center {
-              text-align: center;
-              padding: 20px; /* Add padding for spacing */
-          }
-
-          /* Left-align the text inside the text box */
-          .slideshow-text-left {
-              display: inline-block; /* Ensure inline block for left alignment */
-              text-align: left; /* Left-align the text inside the box */
-          }
-
-
-          /* Style the gallery items */
-          .gallery-item {
-              flex: 0 1 calc(33.33% - 5px); /* Adjust the width as needed */
-              margin-bottom: 5px;
-          }
-
-          /* Remove the width and height styles from gallery-item */
-          .gallery-item img, .gallery-item video {
-              width: 100%; /* Set the width to 100% to maintain consistency */
-              height: auto; /* Allow the height to adjust proportionally */
-          }
-
-         /* Style the active menu item */
-            .menu ul li.active a {
-             background-color: #4c4c4c;
-            color: white !important; /* Text color for active link */
-    }
-
-
-
-    /* Next and previous buttons */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color:  #929292;
-      font-weight: bold;
-      font-size: 24px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-   /* Style for the slideshow container */
-.slideshow-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    height: 1000px; /* Set a fixed height */
-    overflow: hidden;
-}
-
-/* Style for individual slides and their images */
-.mySlides1 {
-    display: none;
-    max-width: 100%; /* Make sure the slides don't exceed the container width */
-    height: 100%; /* Set the height to 100% of the container */
-}
-
-.mySlides1 img {
-    width: 100%; /* Set the image width to 100% */
-    height: 100%; /* Set the image height to 100% */
-    object-fit: cover; /* Ensure the image covers the entire container */
-}
-        
- 
-
-
-    /* Style for captions */
-    .caption {
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      background-color:#4c4c4c;
-      color: #929292;
-      text-align: center;
-      padding: 10px;
-    }
-
-
-
-    /* Style for the captions (initially hidden) */
-    .mySlides1 .caption {
-     
-        position: absolute;
-        background-color: #4c4c4c;
-        color: #929292;
-        padding: 5px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        transition: 0.2s;
-    }
-
-   
-
-
-
-    </style>
-    <!-- Include the Font Awesome CSS stylesheet -->
-    <style>
-    /* Basic CSS styling */
-    /* ... (your existing CSS code) ... */
-
-    /* Add CSS for the Font Awesome icons here */
-    .fa {
-        font-family: FontAwesome, sans-serif;
-    }
+   /* Add CSS for the Font Awesome icons here */
+   .fa {
+       font-family: FontAwesome, sans-serif;
+   }
 </style>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+<div class="page-container">
+ <header>
 
-      
-  
-
-    <header>
-        <div class="page-container">
-            <h1>Shivani Mathur</h1>
+       <h1>Shivani Mathur</h1>
 <!-- Slideshow Container -->
 <div class="slideshow-container">
 
@@ -573,76 +587,176 @@
 
 
  
+  
+     <footer>
 
-    <footer>
-      <p>“Art had the power to transform humanity. That is my inspiration”  <br>
-         &copy; Copyright Shivani Mathur. All rights reserved.</p>
-    </footer>
+       <p>Contact and website</p>
+     </p> <a href="https://shivani-mathur.com"><i class="fas fa-globe"></i></a>
+   <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+   </footer>
 
-<script>
-    var slideIndex = 0;
-    var manualSlideIndex = 0;
-    var titleAudio;
 
-    function toggleMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        var currentDisplay = window.getComputedStyle(menuContainer).display;
-        menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
-    }
+   <script>
 
-    function closeMenu() {
-        var menuContainer = document.getElementById('menuContainer');
-        menuContainer.style.display = 'none';
-    }
+   function toggleMenu() {
+       var menu = document.querySelector('.menu');
+       var isMenuActive = menu.classList.contains('active');
 
-    function showSlides() {
-        var slides = document.querySelectorAll(".mySlides1");
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 7000); // Change slide every 7 seconds
-    }
+       // Toggle the 'active' class for the menu
+       menu.classList.toggle('active', !isMenuActive);
 
-    function plusSlides(n) {
-        showSlidesManual(manualSlideIndex += n);
-    }
+       if (!isMenuActive) {
+           // If the menu is now active, scroll to the top of the page
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+       }
+   }
 
-    function showSlidesManual(n) {
-        var slides = document.querySelectorAll(".mySlides1");
-        if (n > slides.length) {
-            manualSlideIndex = 1;
-        }
-        if (n < 1) {
-            manualSlideIndex = slides.length;
-        }
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[manualSlideIndex - 1].style.display = "block";
-    }
 
-    function playTitleAudio() {
-        if (!titleAudio) {
-            titleAudio = new Audio('lindzay.m4a');
-            titleAudio.loop = false;
-            titleAudio.volume = 0.2;
-            titleAudio.play();
-        } else {
-            if (!titleAudio.paused) {
-                titleAudio.pause();
-            } else {
-                titleAudio.play();
-            }
-        }
-    }
+// Function to open the modal for images
+function openModal(imageSrc) {
+  var modal = document.getElementById('myModal');
+  var modalImage = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalImage.src = imageSrc;
+}
 
-    // Call the initial function to start the automatic slideshow
-    showSlides();
-</script>
-    </body>
-</html> 
+// Function to open the modal for videos
+function openModalVideo(videoSrc) {
+  var modal = document.getElementById('myModal');
+  var modalVideo = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalVideo.innerHTML = `<video controls style="width: 100%;"><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
+}
+
+// Function to close the modal
+function closeModal() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = "none";
+}
+
+// Call the adjustGalleryItems function when the page loads
+window.addEventListener('load', adjustGalleryItems);
+
+// Call the adjustGalleryItems function whenever the window is resized
+window.addEventListener('resize', adjustGalleryItems);
+
+       var titleAudio; // Declare the audio variable globally
+
+ function playTitleAudio() {
+     if (!titleAudio) {
+         titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+         titleAudio.loop = false; // Set the audio to loop continuously
+         titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+         titleAudio.play();
+     } else {
+         if (!titleAudio.paused) {
+             titleAudio.pause(); // Pause the audio if it's playing
+         } else {
+             titleAudio.play(); // Resume playing if it's paused
+         }
+     }
+ }
+
+
+
+       // Function to toggle video description
+       function toggleDescription(index) {
+           var description = document.querySelectorAll('.video-description')[index];
+           description.style.display = description.style.display === 'block' ? 'none' : 'block';
+       }
+
+       // Function to play or pause the video when a poster is clicked
+       function toggleVideo(index) {
+           console.log("Toggle video called with index: " + index);
+           var video = document.querySelectorAll('video')[index];
+
+           // Check if the video is paused, and toggle play/pause accordingly
+           if (video.paused) {
+               video.play();
+           } else {
+               video.pause();
+           }
+
+           // Pause other videos
+           var allVideos = document.querySelectorAll('video');
+           for (var i = 0; i < allVideos.length; i++) {
+               if (i !== index) {
+                   allVideos[i].pause();
+                   console.log("Paused video at index: " + i);
+               }
+           }
+       }
+       var slideIndex = 0;
+
+function showSlides() {
+   var i;
+   var slides = document.querySelectorAll(".mySlides");
+   for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+   }
+   slideIndex++;
+   if (slideIndex > slides.length) {
+       slideIndex = 1;
+   }
+   slides[slideIndex - 1].style.display = "block";
+   setTimeout(showSlides, 2000); // Change slide every 2 seconds
+}
+
+showSlides(); // Start the slideshow automatically
+
+// Function to switch slides manually
+function plusSlides(n) {
+   slideIndex += n;
+   var slides = document.querySelectorAll(".mySlides");
+   if (slideIndex > slides.length) {
+       slideIndex = 1;
+   }
+   if (slideIndex < 1) {
+       slideIndex = slides.length;
+   }
+   for (var i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+   }
+   slides[slideIndex - 1].style.display = "block";
+}
+
+   </script>
+
+   <script>
+     var slideIndex = 0;
+
+     function showSlides() {
+       var i;
+       var slides = document.querySelectorAll(".mySlides");
+       for (i = 0; i < slides.length; i++) {
+         slides[i].style.display = "none";
+       }
+       slideIndex++;
+       if (slideIndex > slides.length) {
+         slideIndex = 1;
+       }
+       slides[slideIndex - 1].style.display = "block";
+       setTimeout(showSlides, 7000); // Change slide every 7seconds
+     }
+
+     showSlides(); // Start the slideshow automatically
+
+     // Function to switch slides manually
+     function plusSlides(n) {
+       slideIndex += n;
+       var slides = document.querySelectorAll(".mySlides");
+       if (slideIndex > slides.length) {
+         slideIndex = 1;
+       }
+       if (slideIndex < 1) {
+         slideIndex = slides.length;
+       }
+       for (var i = 0; i < slides.length; i++) {
+         slides[i].style.display = "none";
+       }
+       slides[slideIndex - 1].style.display = "block";
+     }
+   </script>
+
+</body>
+</html>
