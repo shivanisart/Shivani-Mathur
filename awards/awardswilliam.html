@@ -1,536 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Shivani Mathur.Awards</title>
-   <style>
-       /* Basic CSS styling */
-       body {
-           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-           background-color: #4c4c4c;
-           margin: 0;
-           font-size: 18px;
-           color: #929292;
-           padding: 0;
-       }
-       /* Style header and footer */
-       header {
-           background-color: #4c4c4c;
-           color: #929292;
-           text-align: center;
-           padding: 10px;
-           font-size: 36px; /* Adjust the font size to your preference */
-       }
-
-
-       /* Apply max-width to the page container */
-       .page-container {
-           max-width: 800px;
-           margin: 0 auto; /* To center the content horizontally */
-           padding: 0 20px; /* Add padding to create spacing from the edges */
-       }
-
-
-       /* Ensure that the menu icon is visible at smaller screen sizes */
-       @media (max-width: 7680px) {
-           .menu-icon {
-               display: inline-block;
-           }
-
-           nav ul {
-               display: none;
-               list-style: none; /* Remove default list-style */
-               padding: 0; /* Remove any default padding */
-           }
-
-           .menu.active ul {
-               display: block;
-           }
-       }
-
-       /* Style the menu links (change color to #929292;) */
-       nav a {
-           color: #929292 !important;
-           text-decoration: none; /* Remove underlines from links */
-       }
-
-       /* Center the menu */
-       .menu {
-           text-align: center;
-           font-size: 36px;
-       }
-
-       /* Style header and footer */
-       header {
-           background-color: #4c4c4c;
-           color: #929292;
-           text-align: center;
-           padding: 10px;
-       }
-
-       footer {
-           background-color: #4c4c4c;
-           color: #929292;
-           text-align: center;
-           padding: 10px;
-           margin-top: auto;
-       }
-
-       /* Add CSS for the Font Awesome icons here */
-       .footer-icons {
-           font-size: 36px;
-       }
-
-       .footer-icons a {
-           color: #929292;
-           text-decoration: none;
-           margin: 0 10px;
-       }
-
-       /* Style the icons on hover (optional) */
-       .footer-icons a:hover {
-           color: #07BFF;
-       }
-
-       /* Style the video container */
-       .video-container {
-           max-width: 800px;
-           margin: 0 auto;
-           padding: 20px;
-           box-sizing: border-box;
-       }
-
-       /* Style the video captions (toggle button) */
-       .video-caption {
-           font-size: 18px;
-           margin-bottom: 10px;
-           text-align: center;
-           cursor: pointer;
-           background-color: #4c4c4c;
-           color: #929292;
-           padding: 5px 10px;
-           border-radius: 5px;
-       }
-
-       /* Style the video descriptions (hidden by default) */
-       .video-description {
-           display: none;
-           font-size: 18px;
-           text-align: left;
-           padding: 10px;
-           border: 1px solid #ccc;
-           border-radius: 5px;
-           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-       }
-       /* Style the video posters (thumbnails) */
-       /* Style the video posters (thumbnails) */
-       .video-item video {
-           width: 100%; /* Set the video width to 100% */
-           height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-           object-fit: cover; /* Ensure the video covers the entire container */
-         }
-
-         .video-item video::poster {
-           width: 100%; /* Set the video width to 100% */
-           height: auto; /* Allow the video height to adjust to maintain aspect ratio */
-           object-fit: cover; /* Ensure the video covers the entire container */
-
-     }
-     /* Center the header content */
-         .header-content {
-           text-align: center;
-       }
-
-
-
-       h1 {
-           text-align: center;
-       }
-
-         /* Style for the additional text */
-         .header-description {
-           font-size: 24px; /* Adjust the font size as needed */
-           margin-top: 10px; /* Add margin to separate it from the title */
-           color: #929292; /* Set the text color */
-         }
-
-
-         /* Style the larger image (modal) */
-         .modal {
-             display: none;
-             position: fixed;
-             z-index: 1;
-             left: 0;
-             top: 0;
-             width: 100%;
-             height: 100%;
-             overflow: auto;
-             background-color: rgba(0,0,0,0.9);
-         }
-
-         .modal-content {
-             margin: auto;
-             display: block;
-             max-width: 800px;
-         }
-
-         /* Style the Close button */
-         .close {
-             position: absolute;
-             top: 15px;
-             right: 35px;
-             color: white;
-             font-size: 30px;
-             font-weight: bold;
-             transition: 0.3s;
-         }
-
-         .close:hover,
-         .close:focus {
-             color: #bbb;
-             text-decoration: none;
-             cursor: pointer;
-         }
-         /* Style the gallery container with Flexbox */
-         .gallery-container {
-             display: flex;
-             flex-wrap: wrap;
-             justify-content: space-between;
-             max-width: 1000px;
-             margin: 0 auto;
-         }
-         /* Center-align the text box */
-         .slideshow-text-center {
-             text-align: center;
-             padding: 20px; /* Add padding for spacing */
-         }
-
-         /* Left-align the text inside the text box */
-         .slideshow-text-left {
-             display: inline-block; /* Ensure inline block for left alignment */
-             text-align: left; /* Left-align the text inside the box */
-         }
-
-
-         /* Style the gallery items */
-         .gallery-item {
-             flex: 0 1 calc(33.33% - 5px); /* Adjust the width as needed */
-             margin-bottom: 5px;
-         }
-
-         /* Remove the width and height styles from gallery-item */
-         .gallery-item img, .gallery-item video {
-             width: 100%; /* Set the width to 100% to maintain consistency */
-             height: auto; /* Allow the height to adjust proportionally */
-         }
-
-        /* Style the active menu item */
-           .menu ul li.active a {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur.Awards</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             background-color: #4c4c4c;
-           color: #ffffff !important; /* Text color for active link */
-   }
+            margin: 0;
+            font-size: 18px;
+            color: #929292;
+            padding: 0;
+        }
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            font-size: 36px; /* Adjust the font size to your preference */
+        }
 
-   /* Style for the captions (initially hidden) */
-         .gallery-item .caption {
-           display: none;
-           position: absolute;
-           background-color: #4c4c4c;
-           color:  #929292;
-           padding: 5px;
-           bottom: 0;
-           left: 0;
-           width: 100%;
-           text-align: center;
-           transition: 0.2s;
-   }
 
-   /* Show captions on hover */
-     .gallery-item:hover .caption {
-       display: block;
-   }
-   /* Slideshow container */
-     .slideshow-container {
-       position: relative;
-       max-width: 800px;
-       margin: 0 auto;
-     }
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto; /* To center the content horizontally */
+            padding: 0 20px; /* Add padding to create spacing from the edges */
+        }
+
+
+        /* Ensure that the menu icon is visible at smaller screen sizes */
+        @media (max-width: 7680px) {
+            .menu-icon {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none;
+                list-style: none; /* Remove default list-style */
+                padding: 0; /* Remove any default padding */
+            }
+
+            .menu.active ul {
+                display: block;
+            }
+        }
+
+        /* Style the menu links (change color to #929292;) */
+        nav a {
+            color: #929292 !important;
+            text-decoration: none; /* Remove underlines from links */
+        }
+
+        /* Center the menu */
+        .menu {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Add CSS for the Font Awesome icons here */
+        .footer-icons {
+            font-size: 36px;
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Style the icons on hover (optional) */
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        /* Style the video container */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Style the video captions (toggle button) */
+        .video-caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style the video descriptions (hidden by default) */
+        .video-description {
+            display: none;
+            font-size: 18px;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Style the video posters (thumbnails) */
+        /* Style the video posters (thumbnails) */
+        .video-item video {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+          }
+
+          .video-item video::poster {
+            width: 100%; /* Set the video width to 100% */
+            height: auto; /* Allow the video height to adjust to maintain aspect ratio */
+            object-fit: cover; /* Ensure the video covers the entire container */
+
+      }
+      /* Center the header content */
+          .header-content {
+            text-align: center;
+        }
+
+     
+
+        h1 {
+            text-align: center;
+        }
+
+          /* Style for the additional text */
+          .header-description {
+            font-size: 24px; /* Adjust the font size as needed */
+            margin-top: 10px; /* Add margin to separate it from the title */
+            color: #929292; /* Set the text color */
+          }
+
+
+          /* Style the larger image (modal) */
+          .modal {
+              display: none;
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgba(0,0,0,0.9);
+          }
+
+          .modal-content {
+              margin: auto;
+              display: block;
+              max-width: 800px;
+          }
+
+          /* Style the Close button */
+          .close {
+              position: absolute;
+              top: 15px;
+              right: 35px;
+              color: white;
+              font-size: 30px;
+              font-weight: bold;
+              transition: 0.3s;
+          }
+
+          .close:hover,
+          .close:focus {
+              color: #bbb;
+              text-decoration: none;
+              cursor: pointer;
+          }
+          /* Style the gallery container with Flexbox */
+          .gallery-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              max-width: 1000px;
+              margin: 0 auto;
+          }
+          /* Center-align the text box */
+          .slideshow-text-center {
+              text-align: center;
+              padding: 20px; /* Add padding for spacing */
+          }
+
+          /* Left-align the text inside the text box */
+          .slideshow-text-left {
+              display: inline-block; /* Ensure inline block for left alignment */
+              text-align: left; /* Left-align the text inside the box */
+          }
+
+
+          /* Style the gallery items */
+          .gallery-item {
+              flex: 0 1 calc(33.33% - 5px); /* Adjust the width as needed */
+              margin-bottom: 5px;
+          }
+
+          /* Remove the width and height styles from gallery-item */
+          .gallery-item img, .gallery-item video {
+              width: 100%; /* Set the width to 100% to maintain consistency */
+              height: auto; /* Allow the height to adjust proportionally */
+          }
+
+         /* Style the active menu item */
+            .menu ul li.active a {
+             background-color: #4c4c4c;
+            color: #ffffff !important; /* Text color for active link */
+    }
+
+    /* Style for the captions (initially hidden) */
+          .gallery-item .caption {
+            display: none;
+            position: absolute;
+            background-color: #4c4c4c;
+            color:  #929292;
+            padding: 5px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s;
+    }
+
+    /* Show captions on hover */
+      .gallery-item:hover .caption {
+        display: block;
+    }
+    /* Slideshow container */
+      .slideshow-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
 /* Hide slides by default */
-   .mySlides {
-     display: none;
-   }
+    .mySlides {
+      display: none;
+    }
 
-   /* Next and previous buttons */
-   .prev, .next {
-     cursor: pointer;
-     position: absolute;
-     top: 50%;
-     width: auto;
-     padding: 16px;
-     margin-top: -22px;
-     color:  #929292;
-     font-weight: bold;
-     font-size: 18px;
-     transition: 0.6s ease;
-     border-radius: 0 3px 3px 0;
-   }
+    /* Next and previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color:  #929292;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
 
-   /* Position the "next button" to the right */
-   .next {
-     right: 0;
-     border-radius: 3px 0 0 3px;
-   }
-   /* Style for slideshow container */
-   .slideshow-container {
-     max-width: 800px;
-     margin: 0 auto;
-     position: relative;
-     overflow: hidden;
-   }
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    /* Style for slideshow container */
+    .slideshow-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
 
-   /* Style for individual slides */
-   .mySlides {
-     display: none;
-   }
+    /* Style for individual slides */
+    .mySlides {
+      display: none;
+    }
 
-   /* Style for slide images */
-   .mySlides img {
-     width: 100%;
-     height: auto;
-   }
+    /* Style for slide images */
+    .mySlides img {
+      width: 100%;
+      height: auto;
+    }
 
-   /* Style for captions */
-   .caption {
-     position: absolute;
-     bottom: -10px;
-     left: 0;
-     width: 100%;
-     background-color:#4c4c4c;
-     color: #929292;
-     text-align: center;
-     padding: 10px;
-   }
+    /* Style for captions */
+    .caption {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      background-color:#4c4c4c;
+      color: #929292;
+      text-align: center;
+      padding: 10px;
+    }
 
-   /* Style for prev/next buttons */
-   .prev, .next {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     font-size: 18px;
-     font-weight: bold;
-     cursor: pointer;
-     padding: 10px;
-     background-color: #4c4c4c;
-     color: white;
-     transition: background-color 0.3s;
-   }
+    /* Style for prev/next buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #4c4c4c;
+      color: white;
+      transition: background-color 0.3s;
+    }
 
-   .prev:hover, .next:hover {
-     background-color: #4c4c4c;
-   }
-   /* Style for the captions (initially hidden) */
-   .gallery-item .caption {
-       display: none;
-       position: absolute;
-       background-color: #4c4c4c;
-       color: #929292;
-       padding: 5px;
-       bottom: -20px; /* Add some space at the bottom */
-       left: 0;
-       width: 100%;
-       text-align: center;
-       transition: 0.5s;
+    .prev:hover, .next:hover {
+      background-color: #4c4c4c;
+    }
+    /* Style for the captions (initially hidden) */
+    .gallery-item .caption {
+        display: none;
+        position: absolute;
+        background-color: #4c4c4c;
+        color: #929292;
+        padding: 5px;
+        bottom: -20px; /* Add some space at the bottom */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
 
-   }
+    }
 
 
-   </style>
-   <!-- Include the Font Awesome CSS stylesheet -->
-   <style>
-   /* Basic CSS styling */
-   /* ... (your existing CSS code) ... */
+    </style>
+    <!-- Include the Font Awesome CSS stylesheet -->
+    <style>
+    /* Basic CSS styling */
+    /* ... (your existing CSS code) ... */
 
-   /* Add CSS for the Font Awesome icons here */
-   .fa {
-       font-family: FontAwesome, sans-serif;
-   }
+    /* Add CSS for the Font Awesome icons here */
+    .fa {
+        font-family: FontAwesome, sans-serif;
+    }
 </style>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <div class="page-container">
- <header>
-
-       <h1>Shivani Mathur</h1>
-<!-- Slideshow Container -->
-<div class="slideshow-container">
-
-    <!-- Slide 1 -->
-    <div class="mySlides1 fade">
-        <img src="fullview.jpg" alt="Slide 1">
-        <div class="caption">Pathways of Light, 2022. Maison Zero award by Louis Vuitton and UAL. As installed at Central Saint Martins, London</div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="mySlides1 fade">
-        <img src="maisonzero.jpg" alt="Slide 2">
-        <div class="caption">Pathways of Light, 2022. Maison Zero award by Louis Vuitton and UAL. Backlit image of the cracks</div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="mySlides1 fade">
-        <img src="exhibition-egg1.jpg" alt="Slide 3">
-        <div class="caption">Hiranya Garnha, 2012. Public sculpture displayed in Covent Garden London. Voted among the top three "most popular" sculptures by the public out of a total of 209 sculptures showcased throughout London.</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 4 -->
-    <div class="mySlides1 fade">
-        <img src="27.jpg" alt="Image 24">
-        <div class="caption">The door. An oil painting and a digital work exhibited at the William gallery in William Blake House, 12 October to 15 Dec 2023.</div>
-    </div>
-
-    <!-- Slide 5 -->
-    <div class="mySlides1 fade">
-        <img src="24.jpg" alt="Image 24">
-        <div class="caption">Humpty Dumpty Version 2.0. Eggshell sculpture, one of five works displayed in the exhibition 'Motherland' at the Great West gallery in October 2022 - September 2023.</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 6 -->
-    <div class="mySlides1 fade">
-        <img src="25.jpg" alt="Image 24">
-        <div class="caption">Hologram. Displayed at Art and Science symposium at Central Saint Martins, 18th June 2022.</div>
-    </div>
-
-    <!-- Slide 7 -->
-    <div class="mySlides1 fade">
-        <img src="22poland.jpg" alt="Image 22">
-        <div class="caption">Pathways. Exhibited at Festival of light, Poland. May 2022</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 8 -->
-    <div class="mySlides1 fade">
-        <img src="21.jpg" alt="Image 21">
-        <div class="caption">Moment in time. A riso print in an edition of ten, paired with an NFT. Exhibited at 'Merch' - a print sale at the Lethaby gallery London in February 2022.</div>
-    </div>
-
-    <!-- Slide 9 -->
-    <div class="mySlides1 fade">
-        <img src="18.jpg" alt="Image 18">
-        <div class="caption">See you tomorrow, Digital image in online exhibition, June 2021</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 10 -->
-    <div class="mySlides1 fade">
-        <img src="17.jpg" alt="Image 17">
-        <div class="caption">Blossom, one of five paintings exhibited at Bozar Brussels. Art fair, October 2019</div>
-    </div>
-
-    <!-- Slide 11 -->
-    <div class="mySlides1 fade">
-        <img src="15.jpg" alt="Image 15">
-        <div class="caption">Gandhi, A solo show of thirty works at India House, London, October to December 2018</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 12 -->
-    <div class="mySlides1 fade">
-        <img src="26.jpg" alt="Image 15">
-        <div class="caption">A grain of salt. A solo show of thirty works on the life and influences of Gandhi, and his principles of Ahimsa. India House, London, October to December 2018</div>
-    </div>
-
-    <!-- Slide 13 -->
-    <div class="mySlides1 fade">
-        <img src="14.jpg" alt="Image 14">
-        <div class="caption">Infinity, One of two works exhibited at the exhibition 'Small is beautiful' at Matthew Flowers gallery, Cork Street, London 4th December to 4th January 2019</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 14 -->
-    <div class="mySlides1 fade">
-        <img src="12.jpg" alt="Image 12">
-        <div class="caption">A sanctuary of calm. One of five works exhibited at a solo show in Cornwall Gardens for 'London open square' week. June 2018</div>
-    </div>
-
-    <!-- Slide 15 -->
-    <div class="mySlides1 fade">
-        <img src="Waiting.2010.JPG" alt="Image 08">
-        <div class="caption">Waiting. Auctioned at Bonham's London. 27 September 2011</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 16 -->
-    <div class="mySlides1 fade">
-        <img src="07.jpg" alt="Image 07">
-        <div class="caption">Temple City. One of ten works exhibited in a solo show by Upaya - a charity that raises money for the employment of rural Indian women. Seattle March, 2013</div>
-    </div>
-
-    <!-- Slide 17 -->
-    <div class="mySlides1 fade">
-        <img src="04.jpg" alt="Image 05">
-        <div class="caption">Golden Eyes. One of five works exhibited in a group show at the Hanging Gallery, Royal Automobile Club, London. 22 November - 9 January 2011</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 18 -->
-    <div class="mySlides1 fade">
-        <img src="04.jpg" alt="Image 04">
-        <div class="caption">Dreams. Auctioned by Macmillan Delonghi at Royal College of Art, London. 25 September 2012</div>
-    </div>
-
-    <!-- Slide 19 -->
-    <div class="mySlides1 fade">
-        <img src="03.jpg" alt="Image 03">
-        <div class="caption">Black Pearls. Auctioned for UNICEF at London Business School, London. 20 May 2010</div>
-    </div>
-
-    <!-- Add more slides as needed -->
-
-    <!-- Slide 20 -->
-    <div class="mySlides1 fade">
-        <img src="02.jpg" alt="Image 02
-        <!-- Additional text below the header -->
-       <div class="caption">Past exhibitions, awards and collaborations  </div>
-    </div>
-  <!-- Slide 21 -->
-<div class="mySlides1 fade">
-    <img src="01.jpg" alt="Image 01">
-    <div class="caption">Solo show of twenty-two works at the Art bar, Walton Street, London, June 2008</div>
-</div>
-
-<!-- Next and Previous Buttons -->
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-   </div>
- 
+  <header>
+        
+        <h1>Shivani Mathur</h1>
+       
     </header>
 
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li><br>
+                <li><a href="../portfolio/port.html">Portfolio</a></li>
+                <li><a href="../digital/digital.html">Pathways</a></li>
+                <li><a href="../empty space/emptyspace.html">Empty Space</a></li>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li>
+                <li><a href="../fire/fire.html">Fire and Water</a></li><br>
+                <li class="active"><a href="../awards/awards.html">Awards & Exhibitions</a></li>
+                <li><a href="../aboutshivani/aboutshivani.html">Journey & Inspiration</a></li>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides fade">
+            <img src="fullview.jpg" alt="Slide 1">
+            <div class="caption">Pathways of Light, 2022. Award by LVMH and UAl for sustainability. As installed at Central Saint Martins, London </div>
+        </div>
 
+        <!-- Slide 2 -->
+        <div class="mySlides fade">
+            <img src="maisonzero.jpg" alt="Slide 2">
+            <div class="caption">Pathways of Light, 2022. Award by LVMH and UAl for sustainability. Backlit image </div>
+        </div>
+
+
+          <!-- Slide 4 -->
+          <div class="mySlides fade">
+              <img src="exhibition-egg1.jpg" alt="Slide 3">
+              <div class="caption">Hiranya Garnha, 2012. Public sculpture dispayed in Covent Garden London. Voted among the top three "most popular" sculptures by the public out of a total of 209 sculptures showcased throughout London. </div>
+          </div>
+        <!-- Add more slides as needed -->
+   <!-- Slide 4 -->
+   <div class="mySlides1 fade">
+       <img src="27.jpg" alt="Image 24">
+       <div class="caption">The door. An oil painting and a digital work exhibited at the William gallery in William Blake House, 12 October to 15 Dec 2023.</div>
+   </div>
+
+   <!-- Slide 5 -->
+   <div class="mySlides1 fade">
+       <img src="24.jpg" alt="Image 24">
+       <div class="caption">Humpty Dumpty Version 2.0. Eggshell sculpture, one of five works displayed in the exhibition 'Motherland' at the Great West gallery in October 2022 - September 2023.</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 6 -->
+   <div class="mySlides1 fade">
+       <img src="25.jpg" alt="Image 24">
+       <div class="caption">Hologram. Displayed at Art and Science symposium at Central Saint Martins, 18th June 2022.</div>
+   </div>
+
+   <!-- Slide 7 -->
+   <div class="mySlides1 fade">
+       <img src="22poland.jpg" alt="Image 22">
+       <div class="caption">Pathways. Exhibited at Festival of light, Poland. May 2022</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 8 -->
+   <div class="mySlides1 fade">
+       <img src="21.jpg" alt="Image 21">
+       <div class="caption">Moment in time. A riso print in an edition of ten, paired with an NFT. Exhibited at 'Merch' - a print sale at the Lethaby gallery London in February 2022.</div>
+   </div>
+
+   <!-- Slide 9 -->
+   <div class="mySlides1 fade">
+       <img src="18.jpg" alt="Image 18">
+       <div class="caption">See you tomorrow, Digital image in online exhibition, June 2021</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 10 -->
+   <div class="mySlides1 fade">
+       <img src="17.jpg" alt="Image 17">
+       <div class="caption">Blossom, one of five paintings exhibited at Bozar Brussels. Art fair, October 2019</div>
+   </div>
+
+   <!-- Slide 11 -->
+   <div class="mySlides1 fade">
+       <img src="15.jpg" alt="Image 15">
+       <div class="caption">Gandhi, A solo show of thirty works at India House, London, October to December 2018</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 12 -->
+   <div class="mySlides1 fade">
+       <img src="26.jpg" alt="Image 15">
+       <div class="caption">A grain of salt. A solo show of thirty works on the life and influences of Gandhi, and his principles of Ahimsa. India House, London, October to December 2018</div>
+   </div>
+
+   <!-- Slide 13 -->
+   <div class="mySlides1 fade">
+       <img src="14.jpg" alt="Image 14">
+       <div class="caption">Infinity, One of two works exhibited at the exhibition 'Small is beautiful' at Matthew Flowers gallery, Cork Street, London 4th December to 4th January 2019</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 14 -->
+   <div class="mySlides1 fade">
+       <img src="12.jpg" alt="Image 12">
+       <div class="caption">A sanctuary of calm. One of five works exhibited at a solo show in Cornwall Gardens for 'London open square' week. June 2018</div>
+   </div>
+
+   <!-- Slide 15 -->
+   <div class="mySlides1 fade">
+       <img src="Waiting.2010.JPG" alt="Image 08">
+       <div class="caption">Waiting. Auctioned at Bonham's London. 27 September 2011</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 16 -->
+   <div class="mySlides1 fade">
+       <img src="07.jpg" alt="Image 07">
+       <div class="caption">Temple City. One of ten works exhibited in a solo show by Upaya - a charity that raises money for the employment of rural Indian women. Seattle March, 2013</div>
+   </div>
+
+   <!-- Slide 17 -->
+   <div class="mySlides1 fade">
+       <img src="04.jpg" alt="Image 05">
+       <div class="caption">Golden Eyes. One of five works exhibited in a group show at the Hanging Gallery, Royal Automobile Club, London. 22 November - 9 January 2011</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 18 -->
+   <div class="mySlides1 fade">
+       <img src="04.jpg" alt="Image 04">
+       <div class="caption">Dreams. Auctioned by Macmillan Delonghi at Royal College of Art, London. 25 September 2012</div>
+   </div>
+
+   <!-- Slide 19 -->
+   <div class="mySlides1 fade">
+       <img src="03.jpg" alt="Image 03">
+       <div class="caption">Black Pearls. Auctioned for UNICEF at London Business School, London. 20 May 2010</div>
+   </div>
+
+   <!-- Add more slides as needed -->
+
+   <!-- Slide 20 -->
+   <div class="mySlides1 fade">
+       <img src="02.jpg" alt="Image 02
+       <!-- Additional text below the header -->
+      <div class="caption">Past exhibitions, awards and collaborations  </div>
+   </div>
+ <!-- Slide 21 -->
+<div class="mySlides1 fade">
+   <img src="01.jpg" alt="Image 01">
+   <div class="caption">Solo show of twenty-two works at the Art bar, Walton Street, London, June 2008</div>
+</div>
+
+        <!-- Next and Previous Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
 
     <!-- Additional text below the picture -->
     <div class="slideshow-text-center">
         <div class="slideshow-text-left">
-  
-            
         <p style="font-size: 36px; font-weight: bold;">Awards and Publications</p>
         <p>
-            2023 Pinacotheque Museum of Luxembourg award<br>
+            2023 Merit award by Pinocotheque Museum, Luxembourg<br>
             2023 Academic paper published in Leonardo Labs<br>
             2022 Recipient of ‘Maison Zero, This earth’ award for sustainability by LVMH and UAL<br>
             2022 Awarded distinction in Masters of Art and Science, UAL London<br>
@@ -542,20 +551,21 @@
 
         <p style="font-size: 36px; font-weight: bold;">Exhibitions</p>
         <p>
-              Solo exhibitions<br> <br>
+
+            
+            Solo exhibitions<br> <br>
 
             2020 Lockdown exhibition. solo live curated show in virtual gallery<br>
             2019 Passage,Red moon gallery,Brussels <br>
-            2018 Gandhi,India House,London<br>
+            2018 Gandhi,India House,London<br> 
             2018 Uninterrupted, Nehru Centre,London<br>
-            2013 Crlebration of hundred works. Institute of Contemporary Arts,London<br>
-            2013 Upaya,Seattle<br>
+            2013 Crlebration of hundred works. Institute of Contemporary Arts,London<br> 	
+            2013 Upaya,Seattle<br> 
             2012 Goethe Institute,London, Partnering with Chef Asma Khan<br>
             2008 Art Bar, Knightsbridge,London <br><br>
-
+            
             Group Exhibitions<br><br>
-            2023 The graduate art show, William Blake house, London<br>
-            2023 MotherLand, Great West Gallery London<br>
+            2023 Motherland, Great West Gallery London<br>
             2022 The show. Central Saint Martins, UAL<br>
             2022 Festival of Light, Poland<br>
             2022 Merch Lethaby Gallery.Granary Square, London<br>
@@ -580,58 +590,68 @@
             2022 Tokyo Institute of technology and Queen Mary Hospital: Making Waves <br>
             2022 Cambridge University: Digital technologies
         </p>
-           </div>
+    </div>
 </div>
 
+       
 
 
-
- 
-  
-     <footer>
-
-       <p>Contact and website</p>
-     </p> <a href="https://shivani-mathur.com"><i class="fas fa-globe"></i></a>
-   <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
-   </footer>
+    <!-- Modal for displaying media -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
 
-   <script>
+    </div>
+        </div>
+    </div>
+    </div>
 
-   function toggleMenu() {
-       var menu = document.querySelector('.menu');
-       var isMenuActive = menu.classList.contains('active');
+      <footer>
+       
+        <p>Contact and website</p>
+      </p> <a href="https://shivani-mathur.com"><i class="fas fa-globe"></i></a>
+    <p>&copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
 
-       // Toggle the 'active' class for the menu
-       menu.classList.toggle('active', !isMenuActive);
 
-       if (!isMenuActive) {
-           // If the menu is now active, scroll to the top of the page
-           window.scrollTo({ top: 0, behavior: 'smooth' });
-       }
-   }
+    <script>
+
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        var isMenuActive = menu.classList.contains('active');
+
+        // Toggle the 'active' class for the menu
+        menu.classList.toggle('active', !isMenuActive);
+
+        if (!isMenuActive) {
+            // If the menu is now active, scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
 
 
 // Function to open the modal for images
 function openModal(imageSrc) {
-  var modal = document.getElementById('myModal');
-  var modalImage = document.getElementById('modalImage');
-  modal.style.display = "block";
-  modalImage.src = imageSrc;
+   var modal = document.getElementById('myModal');
+   var modalImage = document.getElementById('modalImage');
+   modal.style.display = "block";
+   modalImage.src = imageSrc;
 }
 
 // Function to open the modal for videos
 function openModalVideo(videoSrc) {
-  var modal = document.getElementById('myModal');
-  var modalVideo = document.getElementById('modalImage');
-  modal.style.display = "block";
-  modalVideo.innerHTML = `<video controls style="width: 100%;"><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
+   var modal = document.getElementById('myModal');
+   var modalVideo = document.getElementById('modalImage');
+   modal.style.display = "block";
+   modalVideo.innerHTML = `<video controls style="width: 100%;"><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
 }
 
 // Function to close the modal
 function closeModal() {
-  var modal = document.getElementById('myModal');
-  modal.style.display = "none";
+   var modal = document.getElementById('myModal');
+   modal.style.display = "none";
 }
 
 // Call the adjustGalleryItems function when the page loads
@@ -640,123 +660,123 @@ window.addEventListener('load', adjustGalleryItems);
 // Call the adjustGalleryItems function whenever the window is resized
 window.addEventListener('resize', adjustGalleryItems);
 
-       var titleAudio; // Declare the audio variable globally
+        var titleAudio; // Declare the audio variable globally
 
- function playTitleAudio() {
-     if (!titleAudio) {
-         titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
-         titleAudio.loop = false; // Set the audio to loop continuously
-         titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
-         titleAudio.play();
-     } else {
-         if (!titleAudio.paused) {
-             titleAudio.pause(); // Pause the audio if it's playing
-         } else {
-             titleAudio.play(); // Resume playing if it's paused
-         }
-     }
- }
+  function playTitleAudio() {
+      if (!titleAudio) {
+          titleAudio = new Audio('lindzay.m4a'); // Replace 'your-audio-file.mp3' with the path to your MP3 audio file
+          titleAudio.loop = false; // Set the audio to loop continuously
+          titleAudio.volume = 0.2; // Set the volume to a lower value (e.g., 0.2 for 20% volume)
+          titleAudio.play();
+      } else {
+          if (!titleAudio.paused) {
+              titleAudio.pause(); // Pause the audio if it's playing
+          } else {
+              titleAudio.play(); // Resume playing if it's paused
+          }
+      }
+  }
 
 
 
-       // Function to toggle video description
-       function toggleDescription(index) {
-           var description = document.querySelectorAll('.video-description')[index];
-           description.style.display = description.style.display === 'block' ? 'none' : 'block';
-       }
+        // Function to toggle video description
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
 
-       // Function to play or pause the video when a poster is clicked
-       function toggleVideo(index) {
-           console.log("Toggle video called with index: " + index);
-           var video = document.querySelectorAll('video')[index];
+        // Function to play or pause the video when a poster is clicked
+        function toggleVideo(index) {
+            console.log("Toggle video called with index: " + index);
+            var video = document.querySelectorAll('video')[index];
 
-           // Check if the video is paused, and toggle play/pause accordingly
-           if (video.paused) {
-               video.play();
-           } else {
-               video.pause();
-           }
+            // Check if the video is paused, and toggle play/pause accordingly
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
 
-           // Pause other videos
-           var allVideos = document.querySelectorAll('video');
-           for (var i = 0; i < allVideos.length; i++) {
-               if (i !== index) {
-                   allVideos[i].pause();
-                   console.log("Paused video at index: " + i);
-               }
-           }
-       }
-       var slideIndex = 0;
+            // Pause other videos
+            var allVideos = document.querySelectorAll('video');
+            for (var i = 0; i < allVideos.length; i++) {
+                if (i !== index) {
+                    allVideos[i].pause();
+                    console.log("Paused video at index: " + i);
+                }
+            }
+        }
+        var slideIndex = 0;
 
 function showSlides() {
-   var i;
-   var slides = document.querySelectorAll(".mySlides");
-   for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-   }
-   slideIndex++;
-   if (slideIndex > slides.length) {
-       slideIndex = 1;
-   }
-   slides[slideIndex - 1].style.display = "block";
-   setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    var i;
+    var slides = document.querySelectorAll(".mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change slide every 2 seconds
 }
 
 showSlides(); // Start the slideshow automatically
 
 // Function to switch slides manually
 function plusSlides(n) {
-   slideIndex += n;
-   var slides = document.querySelectorAll(".mySlides");
-   if (slideIndex > slides.length) {
-       slideIndex = 1;
-   }
-   if (slideIndex < 1) {
-       slideIndex = slides.length;
-   }
-   for (var i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-   }
-   slides[slideIndex - 1].style.display = "block";
+    slideIndex += n;
+    var slides = document.querySelectorAll(".mySlides");
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    if (slideIndex < 1) {
+        slideIndex = slides.length;
+    }
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
 }
 
-   </script>
+    </script>
 
-   <script>
-     var slideIndex = 0;
+    <script>
+      var slideIndex = 0;
 
-     function showSlides() {
-       var i;
-       var slides = document.querySelectorAll(".mySlides");
-       for (i = 0; i < slides.length; i++) {
-         slides[i].style.display = "none";
-       }
-       slideIndex++;
-       if (slideIndex > slides.length) {
-         slideIndex = 1;
-       }
-       slides[slideIndex - 1].style.display = "block";
-       setTimeout(showSlides, 7000); // Change slide every 7seconds
-     }
+      function showSlides() {
+        var i;
+        var slides = document.querySelectorAll(".mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 7000); // Change slide every 7seconds
+      }
 
-     showSlides(); // Start the slideshow automatically
+      showSlides(); // Start the slideshow automatically
 
-     // Function to switch slides manually
-     function plusSlides(n) {
-       slideIndex += n;
-       var slides = document.querySelectorAll(".mySlides");
-       if (slideIndex > slides.length) {
-         slideIndex = 1;
-       }
-       if (slideIndex < 1) {
-         slideIndex = slides.length;
-       }
-       for (var i = 0; i < slides.length; i++) {
-         slides[i].style.display = "none";
-       }
-       slides[slideIndex - 1].style.display = "block";
-     }
-   </script>
+      // Function to switch slides manually
+      function plusSlides(n) {
+        slideIndex += n;
+        var slides = document.querySelectorAll(".mySlides");
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        if (slideIndex < 1) {
+          slideIndex = slides.length;
+        }
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
 
 </body>
 </html>
