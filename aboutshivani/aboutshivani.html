@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. Inspiration</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            margin: 0;
+            color: #929292;
+            padding: 0;
+            font-size: clamp(15px, 3vw, 22px);
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-icon img {
+            width: clamp(50px, 12vw, 100px);
+            height: clamp(50px, 12vw, 100px);
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            display: none;
+            z-index: 3;
+            overflow-y: auto;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px 20px;
+            text-decoration: none;
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            color: #929292;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-content li.active a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: clamp(28px, 6vw, 40px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .fa {
+            font-family: FontAwesome, sans-serif;
+        }
+
+        .footer-icons {
+            font-size: clamp(20px, 5vw, 32px);
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-caption, .caption {
+            font-size: clamp(14px, 3vw, 18px);
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .caption {
+            text-align: left;
+            cursor: default;
+            margin-top: 10px;
+        }
+
+        .video-description {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-description, p {
+            font-size: clamp(15px, 3vw, 20px);
+            margin-top: 10px;
+            color: #929292;
+        }
+
+        .section-heading {
+            font-size: clamp(20px, 4.5vw, 30px);
+            font-weight: bold;
+        }
+
+        /* Modal (popup) for enlarged gallery photos */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 4;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: 60px auto;
+            display: block;
+            max-width: 90%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            flex: 0 1 calc(33.33% - 5px);
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .poster-container {
+            width: 47%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .video-item video,
+        .poster-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+            display: block;
+        }
+
+        @media (max-width: 500px) {
+            .poster-container {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="http://www.shivani-mathur.com/" style="cursor: pointer;"><i class="fas fa-globe"></i></a></li><br>
+                <li><a href="../portfolio/port.html">Portfolios</a></li><br>
+                <li><a href="../awards/awards.html">Awards and exhibitions</a></li><br>
+                <li class="active"><a href="../aboutshivani/aboutshivani.html">The artist and her studio</a></li><br>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li><br><br><br>
+                <li><a href="../whatsnext/junk.html">Contact</a></li><br>
+                <li><a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <h1>Shivani Mathur</h1>
+        <p class="header-description">The artist and her studio</p>
+    </header>
+
+    <div class="page-container">
+        <div class="video-container">
+            <p class="section-heading">A portrait and a self portrait</p>
+
+            <div class="video-item">
+                <div class="poster-container" onclick="toggleVideo(0)">
+                    <video class="poster" poster="dusttolife.jpg" loop playsinline>
+                        <source src="dusttolife.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="caption" style="text-align: center;">
+                        <p>Self portrait.<br>Click image to see 'Dust to life'</p>
+                    </div>
+                </div>
+
+                <div class="poster-container">
+                    <img class="poster" src="scottposter.jpg" alt="Portrait of Shivani Mathur by Scott Mead">
+                    <div class="caption" style="text-align: center;">
+                        <p>Portrait<br>Shivani Mathur by Scott Mead</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Shivani works with oil paints, charcoal, sculpture, installation and digital interactive and generative art. Influences of her mathematical background, her multicultural upbringing, her experiences as a woman and a minority surface in her work repeatedly. Her current portfolios are situated at the intersection of art, science and technology. At the core of her creative practice lies the belief that art transforms lives.</p>
+
+            <p class="section-heading">Shivani's studio</p>
+            <p><br>In her studio in London, Shivani immerses herself in clay, paint, slime mold, computers and discarded materials like broken mirrors and eggshells. In these materials, she explores subtle cracks symbolizing life's disruptions and the lack of agency we have over many aspects of our lives. These cracks evolve unpredictably over time and begin to reflect, transmit, and amplify light.
+            Much like the radiance within us.<br>Her tiny studio, which is her universe, echoes the wisdom from the Chandogya Upanishad circa 800 BCE<br>"The same essence that gives you life also animates the entire cosmos.<br>Therefore the potential within you is as vast as the universe itself."<br><br>Everything in the studio seems to have a mind of its own. Yet somehow, it is a sanctuary of calmness.... As if there is a structure in chaos, in her studio and in our universe.</p>
+
+            <div class="gallery-container">
+                <div class="gallery-item" onclick="openModal('cabbage.GIF')">
+                    <img src="cabbage.GIF" alt="Cabbage GIF">
+                </div>
+                <div class="gallery-item" onclick="openModal('chlorophyll.gif')">
+                    <img src="chlorophyll.gif" alt="chlorophyll">
+                </div>
+                <div class="gallery-item" onclick="openModal('slimemould.GIF')">
+                    <img src="slimemould.GIF" alt="Slimemould GIF">
+                </div>
+                <div class="gallery-item" onclick="openModal('pouringegg.GIF')">
+                    <img src="pouringegg.GIF" alt="Pouring Egg GIF">
+                </div>
+                <div class="gallery-item" onclick="openModal('playing.gif')">
+                    <img src="playing.gif" alt="playGIF">
+                </div>
+                <div class="gallery-item" onclick="openModal('eggshell drying.jpg')">
+                    <img src="eggshell drying.jpg" alt="Eggshell Drying">
+                </div>
+                <div class="gallery-item" onclick="openModal('chris.jpg')">
+                    <img src="chris.jpg" alt="Eggshell Drying">
+                </div>
+                <div class="gallery-item" onclick="openModal('eggshell.jpg')">
+                    <img src="eggshell.jpg" alt="Broken Eggshell">
+                </div>
+                <div class="gallery-item" onclick="openModal('vacuumchamber.gif')">
+                    <img src="vacuumchamber.gif" alt="playGIF">
+                </div>
+            </div>
+
+            <p class="section-heading"><br>How her journey began:<br>The pathway from Lucknow to London</p>
+            <p>Originally from India, Shivani Mathur came to London in June 1998 on an allowance of 35 pounds per day, expecting to spend two weeks here. Financial markets were in turmoil, her education background seemed 'just right' and she found opportunity in the male-dominated realm of investment banking. Entering this high-stakes, high-emotion environment, Shivani made London her home.</p>
+            <img src="lucknow.jpg" alt="Lucknow" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+            <div class="video-caption">From Lucknow to London, 2020</div>
+            <p>She soon rose to be recognized as the top two percent of women in the financial sector in London, and she loved her job, but something in her was restless to look beyond. As an outsider, her vision was of a world where extraordinary opportunities are accessible to ordinary people with big dreams, grit, humility, an incessant quest for learning. People who do not shy from taking alternate pathways. People who see learning in failure and beauty in breakage. Shivani began an incessant search for pathways that empower us to discover and realize the vast potential that resides within each and every one of us.</p>
+
+            <img src="tothetop.JPG" alt="To the top" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+            <div class="video-caption">To the top, 2008. <br> An early work expressing conflict</div>
+
+            <p class="section-heading"><br>Following Dreams. How Art entered her life</p>
+            <p>Shivani realized that art has the power to empower, provoke thought, and bring about positive change. Her workplace became an artists laboratory. Alongside her demanding career, she embarked on a parallel artistic journey, igniting conversations around disruption, opportunity, social justice, sustainability, and empowerment.</p>
+
+            <p class="section-heading">The rise. The fall. The bounce.</p>
+            <p>They say that the higher you soar, the harder you fall. Shivani believes the reverse is also true. The harder you fall, the bigger is the potential to bounce when you propel yourself. When several doors closed in her life, Shivani took the opportunity during the pandemic to enroll in a Master's degree in Art and Science at Central Saint Martins, London. This transformative experience earned her a distinction and an award for sustainability by the prestigious 'Maison Zero' - a joint award by LVMH and the University of the Arts, London. Her research paper titled "Pregnant with infinity" was peer-reviewed and published by Leonardo Labs.</p>
+
+            <p class="section-heading">Inspiration</p>
+            <img src="inspiration.png" alt="Inspiration" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+            <p>Shivani's mathematical background, multicultural upbringing and her experiences as a woman and a minority ignited an interest in exploring the conditions that fuel people and empower them. She turns to three distinct disciplines:<br><br>
+            - Ancient Indian philosophy from the Upanishads, emphasizing self-discovery and interconnectedness, encouraging individuals to look within themselves to understand the universe.<br>
+            - The Japanese art of Kintsugi, celebrating imperfections and breakage.<br>
+            - Quantum physics, which explores subatomic particle behavior and questions how they are related to the cosmic scale.<br></p>
+        </div>
+    </div>
+
+    <!-- Popup that opens when a gallery photo is tapped -->
+    <div class="modal" id="imageModal">
+        <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
+        <div class="modal-content"></div>
+    </div>
+
+    <footer>
+        <p>"Art had the power to transform humanity. That is my inspiration"<br>
+            &copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+
+        function toggleVideo(index) {
+            var video = document.querySelectorAll('video')[index];
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function toggleDescription(index) {
+            var description = document.querySelectorAll('.video-description')[index];
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openModal(image) {
+            var modal = document.getElementById('imageModal');
+            var modalContent = document.querySelector('.modal-content');
+
+            modalContent.innerHTML = '<img src="' + image + '" alt="Enlarged image">';
+            modal.style.display = 'block';
+
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        }
+    </script>
+</body>
+</html>
