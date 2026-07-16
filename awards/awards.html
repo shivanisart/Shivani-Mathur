@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur.Awards</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            margin: 0;
+            font-size: clamp(15px, 3vw, 22px);
+            line-height: 1.5;
+            color: #929292;
+            padding: 0;
+        }
+        /* Style header and footer */
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Apply max-width to the page container */
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-icon img {
+            width: clamp(50px, 12vw, 100px);
+            height: clamp(50px, 12vw, 100px);
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            display: none;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px 20px;
+            text-decoration: none;
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            color: #929292;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+            display: block;
+            padding: 10px;
+        }
+        .menu-content li.active a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: clamp(40px, 12vw, 100px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            font-size: clamp(13px, 2.5vw, 18px);
+        }
+
+        .footer-icons {
+            font-size: clamp(20px, 5vw, 36px);
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #07BFF;
+        }
+
+        .video-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-caption {
+            font-size: clamp(16px, 3.5vw, 24px);
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .video-description {
+            display: none;
+            font-size: clamp(14px, 3vw, 18px);
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .video-item video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        .header-description {
+            font-size: clamp(14px, 3vw, 20px);
+            margin-top: 10px;
+            color: #929292;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .slideshow-text-center {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .slideshow-text-left {
+            display: inline-block;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+
+        .gallery-item {
+            flex: 0 1 calc(33.33% - 5px);
+            margin-bottom: 5px;
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+        }
+
+        .menu ul li.active a {
+            background-color: #4c4c4c;
+            color: white !important;
+        }
+
+        /* Next and previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: clamp(8px, 2vw, 16px);
+            margin-top: -22px;
+            color: #929292;
+            font-weight: bold;
+            font-size: clamp(20px, 5vw, 36px);
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            z-index: 3;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Style for the slideshow container - now scales with screen width instead of a fixed 1000px height */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 4 / 3;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .mySlides1 {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            text-align: center;
+            padding: 8px;
+            font-size: clamp(12px, 2.5vw, 16px);
+            box-sizing: border-box;
+        }
+
+        .section-heading {
+            font-size: clamp(20px, 4.5vw, 30px);
+            font-weight: bold;
+        }
+
+        /* Include the Font Awesome CSS stylesheet */
+        .fa {
+            font-family: FontAwesome, sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="http://www.shivani-mathur.com/" style="cursor: pointer;"><i class="fas fa-globe"></i></a></li><br>
+                <li><a href="../portfolio/port.html">Portfolios</a></li><br>
+                <li class="active"><a href="../awards/awards.html">Awards and exhibitions</a></li><br>
+                <li><a href="../aboutshivani/aboutshivani.html">The artist and her studio</a></li><br>
+                <li><a href="../whatsnext/whatsnext.html">What's Next</a></li><br><br><br>
+                <li><a href="../whatsnext/junk.html">Contact</a></li><br>
+                <li><a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <div class="page-container">
+            <h1>Shivani Mathur</h1>
+
+            <div class="slideshow-container">
+                <div class="mySlides1 fade">
+                    <img src="fullview.jpg" alt="Slide 1">
+                    <div class="caption">Pathways of Light, 2022. Maison Zero award by Louis Vuitton and UAL. As installed at Central Saint Martins, London</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="maisonzero.jpg" alt="Slide 2">
+                    <div class="caption">Pathways of Light, 2022. Maison Zero award by Louis Vuitton and UAL. Backlit image of the cracks</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="exhibition-egg1.jpg" alt="Slide 3">
+                    <div class="caption">Hiranya Garnha, 2012. Public sculpture displayed in Covent Garden London. Voted among the top three "most popular" sculptures by the public out of a total of 209 sculptures showcased throughout London.</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="27.jpg" alt="Image 24">
+                    <div class="caption">The door. An oil painting and a digital work exhibited at the William gallery in William Blake House, 12 October to 15 Dec 2023.</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="24.jpg" alt="Image 24">
+                    <div class="caption">Humpty Dumpty Version 2.0. Eggshell sculpture, one of five works displayed in the exhibition 'Motherland' at the Great West gallery in October 2022 - September 2023.</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="25.jpg" alt="Image 24">
+                    <div class="caption">Hologram. Displayed at Art and Science symposium at Central Saint Martins, 18th June 2022.</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="22poland.jpg" alt="Image 22">
+                    <div class="caption">Pathways. Exhibited at Festival of light, Poland. May 2022</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="21.jpg" alt="Image 21">
+                    <div class="caption">Moment in time. A riso print in an edition of ten, paired with an NFT. Exhibited at 'Merch' - a print sale at the Lethaby gallery London in February 2022.</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="18.jpg" alt="Image 18">
+                    <div class="caption">See you tomorrow, Digital image in online exhibition, June 2021</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="17.jpg" alt="Image 17">
+                    <div class="caption">Blossom, one of five paintings exhibited at Bozar Brussels. Art fair, October 2019</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="15.jpg" alt="Image 15">
+                    <div class="caption">Gandhi, A solo show of thirty works at India House, London, October to December 2018</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="26.jpg" alt="Image 15">
+                    <div class="caption">A grain of salt. A solo show of thirty works on the life and influences of Gandhi, and his principles of Ahimsa. India House, London, October to December 2018</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="14.jpg" alt="Image 14">
+                    <div class="caption">Infinity, One of two works exhibited at the exhibition 'Small is beautiful' at Matthew Flowers gallery, Cork Street, London 4th December to 4th January 2019</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="12.jpg" alt="Image 12">
+                    <div class="caption">A sanctuary of calm. One of five works exhibited at a solo show in Cornwall Gardens for 'London open square' week. June 2018</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="Waiting.2010.JPG" alt="Image 08">
+                    <div class="caption">Waiting. Auctioned at Bonham's London. 27 September 2011</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="07.jpg" alt="Image 07">
+                    <div class="caption">Temple City. One of ten works exhibited in a solo show by Upaya - a charity that raises money for the employment of rural Indian women. Seattle March, 2013</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="04.jpg" alt="Image 05">
+                    <div class="caption">Golden Eyes. One of five works exhibited in a group show at the Hanging Gallery, Royal Automobile Club, London. 22 November - 9 January 2011</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="04.jpg" alt="Image 04">
+                    <div class="caption">Dreams. Auctioned by Macmillan Delonghi at Royal College of Art, London. 25 September 2012</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="03.jpg" alt="Image 03">
+                    <div class="caption">Black Pearls. Auctioned for UNICEF at London Business School, London. 20 May 2010</div>
+                </div>
+
+                <!-- FIXED: this alt tag was never closed in the original file, which broke the HTML structure for the rest of the page -->
+                <div class="mySlides1 fade">
+                    <img src="02.jpg" alt="Image 02">
+                    <div class="caption">Past exhibitions, awards and collaborations</div>
+                </div>
+
+                <div class="mySlides1 fade">
+                    <img src="01.jpg" alt="Image 01">
+                    <div class="caption">Solo show of twenty-two works at the Art bar, Walton Street, London, June 2008</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="slideshow-text-center">
+        <div class="slideshow-text-left">
+
+            <p class="section-heading">Awards and Publications</p>
+            <p>
+                2023 Pinacotheque Museum of Luxembourg award<br>
+                2023 Academic paper published in Leonardo Labs<br>
+                2022 Recipient of &lsquo;Maison Zero, This earth&rsquo; award for sustainability by LVMH and UAL<br>
+                2022 Awarded distinction in Masters of Art and Science, UAL London<br>
+                2012 Global Women&rsquo;s leader award, top two percent of women in the city, by Deutsche Bank<br>
+                2012 Ranked 3 out of 209 artists for Fabergé Egg hunt sculpture displayed in Covent Garden<br>
+                1992 Merit scholar for academic excellence. Mumbai university<br>
+                1990 Ranked No.1 in Delhi university and achieved a new academic record
+            </p>
+
+            <p class="section-heading">Exhibitions</p>
+            <p>
+                Solo exhibitions<br><br>
+
+                2020 Lockdown exhibition. solo live curated show in virtual gallery<br>
+                2019 Passage, Red moon gallery, Brussels<br>
+                2018 Gandhi, India House, London<br>
+                2018 Uninterrupted, Nehru Centre, London<br>
+                2013 Crlebration of hundred works. Institute of Contemporary Arts, London<br>
+                2013 Upaya, Seattle<br>
+                2012 Goethe Institute, London, Partnering with Chef Asma Khan<br>
+                2008 Art Bar, Knightsbridge, London<br><br>
+
+                Group Exhibitions<br><br>
+                2023 The graduate art show, William Blake house, London<br>
+                2023 MotherLand, Great West Gallery London<br>
+                2022 The show. Central Saint Martins, UAL<br>
+                2022 Festival of Light, Poland<br>
+                2022 Merch Lethaby Gallery. Granary Square, London<br>
+                2021 See you tomorrow, Online exhibition<br>
+                2019 Bozar Brussels. Art fair<br>
+                2018 Small is beautiful. Flowers gallery, Cork Street, London<br>
+                2012 Fabergé egg hunt, London. Public sculpture<br>
+                2012 Deutsche Bank<br>
+                2012 The MacMillan Delomghi auction. Royal College of Art, London<br>
+                2011 The MacMillan Delomghi auction. Bonham&rsquo;s London<br>
+                2010 The Hanging gallery show. Royal Automobile Club, Pall Mall, London<br>
+                2009 Charity auction. London Business School<br>
+                2008 Empowerment of women. SOAS London
+            </p>
+
+            <p class="section-heading">Seminars, Collaborations and Residencies</p>
+            <p>
+                2022 Rock Paper Scissors. A collaborative work with a violinist, James, and artist Kelly Briggs<br>
+                2021 University of Arts London: Creative Hack; Digital Hack<br>
+                2021 Agents of Change. An exhibition on sustainability in the week of COP26<br>
+                2021 Imperial college. I science publication of artworks<br>
+                2022 Tokyo Institute of technology and Queen Mary Hospital: Making Waves<br>
+                2022 Cambridge University: Digital technologies
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&ldquo;Art had the power to transform humanity. That is my inspiration&rdquo;<br>
+            &copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var slideIndex = 0;
+        var manualSlideIndex = 0;
+        var titleAudio;
+
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+
+        function showSlides() {
+            var slides = document.querySelectorAll(".mySlides1");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 7000);
+        }
+
+        function plusSlides(n) {
+            showSlidesManual(manualSlideIndex += n);
+        }
+
+        function showSlidesManual(n) {
+            var slides = document.querySelectorAll(".mySlides1");
+            if (n > slides.length) {
+                manualSlideIndex = 1;
+            }
+            if (n < 1) {
+                manualSlideIndex = slides.length;
+            }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[manualSlideIndex - 1].style.display = "block";
+        }
+
+        function playTitleAudio() {
+            if (!titleAudio) {
+                titleAudio = new Audio('lindzay.m4a');
+                titleAudio.loop = false;
+                titleAudio.volume = 0.2;
+                titleAudio.play();
+            } else {
+                if (!titleAudio.paused) {
+                    titleAudio.pause();
+                } else {
+                    titleAudio.play();
+                }
+            }
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>
