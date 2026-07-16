@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur.From zero to infinity</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            margin: 0;
+            padding: 0;
+            font-size: clamp(15px, 3vw, 22px);
+            line-height: 1.5;
+            color: #929292;
+        }
+
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-icon img {
+            width: clamp(50px, 12vw, 100px);
+            height: clamp(50px, 12vw, 100px);
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            display: none;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px 20px;
+            text-decoration: none;
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            color: #929292;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-content li.active a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: clamp(40px, 12vw, 100px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            font-size: clamp(14px, 3vw, 18px);
+            padding: 10px;
+        }
+
+        .footer-icons {
+            font-size: clamp(20px, 5vw, 32px);
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-caption {
+            font-size: clamp(16px, 3.5vw, 22px);
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .video-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .video-item {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        .header-description {
+            font-size: clamp(15px, 3vw, 20px);
+            margin-top: 10px;
+            color: #929292;
+        }
+
+        .video-set {
+            margin-bottom: 20px;
+        }
+
+        .listen-text {
+            text-align: center;
+            color: #929292;
+            font-size: clamp(15px, 3vw, 20px);
+        }
+
+        .play-button {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+            font-size: clamp(18px, 4vw, 24px);
+        }
+
+        #bottom-text p {
+            font-size: clamp(14px, 3vw, 18px);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../portfolio/port.html">Back to Portfolios main page</a></li><br>
+                <li><a href="../digital/digital.html">Pathways</a></li><br>
+                <li class="active"><a href="../empty space/emptyspace.html">From Zero to infinity</a></li><br>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li><br>
+                <li><a href="../fire/fire.html">Fractured relationships</a></li><br>
+                <li><a href="../war/war.html">War, Peace, Rebirth</a></li><br>
+                <li><a href="../whatsnext/junk.html">Contact</a></li><br>
+                <li><a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <h1>Shivani Mathur</h1>
+    </header>
+
+    <div class="page-container">
+        <p class="header-description">In this series, Shivani traces a journey from zero to infinity by exploring empty space. John Wheeler, the eminent quantum physicist famously said<br>'Empty Space is not empty. It is the seat of the most violent physics."<br><br>Conventional boundaries are disregarded in this series.</p>
+
+        <div class="video-container video-set">
+
+            <div class="video-item">
+                <img src="171the wormhole 2.JPG" alt="Wormhole, 2019. Oil on canvas. 50x50 cm." style="width: 100%;">
+                <p class="video-caption">Wormhole, 2019<br>Oil on canvas. 50x50 cm.</p>
+            </div>
+
+            <div class="video-item">
+                <img src="043 celestial bodies.JPG" alt="Celestial Bodies, 2012. Oil on canvas. 102x92 cm." style="width: 100%;">
+                <p class="video-caption">Celestial Bodies, 2012<br>Oil on canvas. 102x92 cm.</p>
+            </div>
+
+            <div class="video-item">
+                <img src="Infinity.GIF" alt="Empty Space, 2020. Oil on canvas. 50x50 cm." style="width: 100%;">
+                <p class="video-caption">Empty Space, 2020<br>Oil on canvas. 50x50 cm.</p>
+            </div>
+
+            <div class="video-item">
+                <img src="20180326innervoice1mb2.GIF" alt="The Inner Voice, 2015. Oil on canvas. 122x92 cm." style="width: 100%;">
+                <p class="video-caption">The Inner Voice, 2015<br>Oil on canvas. 122x92 cm.</p>
+            </div>
+
+            <div class="video-item">
+                <img src="20200626theeye.GIF" alt="The Eye, 2020. Oil on canvas. 150cmx180cm." style="width: 100%;">
+                <p class="video-caption">The Eye, 2020<br>Oil on canvas. 150cmx180cm.</p>
+            </div>
+
+            <p class="listen-text">Listen to curator Lindzay Chan on the series "Empty space"</p>
+            <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+
+            <div id="bottom-text" style="display: none;">
+                <p><br><br>The exploration of empty space, dark matter, and the behavior of light in a vacuum have long been focal points of inquiry in physics. However, to date, true 'empty space' remains elusive.
+
+                Nearly a century ago, in 1928, the brilliant mathematician Paul Dirac stumbled upon a remarkable revelation while toying with equations: Empty space is far from empty. It pulsates with ceaseless activity—an incessant dance of matter and antimatter, creating, destroying and recreating, too rapid for human perception to capture.
+
+                <br>This insight brought Shivani's mind to the Upanishads, an ancient Indian text dating back five millennia. The word for zero (Shunya) in Sanskrit derives from the term 'Kha,' loosely translated as 'nothing' in English. However, a more apt interpretation might be 'that which is unmanifest and unseen but has boundless possibilities.'
+
+                Think of Kha as the empty space within the hub of a wheel, the void. Insert an axle in this void propels the wheel forward.<br><br>
+
+                Could the path to infinity lie in realising the power of what is invisible?</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>"Art had the power to transform humanity. That is my inspiration"<br>
+            &copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+
+        var titleAudio;
+
+        function playTitleAudio() {
+            if (!titleAudio) {
+                titleAudio = new Audio('emptyspace.m4a');
+                titleAudio.loop = false;
+                titleAudio.volume = 0.7;
+                titleAudio.play();
+                document.getElementById('bottom-text').style.display = 'block';
+            } else {
+                if (titleAudio.paused) {
+                    titleAudio.play();
+                    document.getElementById('bottom-text').style.display = 'block';
+                } else {
+                    titleAudio.pause();
+                    document.getElementById('bottom-text').style.display = 'none';
+                }
+            }
+        }
+
+        // Note: the three GIFs above (Empty Space, The Inner Voice, The Eye) play continuously
+        // on a loop, the same way any GIF does in a browser. There is no way to pause a GIF
+        // via JavaScript the way this page previously tried to (img elements don't support
+        // .play()/.pause() the way video elements do), so the click-to-pause behavior was
+        // removed rather than left broken. Convert these to real video files if you want
+        // actual play/pause control.
+    </script>
+</body>
+</html>
