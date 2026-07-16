@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Mathur. What's next</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        h1,
+        .header-description {
+            text-align: center;
+            text-decoration: none;
+            color: #929292;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            font-size: clamp(15px, 3vw, 22px);
+            line-height: 1.5;
+            color: #929292;
+            text-align: center;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            margin: 20px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-icon img {
+            width: clamp(50px, 12vw, 100px);
+            height: clamp(50px, 12vw, 100px);
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            display: none;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px 20px;
+            text-decoration: none;
+            font-size: clamp(1.5rem, 7vw, 4.5rem);
+            color: #929292;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-content li.active a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            font-size: clamp(40px, 12vw, 100px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer-icons {
+            font-size: clamp(20px, 5vw, 32px);
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-item {
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            font-size: clamp(16px, 3.5vw, 24px);
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .video-description {
+            display: none;
+            text-align: center;
+            font-size: clamp(15px, 3vw, 20px);
+            color: #929292;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="http://www.shivani-mathur.com/" style="cursor: pointer;"><i class="fas fa-globe"></i></a></li><br>
+                <li><a href="../portfolio/port.html">Portfolios</a></li><br>
+                <li><a href="../awards/awards.html">Awards and exhibitions</a></li><br>
+                <li><a href="../aboutshivani/aboutshivani.html">The artist and her studio</a></li><br>
+                <li class="active"><a href="../whatsnext/whatsnext.html">What's Next</a></li><br><br><br>
+                <li><a href="../whatsnext/junk.html">Contact</a></li><br>
+                <li><a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <h1>Shivani Mathur</h1>
+    </header>
+
+    <div class="page-container">
+        <p class="header-description"><br>presents<br><br>
+            "Fractured blue flame"<br>5 December 2023 - 1 February 2024<br> in an exhibition by Artcan, Then & Now<br></p>
+        <p class="header-description"><br> and <br>
+            "The Door"<br>12 October - 15 December 2023<br> William gallery, William Blake House, 8 Marshall
+            Street, London.<br></p>
+
+        <div class="video-container">
+
+            <div class="video-item">
+                <img src="fracturedblue.jpg" alt="Fractured blue flame">
+                <p>
+                    "Then and Now", curated by Kate Enters, believes that artists are a barometer of society and invites them to contemplate their artistic journey in the last ten years.
+                </p>
+            </div>
+
+            <div class="video-item">
+                <img src="thedoor.GIF" alt="The Door">
+            </div>
+
+            <p>
+                The William Gallery, London, is located in the iconic William Blake House, the birthplace of poet William
+                Blake.
+                Curated by Anand Saggar and Nick Woolff, Shivani Mathur presents a work in two-parts - an oil painting and a
+                digital generative artwork that invites us to contemplate the role of our choices in shaping our destiny
+                when we encounter a closed door.
+                Join us at The William Blake House, 8 Marshall Street, London, UK. 12th October to 15 December 2023.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>"Art had the power to transform humanity. That is my inspiration" <br>
+            &copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
