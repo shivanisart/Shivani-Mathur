@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire cannot burn it, Water cannot wet it.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            background-color: #4c4c4c;
+            font-size: clamp(15px, 3vw, 22px);
+            line-height: 1.5;
+            color: #929292;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 0px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            margin: 0px auto;
+            padding-top: 0px;
+            background-color: #4c4c4c;
+        }
+
+        .menu-icon img {
+            width: clamp(50px, 12vw, 100px);
+            height: clamp(50px, 12vw, 100px);
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(76, 76, 76, 0.85);
+            color: #929292;
+            display: none;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .menu-content {
+            text-align: center;
+            padding: 50px 20px;
+            text-decoration: none;
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            color: #929292;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-content li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu ul li:nth-child(4) {
+            margin-bottom: 10px;
+        }
+
+        .menu-content a {
+            text-decoration: none;
+            color: #929292;
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-content li.active a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: clamp(40px, 12vw, 100px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        h1, .header-description {
+            text-align: center;
+            color: #929292;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        .header-description {
+            font-size: clamp(15px, 3vw, 20px);
+        }
+
+        footer {
+            background-color: #4c4c4c;
+            color: #929292;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer-icons {
+            font-size: clamp(20px, 5vw, 32px);
+        }
+
+        .footer-icons a {
+            color: #929292;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+
+        .thumbnail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .thumbnail-item {
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .thumbnail-caption {
+            font-size: clamp(15px, 3vw, 20px);
+            text-align: center;
+            cursor: pointer;
+            background-color: #4c4c4c;
+            color: #929292;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .listen-text {
+            text-align: center;
+            color: #929292;
+            font-size: clamp(15px, 3vw, 20px);
+        }
+
+        .play-button {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+            font-size: clamp(18px, 4vw, 24px);
+            background-color: white;
+            color: #4c4c4c;
+        }
+
+        #bottom-text p {
+            font-size: clamp(14px, 3vw, 18px);
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="../icon.jpg" alt="Menu">
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../portfolio/port.html">Back to Portfolios main page</a></li><br>
+                <li><a href="../digital/digital.html">Pathways</a></li><br>
+                <li><a href="../empty space/emptyspace.html">From Zero to infinity</a></li><br>
+                <li><a href="../fibonacci/fibonacci.html">Fibonacci</a></li><br>
+                <li class="active"><a href="../fire/fire.html">Fractured relationships</a></li><br>
+                <li><a href="../war/war.html">War, Peace, Rebirth</a></li><br>
+                <li><a href="../whatsnext/junk.html">Contact</a></li><br>
+                <li><a href="mailto:shivanimathurart@gmail.com" style="cursor: pointer;"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://www.instagram.com/shivanisart/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" style="cursor: pointer;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com/in/shivani-mathur-a480438" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <h1>Shivani Mathur</h1>
+    </header>
+
+    <div class="page-container">
+        <p class="header-description">Fractured relationships 2011 - current<br><br>The harder the fall, the greater will be the bounce.<br><br></p>
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-item">
+                <img src="Entwined.jpg" alt="Entwined Poster">
+                <div class="thumbnail-caption">The sweetest kiss is the kiss to 'make up'. 2012 Charcoal, pastels and gold on canvas 120x150 cm</div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="112wait.jpg" alt="112wait Image">
+                <div class="thumbnail-caption">A tornado will not blow me away. 2014. A self-portrait. 80x60 cm</div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="098gift.jpg" alt="098gift Image">
+                <div class="thumbnail-caption">Miscarriage of justice. 2012 Charcoal and gold on canvas 150x120 cm</div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="charcoalcabbage.jpg" alt="Charcoal Cabbage">
+                <div class="thumbnail-caption">Fire cannot burn me. 2021 Charcoal and cabbage juice on paper, 30x40 cm</div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="267dsisy3.jpg" alt="267dsisy3 Image">
+                <div class="thumbnail-caption">Water cannot wet me. 2021 Charcoal and cabbage juice on paper, 30x40</div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="yellow.jpg" alt="Yellow Image">
+                <div class="thumbnail-caption">The wind cannot move us when we are together. 2022 Charcoal on paper, 30x40</div>
+            </div>
+        </div>
+
+        <div class="centered-play-button">
+            <p class="listen-text">Curator Lindzay Chan on the series "Fractured relationships"<br></p>
+            <button class="play-button" onclick="playTitleAudio()"><i class="fas fa-play"></i></button>
+        </div>
+
+        <div id="bottom-text" style="display: none;">
+            <p>In 2012, Shivani Mathur received medical counsel to stop using oil paints because the corrosive fumes they emitted during the drying process were eroding her cornea. She made a courageous trade. She exchanged a box of oil paints for a stick of charcoal.</p>
+            <p>These charcoals became symbols of the resilience and regeneration that lies at the heart of her practice.</p>
+            <p>In Verse 23, Chapter 2 of The Gita this buoyancy of the eternal and timeless inner self is beautifully described: 'Fire cannot burn it, Water cannot wet it. The Wind cannot dry it.'<br></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>"Art had the power to transform humanity. That is my inspiration"<br>
+            &copy; Copyright Shivani Mathur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            var currentDisplay = window.getComputedStyle(menuContainer).display;
+            menuContainer.style.display = (currentDisplay === 'block') ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var menuContainer = document.getElementById('menuContainer');
+            menuContainer.style.display = 'none';
+        }
+
+        var titleAudio;
+
+        function playTitleAudio() {
+            if (!titleAudio) {
+                titleAudio = new Audio('empty space.m4a');
+                titleAudio.loop = false;
+                titleAudio.volume = 0.7;
+                titleAudio.play();
+                document.getElementById('bottom-text').style.display = 'block';
+            } else {
+                if (titleAudio.paused) {
+                    titleAudio.play();
+                    document.getElementById('bottom-text').style.display = 'block';
+                } else {
+                    titleAudio.pause();
+                    document.getElementById('bottom-text').style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
