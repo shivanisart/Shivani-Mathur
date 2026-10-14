@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Open Studios – Create Space London</title>
     <style>
         /* Reset default styles */
         * {
@@ -67,6 +67,66 @@
             color: #bbb;
             text-decoration: none;
         }
+
+        /* Exhibition section */
+        .exhibition {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 100px 24px 60px;
+        }
+
+        .exhibition h1 {
+            font-size: 2.2rem;
+            line-height: 1.15;
+            color: #e6e6e6;
+            margin-bottom: 8px;
+        }
+
+        .exhibition .tagline {
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .exhibition dl {
+            display: grid;
+            grid-template-columns: 7rem 1fr;
+            gap: 14px 16px;
+            margin-bottom: 36px;
+        }
+
+        .exhibition dt {
+            color: #e0a526;
+            font-weight: bold;
+        }
+
+        .exhibition dd {
+            color: #d0d0d0;
+        }
+
+        .exhibition h2 {
+            font-size: 1.2rem;
+            color: #e6e6e6;
+            margin-bottom: 12px;
+        }
+
+        .exhibition p {
+            line-height: 1.6;
+            margin-bottom: 36px;
+            max-width: 60ch;
+        }
+
+        .artists {
+            list-style: none;
+            columns: 2;
+            column-gap: 24px;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        @media (max-width: 480px) {
+            .exhibition dl { grid-template-columns: 1fr; gap: 2px; }
+            .exhibition dd { margin-bottom: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -85,6 +145,72 @@
     </div>
 
     <!-- Your page content goes here -->
+    <main class="exhibition">
+        <!-- NEW EXHIBITION START: Open Studios (add older exhibitions below this block) -->
+        <h1>Open Studios</h1>
+        <p class="tagline">Kensington's best kept creative secret is opening its doors.</p>
+
+        <dl>
+            <dt>Date</dt>
+            <dd>Friday 23rd – Saturday 24th October 2026</dd>
+
+            <dt>Times</dt>
+            <dd>Friday 4pm – 9pm<br>Saturday 11am – 5pm</dd>
+
+            <dt>Location</dt>
+            <dd>Create Space London, Kensington, London<br>
+                <!-- Flyer address is cut off in the photo – replace with full address -->
+                [Add full address and postcode]</dd>
+
+            <dt>With</dt>
+            <dd>Create Space London resident artists (listed below)</dd>
+        </dl>
+
+        <h2>About</h2>
+        <p>For two days only, Create Space London opens to the neighbourhood. Wander through three floors of bustling private studios, discover original art, and drop into free creative taster classes for all ages.</p>
+
+        <h2>Come and meet the artists</h2>
+        <ul class="artists">
+            <li>Abdul Montaquin</li>
+            <li>Alina Nedelcu</li>
+            <li>Ana Benavides</li>
+            <li>Andrea Varotto</li>
+            <li>Antoine Genevier</li>
+            <li>Aramatou Toure</li>
+            <li>Blanca Parra</li>
+            <li>Caroline Ashley</li>
+            <li>Chloe Feinberg</li>
+            <li>Cosima Von Moreau</li>
+            <li>Delphine Anderson</li>
+            <li>Estelle Asmaa Alanbari</li>
+            <li>Fernando Cari</li>
+            <li>Filippa af Buren</li>
+            <li>Garanto Art Club</li>
+            <li>Georgia Boardman</li>
+            <li>Holly Hudson</li>
+            <li>Judit Kollo</li>
+            <li>Julie Fitzpatrick</li>
+            <li>Kim Judge</li>
+            <li>Kit Christie</li>
+            <li>Laura Dzelzyte</li>
+            <li>Laura Mila</li>
+            <li>Lidija Seferovic</li>
+            <li>Lola Mau</li>
+            <li>Lorna Coughlan</li>
+            <li>Lucy de Roeper</li>
+            <li>Malca Mizrahi</li>
+            <li>Margot Pioro</li>
+            <li>Melissa Perold</li>
+            <li>Michele Bagnod</li>
+            <li>Nadja Stamselberg</li>
+            <li>Rowan Zeinu</li>
+            <li>Shivani Mathur</li>
+            <li>Sofia Lai</li>
+            <li>William Lasdun</li>
+        </ul>
+        <!-- NEW EXHIBITION END -->
+        <!-- Older exhibitions go here -->
+    </main>
 
     <script>
         function toggleMenu() {
