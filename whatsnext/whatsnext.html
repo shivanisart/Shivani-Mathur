@@ -183,6 +183,58 @@
             font-size: clamp(15px, 3vw, 20px);
             color: #929292;
         }
+
+        /* ---------- NEW: Open Studios block (sits above older exhibitions) ---------- */
+        .open-studios {
+            padding: 40px 0 50px;
+            border-bottom: 1px solid #929292;
+            margin-bottom: 40px;
+        }
+
+        .open-studios h2 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            line-height: 1.15;
+            color: #e6e6e6;
+            margin-bottom: 8px;
+        }
+
+        .open-studios .tagline {
+            margin-bottom: 28px;
+        }
+
+        .open-studios .details {
+            margin-bottom: 28px;
+            color: #d0d0d0;
+        }
+
+        .open-studios .details p {
+            margin-bottom: 14px;
+        }
+
+        .open-studios .details strong {
+            color: #e0a526;
+        }
+
+        .open-studios h3 {
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            color: #e6e6e6;
+            margin: 28px 0 12px;
+        }
+
+        .open-studios .artists {
+            list-style: none;
+            columns: 2;
+            column-gap: 24px;
+            line-height: 1.8;
+            color: #d0d0d0;
+            font-size: clamp(14px, 2.8vw, 18px);
+        }
+
+        @media (max-width: 480px) {
+            .open-studios .artists {
+                columns: 1;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -215,6 +267,69 @@
     </header>
 
     <div class="page-container">
+
+        <!-- NEW EXHIBITION START: Open Studios (add future exhibitions above this block) -->
+        <section class="open-studios">
+            <p class="header-description"><br>presents<br><br></p>
+            <h2>Open Studios</h2>
+            <p class="tagline">Kensington's best kept creative secret is opening its doors.</p>
+
+            <div class="details">
+                <p><strong>Date</strong><br>Friday 23rd – Saturday 24th October 2026</p>
+                <p><strong>Times</strong><br>Friday 4pm – 9pm<br>Saturday 11am – 5pm</p>
+                <p><strong>Location</strong><br>Create Space London, Kensington, London
+                    <!-- TODO: add full address and postcode (cut off on the flyer photo) -->
+                </p>
+            </div>
+
+            <p>
+                For two days only, Create Space London opens to the neighbourhood. Wander through three floors of
+                bustling private studios, discover original art, and drop into free creative taster classes for all ages.
+            </p>
+
+            <h3>Come and meet the artists</h3>
+            <ul class="artists">
+                <li>Abdul Montaquin</li>
+                <li>Alina Nedelcu</li>
+                <li>Ana Benavides</li>
+                <li>Andrea Varotto</li>
+                <li>Antoine Genevier</li>
+                <li>Aramatou Toure</li>
+                <li>Blanca Parra</li>
+                <li>Caroline Ashley</li>
+                <li>Chloe Feinberg</li>
+                <li>Cosima Von Moreau</li>
+                <li>Delphine Anderson</li>
+                <li>Estelle Asmaa Alanbari</li>
+                <li>Fernando Cari</li>
+                <li>Filippa af Buren</li>
+                <li>Garanto Art Club</li>
+                <li>Georgia Boardman</li>
+                <li>Holly Hudson</li>
+                <li>Judit Kollo</li>
+                <li>Julie Fitzpatrick</li>
+                <li>Kim Judge</li>
+                <li>Kit Christie</li>
+                <li>Laura Dzelzyte</li>
+                <li>Laura Mila</li>
+                <li>Lidija Seferovic</li>
+                <li>Lola Mau</li>
+                <li>Lorna Coughlan</li>
+                <li>Lucy de Roeper</li>
+                <li>Malca Mizrahi</li>
+                <li>Margot Pioro</li>
+                <li>Melissa Perold</li>
+                <li>Michele Bagnod</li>
+                <li>Nadja Stamselberg</li>
+                <li>Rowan Zeinu</li>
+                <li>Shivani Mathur</li>
+                <li>Sofia Lai</li>
+                <li>William Lasdun</li>
+            </ul>
+        </section>
+        <!-- NEW EXHIBITION END -->
+
+        <!-- PREVIOUS EXHIBITIONS (unchanged) -->
         <p class="header-description"><br>presents<br><br>
             "Fractured blue flame"<br>5 December 2023 - 1 February 2024<br> in an exhibition by Artcan, Then & Now<br></p>
         <p class="header-description"><br> and <br>
